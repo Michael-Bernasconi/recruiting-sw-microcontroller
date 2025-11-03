@@ -23,7 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <string.h>
-
+#include <stdlib.h>   // necessario per rand()
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,7 +49,14 @@ DMA_HandleTypeDef hdma_adc1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+// Buffer per media mobile e indice
+#define MA_SIZE 150
+uint32_t adcBuffer[MA_SIZE] = {0};
+uint16_t bufferIndex = 0;
 
+// Seleziona il tipo di filtro: RAW, MOVING_AVERAGE, RANDOM_NOISE
+typedef enum { RAW, MOVING_AVERAGE, RANDOM_NOISE } FilterMode;
+FilterMode currentMode = RANDOM_NOISE;  // RAW per default
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -65,6 +72,27 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+// Funzione per calcolo media mobile
+uint32_t computeMovingAverage(uint32_t newSample) {
+    adcBuffer[bufferIndex] = newSample;
+    bufferIndex = (bufferIndex + 1) % MA_SIZE;
+
+    uint64_t sum = 0;
+    for (int i = 0; i < MA_SIZE; i++) {
+        sum += adcBuffer[i];
+    }
+    return (uint32_t)(sum / MA_SIZE);
+}
+
+// Funzione per aggiungere rumore casuale
+uint32_t addRandomNoise(uint32_t value) {
+    int32_t noise = (rand() % 1500) +200; // rumore
+    int32_t result = (int32_t)value + noise;
+    if (result < 0) result = 0;
+    if (result > 4095) result = 4095;
+    return (uint32_t)result;
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -73,13 +101,11 @@ static void MX_USART2_UART_Init(void);
   */
 int main(void)
 {
-
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
-
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
@@ -99,40 +125,55 @@ int main(void)
   MX_DMA_Init();
   MX_ADC1_Init();
   MX_USART2_UART_Init();
+
   /* USER CODE BEGIN 2 */
-
-  /* USER CODE END 2 */
-
-  /* Initialize leds */
+  /* Initialize LEDs */
   BSP_LED_Init(LED_GREEN);
-
-  /* Initialize USER push-button, will be used to trigger an interrupt each time it's pressed.*/
-  BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
+  /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    HAL_ADC_Start(&hadc1);                             // Avvia la conversione
-    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);  // Attende fine conversione
-    uint32_t adcValue = HAL_ADC_GetValue(&hadc1);      // Legge il valore ADC
-    HAL_ADC_Stop(&hadc1);                              // Ferma ADC
+    // Avvio conversione ADC
+    HAL_ADC_Start(&hadc1);
+    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);  // attende fine conversione
+    uint32_t adcValue = HAL_ADC_GetValue(&hadc1);      // legge il valore ADC
+    HAL_ADC_Stop(&hadc1);                              // ferma ADC
+
+    // Elaborazione in base al filtro selezionato
+    uint32_t processedValue = adcValue;
+    switch(currentMode) {
+        case RAW:
+            break; // dati puri, nessuna elaborazione
+        case MOVING_AVERAGE:
+            processedValue = computeMovingAverage(adcValue);
+            break;
+        case RANDOM_NOISE:
+            processedValue = addRandomNoise(adcValue);
+            break;
+    }
 
     // Calcolo tensione in millivolt
-    uint32_t voltage_mv = (adcValue * 3300) / 4095;
+    uint32_t voltage_mv = (processedValue * 3300) / 4095;
 
     // Stampa su seriale
-    char msg[50];
-    sprintf(msg, "ADC=%lu -> %lu mV\r\n", adcValue, voltage_mv);
+    char msg[80];
+    sprintf(msg, "Mode=%s | ADC=%lu -> %lu mV\r\n", 
+            (currentMode==RAW)?"RAW":(currentMode==MOVING_AVERAGE)?"MA":"NOISE",
+            processedValue, voltage_mv);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    HAL_Delay(500); // mezzo secondo di pausa 
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+    HAL_Delay(500); // pausa 500ms
   }
+  /* USER CODE END WHILE */
+
+  /* USER CODE BEGIN 3 */
+  // non necessario, ciclo infinito
   /* USER CODE END 3 */
 }
+
+/* ------------------------ Funzioni STM32 generate ------------------------- */
 
 /**
   * @brief System Clock Configuration
@@ -145,9 +186,6 @@ void SystemClock_Config(void)
 
   __HAL_FLASH_SET_LATENCY(FLASH_LATENCY_1);
 
-  /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
-  */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -155,8 +193,6 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 
-  /** Initializes the CPU, AHB and APB buses clocks
-  */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSE;
@@ -172,24 +208,12 @@ void SystemClock_Config(void)
 
 /**
   * @brief ADC1 Initialization Function
-  * @param None
   * @retval None
   */
 static void MX_ADC1_Init(void)
 {
-
-  /* USER CODE BEGIN ADC1_Init 0 */
-
-  /* USER CODE END ADC1_Init 0 */
-
   ADC_ChannelConfTypeDef sConfig = {0};
 
-  /* USER CODE BEGIN ADC1_Init 1 */
-
-  /* USER CODE END ADC1_Init 1 */
-
-  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
-  */
   hadc1.Instance = ADC1;
   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
@@ -208,40 +232,26 @@ static void MX_ADC1_Init(void)
   hadc1.Init.SamplingTimeCommon1 = ADC_SAMPLETIME_1CYCLE_5;
   hadc1.Init.OversamplingMode = DISABLE;
   hadc1.Init.TriggerFrequencyMode = ADC_TRIGGER_FREQ_HIGH;
+
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
     Error_Handler();
   }
 
-  /** Configure Regular Channel
-  */
   sConfig.Channel = ADC_CHANNEL_4;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN ADC1_Init 2 */
-
-  /* USER CODE END ADC1_Init 2 */
-
 }
 
 /**
   * @brief USART2 Initialization Function
-  * @param None
   * @retval None
   */
 static void MX_USART2_UART_Init(void)
 {
-
-  /* USER CODE BEGIN USART2_Init 0 */
-
-  /* USER CODE END USART2_Init 0 */
-
-  /* USER CODE BEGIN USART2_Init 1 */
-
-  /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
   huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
@@ -253,14 +263,11 @@ static void MX_USART2_UART_Init(void)
   huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
   huart2.Init.ClockPrescaler = UART_PRESCALER_DIV1;
   huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+
   if (HAL_UART_Init(&huart2) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART2_Init 2 */
-
-  /* USER CODE END USART2_Init 2 */
-
 }
 
 /**
@@ -268,41 +275,21 @@ static void MX_USART2_UART_Init(void)
   */
 static void MX_DMA_Init(void)
 {
-
-  /* DMA controller clock enable */
   __HAL_RCC_DMA1_CLK_ENABLE();
-
-  /* DMA interrupt init */
-  /* DMA1_Channel1_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
-
 }
 
 /**
   * @brief GPIO Initialization Function
-  * @param None
   * @retval None
   */
 static void MX_GPIO_Init(void)
 {
-  /* USER CODE BEGIN MX_GPIO_Init_1 */
-
-  /* USER CODE END MX_GPIO_Init_1 */
-
-  /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
-
-  /* USER CODE BEGIN MX_GPIO_Init_2 */
-
-  /* USER CODE END MX_GPIO_Init_2 */
 }
-
-/* USER CODE BEGIN 4 */
-
-/* USER CODE END 4 */
 
 /**
   * @brief  This function is executed in case of error occurrence.
@@ -310,27 +297,13 @@ static void MX_GPIO_Init(void)
   */
 void Error_Handler(void)
 {
-  /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
-  while (1)
-  {
-  }
-  /* USER CODE END Error_Handler_Debug */
+  while (1) {}
 }
+
 #ifdef USE_FULL_ASSERT
-/**
-  * @brief  Reports the name of the source file and the source line number
-  *         where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
 void assert_failed(uint8_t *file, uint32_t line)
 {
-  /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-  /* USER CODE END 6 */
+  // Optional: printf("Wrong parameters value: file %s on line %d\r\n", file, line);
 }
-#endif /* USE_FULL_ASSERT */
+#endif
