@@ -102,7 +102,7 @@ uint32_t computeMovingAverage(uint32_t newSample) {
 
 // Funzione per aggiungere rumore casuale
 uint32_t addRandomNoise(uint32_t value) {
-    int32_t noise = 14000 +200; // rumore
+    int32_t noise = (100)-20; // rumore
     int32_t result = (int32_t)value + noise;
     if (result < 0) result = 0;
     if (result > 4095) result = 4095;
@@ -206,7 +206,7 @@ while (1)
             // Invio seriale
             char msg[80];
             sprintf(msg, "Mode=%s | ADC=%lu -> %lu mV\r\n",
-                    (currentMode==RAW)?"RAW":(currentMode==MOVING_AVERAGE)?"MA":"NOISE",
+                    (currentMode==RAW)?"RAW":(currentMode==MOVING_AVERAGE)?"MA":"RAW",
                     processedValue, voltage_mv);
             HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 

@@ -1,23 +1,22 @@
 import serial
 import matplotlib.pyplot as plt
-import numpy as np
 from collections import deque
 
-# Parametri seriale
+# --- Parametri seriale ---
 port = 'COM5'         # cambia con la tua porta
-baudrate = 115200     # deve corrispondere a quella del micro
-timeout = 1           # in secondi
+baudrate = 115200
+timeout = 1           # secondi
 
 ser = serial.Serial(port, baudrate, timeout=timeout)
 
-# Finestra dati per grafico
+# --- Finestra dati per grafico ---
 window_size = 200
 buffer = deque([0]*window_size, maxlen=window_size)
 
 plt.ion()
 fig, ax = plt.subplots()
-line, = ax.plot(buffer)
-ax.set_ylim(0, 3300)             # se stai usando mV con scala 0‑3300
+line, = ax.plot(buffer, color='green')
+ax.set_ylim(0, 3300)  # in mV
 ax.set_xlabel('Campione')
 ax.set_ylabel('Tensione (mV)')
 ax.set_title('ADC realtime plot')
@@ -25,18 +24,28 @@ ax.set_title('ADC realtime plot')
 try:
     while True:
         raw = ser.readline().decode('ascii', errors='ignore').strip()
-        # Es: raw = "ADC=1234 -> 1000 mV"
         if not raw:
             continue
-        # Parse il valore in mV (adatta se formato diverso)
+
+        # Gestione ERROR / WARNING
+        if "ERROR" in raw:
+            print("!!! ERROR !!!")
+            line.set_color('red')   # linea rossa in caso di errore
+            continue
+        elif "WARNING" in raw:
+            print("WARNING")
+            line.set_color('orange')  # linea arancione in caso di warning
+            continue
+        else:
+            line.set_color('green')  # normale
+
+        # Parse valore mV dal messaggio: "Mode=XXX | ADC=YYYY -> ZZZZ mV"
         try:
-            parts = raw.split("mV")
-            # la parte prima: "... -> 1000 "
-            val_part = parts[0].split("->")[-1].strip()
+            parts = raw.split("->")
+            val_part = parts[1].replace("mV", "").strip()
             value = float(val_part)
         except Exception as e:
-            # parsing fallito
-            #print("Parse error:", raw)
+            # parsing fallito, ignora
             continue
 
         buffer.append(value)
