@@ -73,7 +73,8 @@ void Error_Handler(void);
 #define DEBUG_SWCLK_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
-
+#define USER_BUTTON_Pin       GPIO_PIN_13
+#define USER_BUTTON_GPIO_Port GPIOC
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

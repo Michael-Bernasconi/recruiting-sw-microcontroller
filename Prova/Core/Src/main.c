@@ -33,7 +33,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define USER_BUTTON_Pin       GPIO_PIN_13
+#define USER_BUTTON_GPIO_Port GPIOC
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -51,12 +52,27 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 // Buffer per media mobile e indice
 #define MA_SIZE 150
+#define POT_THRESHOLD 2000   //WARNING
+#define POT_THRESHOLDERROR 3000  //ERROR
 uint32_t adcBuffer[MA_SIZE] = {0};
 uint16_t bufferIndex = 0;
+uint8_t buttonPrevState = GPIO_PIN_SET; // assume non premuto all'avvio
 
 // Seleziona il tipo di filtro: RAW, MOVING_AVERAGE, RANDOM_NOISE
 typedef enum { RAW, MOVING_AVERAGE, RANDOM_NOISE } FilterMode;
 FilterMode currentMode = RANDOM_NOISE;  // RAW per default
+
+
+// -------------------- STATE MACHINE --------------------
+typedef enum {
+    STATE_INIT,
+    STATE_WAIT_REQUEST,
+    STATE_LISTENING,
+    STATE_PAUSE,
+    STATE_WARNING,
+    STATE_ERROR
+} SystemState;
+SystemState currentState = STATE_INIT; // variabile globale per lo stato corrente
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -86,7 +102,7 @@ uint32_t computeMovingAverage(uint32_t newSample) {
 
 // Funzione per aggiungere rumore casuale
 uint32_t addRandomNoise(uint32_t value) {
-    int32_t noise = (rand() % 1500) +200; // rumore
+    int32_t noise = 14000 +200; // rumore
     int32_t result = (int32_t)value + noise;
     if (result < 0) result = 0;
     if (result > 4095) result = 4095;
@@ -133,39 +149,107 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    // Avvio conversione ADC
-    HAL_ADC_Start(&hadc1);
-    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);  // attende fine conversione
-    uint32_t adcValue = HAL_ADC_GetValue(&hadc1);      // legge il valore ADC
-    HAL_ADC_Stop(&hadc1);                              // ferma ADC
+while (1)
+{
+    // --- Lettura bottone con rilevamento fronte di discesa ---
+    static uint8_t buttonPrevState = GPIO_PIN_SET; // inizialmente non premuto
+    uint8_t buttonState = HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin);
 
-    // Elaborazione in base al filtro selezionato
-    uint32_t processedValue = adcValue;
-    switch(currentMode) {
-        case RAW:
-            break; // dati puri, nessuna elaborazione
-        case MOVING_AVERAGE:
-            processedValue = computeMovingAverage(adcValue);
+    if(buttonPrevState == GPIO_PIN_SET && buttonState == GPIO_PIN_RESET) // bottone premuto
+    {
+        if(currentState == STATE_WAIT_REQUEST)
+            currentState = STATE_LISTENING;
+        else if(currentState == STATE_LISTENING)
+            currentState = STATE_PAUSE;
+        else if(currentState == STATE_PAUSE)
+            currentState = STATE_LISTENING;
+        else if(currentState == STATE_WARNING)
+            currentState = STATE_WAIT_REQUEST;
+        else if(currentState == STATE_ERROR)
+            NVIC_SystemReset(); // se in errore, reset MCU
+    }
+    buttonPrevState = buttonState;
+
+    // --- Gestione stati ---
+    switch(currentState)
+    {
+        case STATE_INIT:
+            currentState = STATE_WAIT_REQUEST;
             break;
-        case RANDOM_NOISE:
-            processedValue = addRandomNoise(adcValue);
+
+        case STATE_WAIT_REQUEST:
+            BSP_LED_Off(LED_GREEN); // LED spento
+            HAL_Delay(100);
+            break;
+
+        case STATE_LISTENING:
+        {
+            BSP_LED_On(LED_GREEN); // LED acceso fisso
+
+            // Lettura ADC potenziometro
+            HAL_ADC_Start(&hadc1);
+            HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+            uint32_t adcValue = HAL_ADC_GetValue(&hadc1);
+            HAL_ADC_Stop(&hadc1);
+
+            // Elaborazione filtro
+            uint32_t processedValue = adcValue;
+            switch(currentMode)
+            {
+                case RAW: break;
+                case MOVING_AVERAGE: processedValue = computeMovingAverage(adcValue); break;
+                case RANDOM_NOISE: processedValue = addRandomNoise(adcValue); break;
+            }
+
+            uint32_t voltage_mv = (processedValue * 3300) / 4095;
+
+            // Invio seriale
+            char msg[80];
+            sprintf(msg, "Mode=%s | ADC=%lu -> %lu mV\r\n",
+                    (currentMode==RAW)?"RAW":(currentMode==MOVING_AVERAGE)?"MA":"NOISE",
+                    processedValue, voltage_mv);
+            HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+
+            // Controllo “digitale” HIGH se supera soglia
+            static uint32_t highStart = 0;
+            if(processedValue > POT_THRESHOLDERROR)
+            {
+              currentState = STATE_ERROR;
+            }
+            else if(processedValue > POT_THRESHOLD)
+            {
+                if(highStart == 0) highStart = HAL_GetTick();
+                else if(HAL_GetTick() - highStart >= 5000)
+                {
+                    currentState = STATE_WARNING; //entra in warning
+                    highStart = 0;
+                }
+            }
+            else highStart = 0;
+
+            HAL_Delay(500);
+        }
+        break;
+
+        case STATE_PAUSE:
+            BSP_LED_Toggle(LED_GREEN); // LED lampeggiante
+            HAL_Delay(500); // 50% duty
+
+            break;
+
+        case STATE_WARNING:
+            BSP_LED_Off(LED_GREEN);
+            HAL_UART_Transmit(&huart2, (uint8_t*)"WARNING\r\n", 9, HAL_MAX_DELAY);
+            HAL_Delay(200);
+            break;
+
+        case STATE_ERROR:
+            BSP_LED_Toggle(LED_GREEN);
+            HAL_UART_Transmit(&huart2, (uint8_t*)"ERROR\r\n", 7, HAL_MAX_DELAY);
+            HAL_Delay(200);
             break;
     }
-
-    // Calcolo tensione in millivolt
-    uint32_t voltage_mv = (processedValue * 3300) / 4095;
-
-    // Stampa su seriale
-    char msg[80];
-    sprintf(msg, "Mode=%s | ADC=%lu -> %lu mV\r\n", 
-            (currentMode==RAW)?"RAW":(currentMode==MOVING_AVERAGE)?"MA":"NOISE",
-            processedValue, voltage_mv);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    HAL_Delay(500); // pausa 500ms
-  }
+}
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -286,9 +370,25 @@ static void MX_DMA_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
-  __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOF_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
+    __HAL_RCC_GPIOF_CLK_ENABLE();
+     GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    // Abilita clock GPIO
+    __HAL_RCC_GPIOC_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+
+    // Configura USER BUTTON (PC13) come input
+    GPIO_InitStruct.Pin = USER_BUTTON_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(USER_BUTTON_GPIO_Port, &GPIO_InitStruct);
+
+    // Configura LED integrato (PA5) come output
+    GPIO_InitStruct.Pin = GPIO_PIN_5;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 }
 
 /**
