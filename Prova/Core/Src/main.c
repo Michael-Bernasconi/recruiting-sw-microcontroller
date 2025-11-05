@@ -90,19 +90,23 @@ static void MX_USART2_UART_Init(void);
 
 // Funzione per calcolo media mobile
 uint32_t computeMovingAverage(uint32_t newSample) {
+    static uint64_t sum = 0;
+
+    // Togli il vecchio valore
+    sum -= adcBuffer[bufferIndex];
+
+    // Metti il nuovo
     adcBuffer[bufferIndex] = newSample;
+    sum += newSample;
+
     bufferIndex = (bufferIndex + 1) % MA_SIZE;
 
-    uint64_t sum = 0;
-    for (int i = 0; i < MA_SIZE; i++) {
-        sum += adcBuffer[i];
-    }
     return (uint32_t)(sum / MA_SIZE);
 }
 
 // Funzione per aggiungere rumore casuale
 uint32_t addRandomNoise(uint32_t value) {
-    int32_t noise = (100)-20; // rumore
+    int32_t noise = (rand()%40)+250; // rumore
     int32_t result = (int32_t)value + noise;
     if (result < 0) result = 0;
     if (result > 4095) result = 4095;
@@ -183,53 +187,57 @@ while (1)
             break;
 
         case STATE_LISTENING:
+       {
+    BSP_LED_On(LED_GREEN); // LED acceso fisso
+
+    // Lettura ADC potenziometro
+    HAL_ADC_Start(&hadc1);
+    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+    uint32_t rawValue = HAL_ADC_GetValue(&hadc1);
+    HAL_ADC_Stop(&hadc1);
+
+    // Calcoli tutti e tre i segnali
+    uint32_t maValue = computeMovingAverage(rawValue);
+    uint32_t noiseValue = addRandomNoise(rawValue);
+
+    uint32_t raw_mv   = (rawValue   * 3300) / 4095;
+    uint32_t ma_mv    = (maValue    * 3300) / 4095;
+    uint32_t noise_mv = (noiseValue * 3300) / 4095;
+
+    char msg[100];
+
+    // --- INVIA RAW ---
+    sprintf(msg, "Mode=RAW | ADC=%lu -> %lu mV\r\n", rawValue, raw_mv);
+    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+
+    // --- INVIA MA ---
+    sprintf(msg, "Mode=MA | ADC=%lu -> %lu mV\r\n", maValue, ma_mv);
+    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+
+    // --- INVIA NOISE ---
+    sprintf(msg, "Mode=NOISE | ADC=%lu -> %lu mV\r\n", noiseValue, noise_mv);
+    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+
+    // Controllo soglie sugli originali o MA:
+    static uint32_t highStart = 0;
+    if(rawValue > POT_THRESHOLDERROR)
+    {
+        currentState = STATE_ERROR;
+    }
+    else if(rawValue > POT_THRESHOLD)
+    {
+        if(highStart == 0) highStart = HAL_GetTick();
+        else if(HAL_GetTick() - highStart >= 5000)
         {
-            BSP_LED_On(LED_GREEN); // LED acceso fisso
-
-            // Lettura ADC potenziometro
-            HAL_ADC_Start(&hadc1);
-            HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
-            uint32_t adcValue = HAL_ADC_GetValue(&hadc1);
-            HAL_ADC_Stop(&hadc1);
-
-            // Elaborazione filtro
-            uint32_t processedValue = adcValue;
-            switch(currentMode)
-            {
-                case RAW: break;
-                case MOVING_AVERAGE: processedValue = computeMovingAverage(adcValue); break;
-                case RANDOM_NOISE: processedValue = addRandomNoise(adcValue); break;
-            }
-
-            uint32_t voltage_mv = (processedValue * 3300) / 4095;
-
-            // Invio seriale
-            char msg[80];
-            sprintf(msg, "Mode=%s | ADC=%lu -> %lu mV\r\n",
-                    (currentMode==RAW)?"RAW":(currentMode==MOVING_AVERAGE)?"MA":"RAW",
-                    processedValue, voltage_mv);
-            HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-            // Controllo “digitale” HIGH se supera soglia
-            static uint32_t highStart = 0;
-            if(processedValue > POT_THRESHOLDERROR)
-            {
-              currentState = STATE_ERROR;
-            }
-            else if(processedValue > POT_THRESHOLD)
-            {
-                if(highStart == 0) highStart = HAL_GetTick();
-                else if(HAL_GetTick() - highStart >= 5000)
-                {
-                    currentState = STATE_WARNING; //entra in warning
-                    highStart = 0;
-                }
-            }
-            else highStart = 0;
-
-            HAL_Delay(500);
+            currentState = STATE_WARNING;
+            highStart = 0;
         }
-        break;
+    }
+    else highStart = 0;
+
+    HAL_Delay(100); // aggiornamento più fluido
+}
+break;
 
         case STATE_PAUSE:
             BSP_LED_Toggle(LED_GREEN); // LED lampeggiante

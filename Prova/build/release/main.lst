@@ -1,0 +1,932 @@
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              		.section	.text.__NVIC_SystemReset,"ax",%progbits
+  16              		.align	1
+  17              		.syntax unified
+  18              		.code	16
+  19              		.thumb_func
+  21              	__NVIC_SystemReset:
+  22              		@ Volatile: function does not return.
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26              		.syntax divided
+  27              	@ 271 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  28 0000 BFF34F8F 		dsb 0xF
+  29              	@ 0 "" 2
+  30              		.thumb
+  31              		.syntax unified
+  32 0004 034B     		ldr	r3, .L3
+  33 0006 044A     		ldr	r2, .L3+4
+  34 0008 DA60     		str	r2, [r3, #12]
+  35              		.syntax divided
+  36              	@ 271 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  37 000a BFF34F8F 		dsb 0xF
+  38              	@ 0 "" 2
+  39              		.thumb
+  40              		.syntax unified
+  41              	.L2:
+  42              		.syntax divided
+  43              	@ 997 "Drivers/CMSIS/Include/core_cm0plus.h" 1
+  44 000e C046     		nop
+  45              	@ 0 "" 2
+  46              		.thumb
+  47              		.syntax unified
+  48 0010 FDE7     		b	.L2
+  49              	.L4:
+  50 0012 C046     		.align	2
+  51              	.L3:
+  52 0014 00ED00E0 		.word	-536810240
+  53 0018 0400FA05 		.word	100270084
+  55              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  56              		.align	1
+  57              		.syntax unified
+  58              		.code	16
+  59              		.thumb_func
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 2
+
+
+  61              	MX_GPIO_Init:
+  62              		@ args = 0, pretend = 0, frame = 32
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  65 0002 89B0     		sub	sp, sp, #36
+  66 0004 184C     		ldr	r4, .L6
+  67 0006 636B     		ldr	r3, [r4, #52]
+  68 0008 2027     		movs	r7, #32
+  69 000a 3B43     		orrs	r3, r7
+  70 000c 6363     		str	r3, [r4, #52]
+  71 000e 636B     		ldr	r3, [r4, #52]
+  72 0010 3B40     		ands	r3, r7
+  73 0012 0093     		str	r3, [sp]
+  74 0014 009B     		ldr	r3, [sp]
+  75 0016 03AD     		add	r5, sp, #12
+  76 0018 1422     		movs	r2, #20
+  77 001a 0021     		movs	r1, #0
+  78 001c 2800     		movs	r0, r5
+  79 001e FFF7FEFF 		bl	memset
+  80 0022 626B     		ldr	r2, [r4, #52]
+  81 0024 0423     		movs	r3, #4
+  82 0026 1A43     		orrs	r2, r3
+  83 0028 6263     		str	r2, [r4, #52]
+  84 002a 626B     		ldr	r2, [r4, #52]
+  85 002c 1340     		ands	r3, r2
+  86 002e 0193     		str	r3, [sp, #4]
+  87 0030 019B     		ldr	r3, [sp, #4]
+  88 0032 636B     		ldr	r3, [r4, #52]
+  89 0034 0126     		movs	r6, #1
+  90 0036 3343     		orrs	r3, r6
+  91 0038 6363     		str	r3, [r4, #52]
+  92 003a 636B     		ldr	r3, [r4, #52]
+  93 003c 3340     		ands	r3, r6
+  94 003e 0293     		str	r3, [sp, #8]
+  95 0040 029B     		ldr	r3, [sp, #8]
+  96 0042 8023     		movs	r3, #128
+  97 0044 9B01     		lsls	r3, r3, #6
+  98 0046 0393     		str	r3, [sp, #12]
+  99 0048 2900     		movs	r1, r5
+ 100 004a 0848     		ldr	r0, .L6+4
+ 101 004c FFF7FEFF 		bl	HAL_GPIO_Init
+ 102 0050 0397     		str	r7, [sp, #12]
+ 103 0052 0496     		str	r6, [sp, #16]
+ 104 0054 0023     		movs	r3, #0
+ 105 0056 0593     		str	r3, [sp, #20]
+ 106 0058 0693     		str	r3, [sp, #24]
+ 107 005a A020     		movs	r0, #160
+ 108 005c 2900     		movs	r1, r5
+ 109 005e C005     		lsls	r0, r0, #23
+ 110 0060 FFF7FEFF 		bl	HAL_GPIO_Init
+ 111 0064 09B0     		add	sp, sp, #36
+ 112              		@ sp needed
+ 113 0066 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 114              	.L7:
+ 115              		.align	2
+ 116              	.L6:
+ 117 0068 00100240 		.word	1073876992
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 3
+
+
+ 118 006c 00080050 		.word	1342179328
+ 120              		.section	.text.MX_DMA_Init,"ax",%progbits
+ 121              		.align	1
+ 122              		.syntax unified
+ 123              		.code	16
+ 124              		.thumb_func
+ 126              	MX_DMA_Init:
+ 127              		@ args = 0, pretend = 0, frame = 8
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129 0000 00B5     		push	{lr}
+ 130 0002 83B0     		sub	sp, sp, #12
+ 131 0004 094A     		ldr	r2, .L9
+ 132 0006 916B     		ldr	r1, [r2, #56]
+ 133 0008 0123     		movs	r3, #1
+ 134 000a 1943     		orrs	r1, r3
+ 135 000c 9163     		str	r1, [r2, #56]
+ 136 000e 926B     		ldr	r2, [r2, #56]
+ 137 0010 1340     		ands	r3, r2
+ 138 0012 0193     		str	r3, [sp, #4]
+ 139 0014 019B     		ldr	r3, [sp, #4]
+ 140 0016 0022     		movs	r2, #0
+ 141 0018 0021     		movs	r1, #0
+ 142 001a 0920     		movs	r0, #9
+ 143 001c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 144 0020 0920     		movs	r0, #9
+ 145 0022 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 146 0026 03B0     		add	sp, sp, #12
+ 147              		@ sp needed
+ 148 0028 00BD     		pop	{pc}
+ 149              	.L10:
+ 150 002a C046     		.align	2
+ 151              	.L9:
+ 152 002c 00100240 		.word	1073876992
+ 154              		.section	.text.computeMovingAverage,"ax",%progbits
+ 155              		.align	1
+ 156              		.global	computeMovingAverage
+ 157              		.syntax unified
+ 158              		.code	16
+ 159              		.thumb_func
+ 161              	computeMovingAverage:
+ 162              		@ args = 0, pretend = 0, frame = 8
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 165 0002 C646     		mov	lr, r8
+ 166 0004 00B5     		push	{lr}
+ 167 0006 82B0     		sub	sp, sp, #8
+ 168 0008 0190     		str	r0, [sp, #4]
+ 169 000a 134F     		ldr	r7, .L12
+ 170 000c 3888     		ldrh	r0, [r7]
+ 171 000e 134E     		ldr	r6, .L12+4
+ 172 0010 8200     		lsls	r2, r0, #2
+ 173 0012 9046     		mov	r8, r2
+ 174 0014 B258     		ldr	r2, [r6, r2]
+ 175 0016 0023     		movs	r3, #0
+ 176 0018 1149     		ldr	r1, .L12+8
+ 177 001a 0C68     		ldr	r4, [r1]
+ 178 001c 4D68     		ldr	r5, [r1, #4]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 4
+
+
+ 179 001e A41A     		subs	r4, r4, r2
+ 180 0020 9D41     		sbcs	r5, r5, r3
+ 181 0022 0C60     		str	r4, [r1]
+ 182 0024 4D60     		str	r5, [r1, #4]
+ 183 0026 4246     		mov	r2, r8
+ 184 0028 019B     		ldr	r3, [sp, #4]
+ 185 002a 9351     		str	r3, [r2, r6]
+ 186 002c 019A     		ldr	r2, [sp, #4]
+ 187 002e 0023     		movs	r3, #0
+ 188 0030 A418     		adds	r4, r4, r2
+ 189 0032 5D41     		adcs	r5, r5, r3
+ 190 0034 0C60     		str	r4, [r1]
+ 191 0036 4D60     		str	r5, [r1, #4]
+ 192 0038 0130     		adds	r0, r0, #1
+ 193 003a 9621     		movs	r1, #150
+ 194 003c FFF7FEFF 		bl	__aeabi_idivmod
+ 195 0040 3980     		strh	r1, [r7]
+ 196 0042 9622     		movs	r2, #150
+ 197 0044 0023     		movs	r3, #0
+ 198 0046 2000     		movs	r0, r4
+ 199 0048 2900     		movs	r1, r5
+ 200 004a FFF7FEFF 		bl	__aeabi_uldivmod
+ 201 004e 02B0     		add	sp, sp, #8
+ 202              		@ sp needed
+ 203 0050 80BC     		pop	{r7}
+ 204 0052 B846     		mov	r8, r7
+ 205 0054 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 206              	.L13:
+ 207 0056 C046     		.align	2
+ 208              	.L12:
+ 209 0058 00000000 		.word	bufferIndex
+ 210 005c 00000000 		.word	adcBuffer
+ 211 0060 00000000 		.word	sum.2
+ 213              		.section	.text.addRandomNoise,"ax",%progbits
+ 214              		.align	1
+ 215              		.global	addRandomNoise
+ 216              		.syntax unified
+ 217              		.code	16
+ 218              		.thumb_func
+ 220              	addRandomNoise:
+ 221              		@ args = 0, pretend = 0, frame = 0
+ 222              		@ frame_needed = 0, uses_anonymous_args = 0
+ 223 0000 10B5     		push	{r4, lr}
+ 224 0002 0400     		movs	r4, r0
+ 225 0004 FFF7FEFF 		bl	rand
+ 226 0008 2821     		movs	r1, #40
+ 227 000a FFF7FEFF 		bl	__aeabi_idivmod
+ 228 000e FA31     		adds	r1, r1, #250
+ 229 0010 6018     		adds	r0, r4, r1
+ 230 0012 05D4     		bmi	.L16
+ 231 0014 8023     		movs	r3, #128
+ 232 0016 5B01     		lsls	r3, r3, #5
+ 233 0018 9842     		cmp	r0, r3
+ 234 001a 02DB     		blt	.L15
+ 235 001c 0148     		ldr	r0, .L18
+ 236 001e 00E0     		b	.L15
+ 237              	.L16:
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 5
+
+
+ 238 0020 0020     		movs	r0, #0
+ 239              	.L15:
+ 240              		@ sp needed
+ 241 0022 10BD     		pop	{r4, pc}
+ 242              	.L19:
+ 243              		.align	2
+ 244              	.L18:
+ 245 0024 FF0F0000 		.word	4095
+ 247              		.section	.text.Error_Handler,"ax",%progbits
+ 248              		.align	1
+ 249              		.global	Error_Handler
+ 250              		.syntax unified
+ 251              		.code	16
+ 252              		.thumb_func
+ 254              	Error_Handler:
+ 255              		@ Volatile: function does not return.
+ 256              		@ args = 0, pretend = 0, frame = 0
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258              		@ link register save eliminated.
+ 259              		.syntax divided
+ 260              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 261 0000 72B6     		cpsid i
+ 262              	@ 0 "" 2
+ 263              		.thumb
+ 264              		.syntax unified
+ 265              	.L21:
+ 266 0002 FEE7     		b	.L21
+ 268              		.section	.text.MX_ADC1_Init,"ax",%progbits
+ 269              		.align	1
+ 270              		.syntax unified
+ 271              		.code	16
+ 272              		.thumb_func
+ 274              	MX_ADC1_Init:
+ 275              		@ args = 0, pretend = 0, frame = 16
+ 276              		@ frame_needed = 0, uses_anonymous_args = 0
+ 277 0000 00B5     		push	{lr}
+ 278 0002 85B0     		sub	sp, sp, #20
+ 279 0004 0C22     		movs	r2, #12
+ 280 0006 0021     		movs	r1, #0
+ 281 0008 01A8     		add	r0, sp, #4
+ 282 000a FFF7FEFF 		bl	memset
+ 283 000e 1948     		ldr	r0, .L27
+ 284 0010 194B     		ldr	r3, .L27+4
+ 285 0012 0360     		str	r3, [r0]
+ 286 0014 8023     		movs	r3, #128
+ 287 0016 DB05     		lsls	r3, r3, #23
+ 288 0018 4360     		str	r3, [r0, #4]
+ 289 001a 0023     		movs	r3, #0
+ 290 001c 8360     		str	r3, [r0, #8]
+ 291 001e C360     		str	r3, [r0, #12]
+ 292 0020 8022     		movs	r2, #128
+ 293 0022 1206     		lsls	r2, r2, #24
+ 294 0024 0261     		str	r2, [r0, #16]
+ 295 0026 0422     		movs	r2, #4
+ 296 0028 4261     		str	r2, [r0, #20]
+ 297 002a 0376     		strb	r3, [r0, #24]
+ 298 002c 4376     		strb	r3, [r0, #25]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 6
+
+
+ 299 002e 8376     		strb	r3, [r0, #26]
+ 300 0030 033A     		subs	r2, r2, #3
+ 301 0032 C261     		str	r2, [r0, #28]
+ 302 0034 1F32     		adds	r2, r2, #31
+ 303 0036 8354     		strb	r3, [r0, r2]
+ 304 0038 4362     		str	r3, [r0, #36]
+ 305 003a 8362     		str	r3, [r0, #40]
+ 306 003c 0C32     		adds	r2, r2, #12
+ 307 003e 8354     		strb	r3, [r0, r2]
+ 308 0040 0363     		str	r3, [r0, #48]
+ 309 0042 4363     		str	r3, [r0, #52]
+ 310 0044 1032     		adds	r2, r2, #16
+ 311 0046 8354     		strb	r3, [r0, r2]
+ 312 0048 C364     		str	r3, [r0, #76]
+ 313 004a FFF7FEFF 		bl	HAL_ADC_Init
+ 314 004e 0028     		cmp	r0, #0
+ 315 0050 0BD1     		bne	.L25
+ 316 0052 01A9     		add	r1, sp, #4
+ 317 0054 094B     		ldr	r3, .L27+8
+ 318 0056 0193     		str	r3, [sp, #4]
+ 319 0058 0123     		movs	r3, #1
+ 320 005a 4B60     		str	r3, [r1, #4]
+ 321 005c 0548     		ldr	r0, .L27
+ 322 005e FFF7FEFF 		bl	HAL_ADC_ConfigChannel
+ 323 0062 0028     		cmp	r0, #0
+ 324 0064 03D1     		bne	.L26
+ 325 0066 05B0     		add	sp, sp, #20
+ 326              		@ sp needed
+ 327 0068 00BD     		pop	{pc}
+ 328              	.L25:
+ 329 006a FFF7FEFF 		bl	Error_Handler
+ 330              	.L26:
+ 331 006e FFF7FEFF 		bl	Error_Handler
+ 332              	.L28:
+ 333 0072 C046     		.align	2
+ 334              	.L27:
+ 335 0074 00000000 		.word	hadc1
+ 336 0078 00240140 		.word	1073816576
+ 337 007c 10000010 		.word	268435472
+ 339              		.section	.text.MX_USART2_UART_Init,"ax",%progbits
+ 340              		.align	1
+ 341              		.syntax unified
+ 342              		.code	16
+ 343              		.thumb_func
+ 345              	MX_USART2_UART_Init:
+ 346              		@ args = 0, pretend = 0, frame = 0
+ 347              		@ frame_needed = 0, uses_anonymous_args = 0
+ 348 0000 10B5     		push	{r4, lr}
+ 349 0002 0C48     		ldr	r0, .L32
+ 350 0004 0C4B     		ldr	r3, .L32+4
+ 351 0006 0360     		str	r3, [r0]
+ 352 0008 E123     		movs	r3, #225
+ 353 000a 5B02     		lsls	r3, r3, #9
+ 354 000c 4360     		str	r3, [r0, #4]
+ 355 000e 0023     		movs	r3, #0
+ 356 0010 8360     		str	r3, [r0, #8]
+ 357 0012 C360     		str	r3, [r0, #12]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 7
+
+
+ 358 0014 0361     		str	r3, [r0, #16]
+ 359 0016 0C22     		movs	r2, #12
+ 360 0018 4261     		str	r2, [r0, #20]
+ 361 001a 8361     		str	r3, [r0, #24]
+ 362 001c C361     		str	r3, [r0, #28]
+ 363 001e 0362     		str	r3, [r0, #32]
+ 364 0020 4362     		str	r3, [r0, #36]
+ 365 0022 8362     		str	r3, [r0, #40]
+ 366 0024 FFF7FEFF 		bl	HAL_UART_Init
+ 367 0028 0028     		cmp	r0, #0
+ 368 002a 00D1     		bne	.L31
+ 369              		@ sp needed
+ 370 002c 10BD     		pop	{r4, pc}
+ 371              	.L31:
+ 372 002e FFF7FEFF 		bl	Error_Handler
+ 373              	.L33:
+ 374 0032 C046     		.align	2
+ 375              	.L32:
+ 376 0034 00000000 		.word	huart2
+ 377 0038 00440040 		.word	1073759232
+ 379              		.section	.text.SystemClock_Config,"ax",%progbits
+ 380              		.align	1
+ 381              		.global	SystemClock_Config
+ 382              		.syntax unified
+ 383              		.code	16
+ 384              		.thumb_func
+ 386              	SystemClock_Config:
+ 387              		@ args = 0, pretend = 0, frame = 48
+ 388              		@ frame_needed = 0, uses_anonymous_args = 0
+ 389 0000 10B5     		push	{r4, lr}
+ 390 0002 8CB0     		sub	sp, sp, #48
+ 391 0004 05AC     		add	r4, sp, #20
+ 392 0006 1C22     		movs	r2, #28
+ 393 0008 0021     		movs	r1, #0
+ 394 000a 2000     		movs	r0, r4
+ 395 000c FFF7FEFF 		bl	memset
+ 396 0010 1422     		movs	r2, #20
+ 397 0012 0021     		movs	r1, #0
+ 398 0014 6846     		mov	r0, sp
+ 399 0016 FFF7FEFF 		bl	memset
+ 400 001a 1249     		ldr	r1, .L39
+ 401 001c 0B68     		ldr	r3, [r1]
+ 402 001e 0722     		movs	r2, #7
+ 403 0020 9343     		bics	r3, r2
+ 404 0022 063A     		subs	r2, r2, #6
+ 405 0024 1343     		orrs	r3, r2
+ 406 0026 0B60     		str	r3, [r1]
+ 407 0028 0592     		str	r2, [sp, #20]
+ 408 002a 8023     		movs	r3, #128
+ 409 002c 5B02     		lsls	r3, r3, #9
+ 410 002e 0693     		str	r3, [sp, #24]
+ 411 0030 2000     		movs	r0, r4
+ 412 0032 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 413 0036 0028     		cmp	r0, #0
+ 414 0038 0FD1     		bne	.L37
+ 415 003a 6846     		mov	r0, sp
+ 416 003c 0723     		movs	r3, #7
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 8
+
+
+ 417 003e 0093     		str	r3, [sp]
+ 418 0040 063B     		subs	r3, r3, #6
+ 419 0042 0193     		str	r3, [sp, #4]
+ 420 0044 0023     		movs	r3, #0
+ 421 0046 0293     		str	r3, [sp, #8]
+ 422 0048 0393     		str	r3, [sp, #12]
+ 423 004a 0493     		str	r3, [sp, #16]
+ 424 004c 0121     		movs	r1, #1
+ 425 004e FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 426 0052 0028     		cmp	r0, #0
+ 427 0054 03D1     		bne	.L38
+ 428 0056 0CB0     		add	sp, sp, #48
+ 429              		@ sp needed
+ 430 0058 10BD     		pop	{r4, pc}
+ 431              	.L37:
+ 432 005a FFF7FEFF 		bl	Error_Handler
+ 433              	.L38:
+ 434 005e FFF7FEFF 		bl	Error_Handler
+ 435              	.L40:
+ 436 0062 C046     		.align	2
+ 437              	.L39:
+ 438 0064 00200240 		.word	1073881088
+ 440              		.section	.rodata.main.str1.4,"aMS",%progbits,1
+ 441              		.align	2
+ 442              	.LC10:
+ 443 0000 4D6F6465 		.ascii	"Mode=RAW | ADC=%lu -> %lu mV\015\012\000"
+ 443      3D524157 
+ 443      207C2041 
+ 443      44433D25 
+ 443      6C75202D 
+ 444 001f 00       		.align	2
+ 445              	.LC13:
+ 446 0020 4D6F6465 		.ascii	"Mode=MA | ADC=%lu -> %lu mV\015\012\000"
+ 446      3D4D4120 
+ 446      7C204144 
+ 446      433D256C 
+ 446      75202D3E 
+ 447 003e 0000     		.align	2
+ 448              	.LC15:
+ 449 0040 4D6F6465 		.ascii	"Mode=NOISE | ADC=%lu -> %lu mV\015\012\000"
+ 449      3D4E4F49 
+ 449      5345207C 
+ 449      20414443 
+ 449      3D256C75 
+ 450 0061 000000   		.align	2
+ 451              	.LC18:
+ 452 0064 5741524E 		.ascii	"WARNING\015\012\000"
+ 452      494E470D 
+ 452      0A00
+ 453 006e 0000     		.align	2
+ 454              	.LC20:
+ 455 0070 4552524F 		.ascii	"ERROR\015\012\000"
+ 455      520D0A00 
+ 456              		.section	.text.main,"ax",%progbits
+ 457              		.align	1
+ 458              		.global	main
+ 459              		.syntax unified
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 9
+
+
+ 460              		.code	16
+ 461              		.thumb_func
+ 463              	main:
+ 464              		@ args = 0, pretend = 0, frame = 104
+ 465              		@ frame_needed = 0, uses_anonymous_args = 0
+ 466 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 467 0002 DE46     		mov	lr, fp
+ 468 0004 5746     		mov	r7, r10
+ 469 0006 4E46     		mov	r6, r9
+ 470 0008 4546     		mov	r5, r8
+ 471 000a E0B5     		push	{r5, r6, r7, lr}
+ 472 000c 9BB0     		sub	sp, sp, #108
+ 473 000e FFF7FEFF 		bl	HAL_Init
+ 474 0012 FFF7FEFF 		bl	SystemClock_Config
+ 475 0016 FFF7FEFF 		bl	MX_GPIO_Init
+ 476 001a FFF7FEFF 		bl	MX_DMA_Init
+ 477 001e FFF7FEFF 		bl	MX_ADC1_Init
+ 478 0022 FFF7FEFF 		bl	MX_USART2_UART_Init
+ 479 0026 0020     		movs	r0, #0
+ 480 0028 FFF7FEFF 		bl	BSP_LED_Init
+ 481 002c 1EE0     		b	.L43
+ 482              	.L63:
+ 483 002e 0028     		cmp	r0, #0
+ 484 0030 25D1     		bne	.L44
+ 485 0032 714B     		ldr	r3, .L64
+ 486 0034 1B78     		ldrb	r3, [r3]
+ 487 0036 052B     		cmp	r3, #5
+ 488 0038 21D8     		bhi	.L44
+ 489 003a 9B00     		lsls	r3, r3, #2
+ 490 003c 6F4A     		ldr	r2, .L64+4
+ 491 003e D358     		ldr	r3, [r2, r3]
+ 492 0040 9F46     		mov	pc, r3
+ 493              		.section	.rodata.main,"a",%progbits
+ 494              		.align	2
+ 495              	.L46:
+ 496 0000 7E000000 		.word	.L44
+ 497 0004 42000000 		.word	.L50
+ 498 0008 4A000000 		.word	.L49
+ 499 000c 52000000 		.word	.L48
+ 500 0010 5A000000 		.word	.L47
+ 501 0014 62000000 		.word	.L45
+ 502              		.section	.text.main
+ 503              	.L50:
+ 504 0042 6D4B     		ldr	r3, .L64
+ 505 0044 0222     		movs	r2, #2
+ 506 0046 1A70     		strb	r2, [r3]
+ 507 0048 19E0     		b	.L44
+ 508              	.L49:
+ 509 004a 6B4B     		ldr	r3, .L64
+ 510 004c 0322     		movs	r2, #3
+ 511 004e 1A70     		strb	r2, [r3]
+ 512 0050 15E0     		b	.L44
+ 513              	.L48:
+ 514 0052 694B     		ldr	r3, .L64
+ 515 0054 0222     		movs	r2, #2
+ 516 0056 1A70     		strb	r2, [r3]
+ 517 0058 11E0     		b	.L44
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 10
+
+
+ 518              	.L47:
+ 519 005a 674B     		ldr	r3, .L64
+ 520 005c 0122     		movs	r2, #1
+ 521 005e 1A70     		strb	r2, [r3]
+ 522 0060 0DE0     		b	.L44
+ 523              	.L45:
+ 524 0062 FFF7FEFF 		bl	__NVIC_SystemReset
+ 525              	.L57:
+ 526 0066 644B     		ldr	r3, .L64
+ 527 0068 0122     		movs	r2, #1
+ 528 006a 1A70     		strb	r2, [r3]
+ 529              	.L43:
+ 530 006c 8021     		movs	r1, #128
+ 531 006e 8901     		lsls	r1, r1, #6
+ 532 0070 6348     		ldr	r0, .L64+8
+ 533 0072 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 534 0076 634B     		ldr	r3, .L64+12
+ 535 0078 1B78     		ldrb	r3, [r3]
+ 536 007a 012B     		cmp	r3, #1
+ 537 007c D7D0     		beq	.L63
+ 538              	.L44:
+ 539 007e 614B     		ldr	r3, .L64+12
+ 540 0080 1870     		strb	r0, [r3]
+ 541 0082 5D4B     		ldr	r3, .L64
+ 542 0084 1A78     		ldrb	r2, [r3]
+ 543 0086 052A     		cmp	r2, #5
+ 544 0088 F0D8     		bhi	.L43
+ 545 008a 9300     		lsls	r3, r2, #2
+ 546 008c 5E4A     		ldr	r2, .L64+16
+ 547 008e D358     		ldr	r3, [r2, r3]
+ 548 0090 9F46     		mov	pc, r3
+ 549              		.section	.rodata.main
+ 550              		.align	2
+ 551              	.L52:
+ 552 0018 66000000 		.word	.L57
+ 553 001c 92000000 		.word	.L56
+ 554 0020 A0000000 		.word	.L55
+ 555 0024 B0010000 		.word	.L54
+ 556 0028 C0010000 		.word	.L53
+ 557 002c DC010000 		.word	.L51
+ 558              		.section	.text.main
+ 559              	.L56:
+ 560 0092 0020     		movs	r0, #0
+ 561 0094 FFF7FEFF 		bl	BSP_LED_Off
+ 562 0098 6420     		movs	r0, #100
+ 563 009a FFF7FEFF 		bl	HAL_Delay
+ 564 009e E5E7     		b	.L43
+ 565              	.L55:
+ 566 00a0 0020     		movs	r0, #0
+ 567 00a2 FFF7FEFF 		bl	BSP_LED_On
+ 568 00a6 594C     		ldr	r4, .L64+20
+ 569 00a8 2000     		movs	r0, r4
+ 570 00aa FFF7FEFF 		bl	HAL_ADC_Start
+ 571 00ae 0127     		movs	r7, #1
+ 572 00b0 7F42     		rsbs	r7, r7, #0
+ 573 00b2 3900     		movs	r1, r7
+ 574 00b4 2000     		movs	r0, r4
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 11
+
+
+ 575 00b6 FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ 576 00ba 2000     		movs	r0, r4
+ 577 00bc FFF7FEFF 		bl	HAL_ADC_GetValue
+ 578 00c0 0500     		movs	r5, r0
+ 579 00c2 2000     		movs	r0, r4
+ 580 00c4 FFF7FEFF 		bl	HAL_ADC_Stop
+ 581 00c8 2800     		movs	r0, r5
+ 582 00ca FFF7FEFF 		bl	computeMovingAverage
+ 583 00ce 8146     		mov	r9, r0
+ 584 00d0 2800     		movs	r0, r5
+ 585 00d2 FFF7FEFF 		bl	addRandomNoise
+ 586 00d6 8046     		mov	r8, r0
+ 587 00d8 4D4C     		ldr	r4, .L64+24
+ 588 00da 2000     		movs	r0, r4
+ 589 00dc 6843     		muls	r0, r5
+ 590 00de 4D49     		ldr	r1, .L64+28
+ 591 00e0 FFF7FEFF 		bl	__aeabi_uidiv
+ 592 00e4 0600     		movs	r6, r0
+ 593 00e6 4846     		mov	r0, r9
+ 594 00e8 6043     		muls	r0, r4
+ 595 00ea 4A49     		ldr	r1, .L64+28
+ 596 00ec FFF7FEFF 		bl	__aeabi_uidiv
+ 597 00f0 8346     		mov	fp, r0
+ 598 00f2 4046     		mov	r0, r8
+ 599 00f4 6043     		muls	r0, r4
+ 600 00f6 4749     		ldr	r1, .L64+28
+ 601 00f8 FFF7FEFF 		bl	__aeabi_uidiv
+ 602 00fc 8246     		mov	r10, r0
+ 603 00fe 4649     		ldr	r1, .L64+32
+ 604 0100 01AC     		add	r4, sp, #4
+ 605 0102 3300     		movs	r3, r6
+ 606 0104 2A00     		movs	r2, r5
+ 607 0106 2000     		movs	r0, r4
+ 608 0108 FFF7FEFF 		bl	sprintf
+ 609 010c 2000     		movs	r0, r4
+ 610 010e FFF7FEFF 		bl	strlen
+ 611 0112 82B2     		uxth	r2, r0
+ 612 0114 414E     		ldr	r6, .L64+36
+ 613 0116 3B00     		movs	r3, r7
+ 614 0118 2100     		movs	r1, r4
+ 615 011a 3000     		movs	r0, r6
+ 616 011c FFF7FEFF 		bl	HAL_UART_Transmit
+ 617 0120 3F49     		ldr	r1, .L64+40
+ 618 0122 5B46     		mov	r3, fp
+ 619 0124 4A46     		mov	r2, r9
+ 620 0126 2000     		movs	r0, r4
+ 621 0128 FFF7FEFF 		bl	sprintf
+ 622 012c 2000     		movs	r0, r4
+ 623 012e FFF7FEFF 		bl	strlen
+ 624 0132 82B2     		uxth	r2, r0
+ 625 0134 3B00     		movs	r3, r7
+ 626 0136 2100     		movs	r1, r4
+ 627 0138 3000     		movs	r0, r6
+ 628 013a FFF7FEFF 		bl	HAL_UART_Transmit
+ 629 013e 3949     		ldr	r1, .L64+44
+ 630 0140 5346     		mov	r3, r10
+ 631 0142 4246     		mov	r2, r8
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 12
+
+
+ 632 0144 2000     		movs	r0, r4
+ 633 0146 FFF7FEFF 		bl	sprintf
+ 634 014a 2000     		movs	r0, r4
+ 635 014c FFF7FEFF 		bl	strlen
+ 636 0150 82B2     		uxth	r2, r0
+ 637 0152 3B00     		movs	r3, r7
+ 638 0154 2100     		movs	r1, r4
+ 639 0156 3000     		movs	r0, r6
+ 640 0158 FFF7FEFF 		bl	HAL_UART_Transmit
+ 641 015c 324B     		ldr	r3, .L64+48
+ 642 015e 9D42     		cmp	r5, r3
+ 643 0160 06D9     		bls	.L59
+ 644 0162 254B     		ldr	r3, .L64
+ 645 0164 0522     		movs	r2, #5
+ 646 0166 1A70     		strb	r2, [r3]
+ 647              	.L60:
+ 648 0168 6420     		movs	r0, #100
+ 649 016a FFF7FEFF 		bl	HAL_Delay
+ 650 016e 7DE7     		b	.L43
+ 651              	.L59:
+ 652 0170 FA23     		movs	r3, #250
+ 653 0172 DB00     		lsls	r3, r3, #3
+ 654 0174 9D42     		cmp	r5, r3
+ 655 0176 17D9     		bls	.L61
+ 656 0178 2C4B     		ldr	r3, .L64+52
+ 657 017a 1B68     		ldr	r3, [r3]
+ 658 017c 002B     		cmp	r3, #0
+ 659 017e 04D1     		bne	.L62
+ 660 0180 FFF7FEFF 		bl	HAL_GetTick
+ 661 0184 294B     		ldr	r3, .L64+52
+ 662 0186 1860     		str	r0, [r3]
+ 663 0188 EEE7     		b	.L60
+ 664              	.L62:
+ 665 018a FFF7FEFF 		bl	HAL_GetTick
+ 666 018e 274B     		ldr	r3, .L64+52
+ 667 0190 1B68     		ldr	r3, [r3]
+ 668 0192 C01A     		subs	r0, r0, r3
+ 669 0194 264B     		ldr	r3, .L64+56
+ 670 0196 9842     		cmp	r0, r3
+ 671 0198 E6D9     		bls	.L60
+ 672 019a 174B     		ldr	r3, .L64
+ 673 019c 0422     		movs	r2, #4
+ 674 019e 1A70     		strb	r2, [r3]
+ 675 01a0 224B     		ldr	r3, .L64+52
+ 676 01a2 0022     		movs	r2, #0
+ 677 01a4 1A60     		str	r2, [r3]
+ 678 01a6 DFE7     		b	.L60
+ 679              	.L61:
+ 680 01a8 204B     		ldr	r3, .L64+52
+ 681 01aa 0022     		movs	r2, #0
+ 682 01ac 1A60     		str	r2, [r3]
+ 683 01ae DBE7     		b	.L60
+ 684              	.L54:
+ 685 01b0 0020     		movs	r0, #0
+ 686 01b2 FFF7FEFF 		bl	BSP_LED_Toggle
+ 687 01b6 FA20     		movs	r0, #250
+ 688 01b8 4000     		lsls	r0, r0, #1
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 13
+
+
+ 689 01ba FFF7FEFF 		bl	HAL_Delay
+ 690 01be 55E7     		b	.L43
+ 691              	.L53:
+ 692 01c0 0020     		movs	r0, #0
+ 693 01c2 FFF7FEFF 		bl	BSP_LED_Off
+ 694 01c6 0123     		movs	r3, #1
+ 695 01c8 1A49     		ldr	r1, .L64+60
+ 696 01ca 1448     		ldr	r0, .L64+36
+ 697 01cc 5B42     		rsbs	r3, r3, #0
+ 698 01ce 0922     		movs	r2, #9
+ 699 01d0 FFF7FEFF 		bl	HAL_UART_Transmit
+ 700 01d4 C820     		movs	r0, #200
+ 701 01d6 FFF7FEFF 		bl	HAL_Delay
+ 702 01da 47E7     		b	.L43
+ 703              	.L51:
+ 704 01dc 0020     		movs	r0, #0
+ 705 01de FFF7FEFF 		bl	BSP_LED_Toggle
+ 706 01e2 0123     		movs	r3, #1
+ 707 01e4 1449     		ldr	r1, .L64+64
+ 708 01e6 0D48     		ldr	r0, .L64+36
+ 709 01e8 5B42     		rsbs	r3, r3, #0
+ 710 01ea 0722     		movs	r2, #7
+ 711 01ec FFF7FEFF 		bl	HAL_UART_Transmit
+ 712 01f0 C820     		movs	r0, #200
+ 713 01f2 FFF7FEFF 		bl	HAL_Delay
+ 714 01f6 39E7     		b	.L43
+ 715              	.L65:
+ 716              		.align	2
+ 717              	.L64:
+ 718 01f8 00000000 		.word	currentState
+ 719 01fc 00000000 		.word	.L46
+ 720 0200 00080050 		.word	1342179328
+ 721 0204 00000000 		.word	buttonPrevState.1
+ 722 0208 18000000 		.word	.L52
+ 723 020c 00000000 		.word	hadc1
+ 724 0210 E40C0000 		.word	3300
+ 725 0214 FF0F0000 		.word	4095
+ 726 0218 00000000 		.word	.LC10
+ 727 021c 00000000 		.word	huart2
+ 728 0220 20000000 		.word	.LC13
+ 729 0224 40000000 		.word	.LC15
+ 730 0228 B80B0000 		.word	3000
+ 731 022c 00000000 		.word	highStart.0
+ 732 0230 87130000 		.word	4999
+ 733 0234 64000000 		.word	.LC18
+ 734 0238 70000000 		.word	.LC20
+ 736              		.section	.bss.highStart.0,"aw",%nobits
+ 737              		.align	2
+ 740              	highStart.0:
+ 741 0000 00000000 		.space	4
+ 742              		.section	.data.buttonPrevState.1,"aw"
+ 745              	buttonPrevState.1:
+ 746 0000 01       		.byte	1
+ 747              		.section	.bss.sum.2,"aw",%nobits
+ 748              		.align	3
+ 751              	sum.2:
+ 752 0000 00000000 		.space	8
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 14
+
+
+ 752      00000000 
+ 753              		.global	currentState
+ 754              		.section	.bss.currentState,"aw",%nobits
+ 757              	currentState:
+ 758 0000 00       		.space	1
+ 759              		.global	currentMode
+ 760              		.section	.data.currentMode,"aw"
+ 763              	currentMode:
+ 764 0000 02       		.byte	2
+ 765              		.global	buttonPrevState
+ 766              		.section	.data.buttonPrevState,"aw"
+ 769              	buttonPrevState:
+ 770 0000 01       		.byte	1
+ 771              		.global	bufferIndex
+ 772              		.section	.bss.bufferIndex,"aw",%nobits
+ 773              		.align	1
+ 776              	bufferIndex:
+ 777 0000 0000     		.space	2
+ 778              		.global	adcBuffer
+ 779              		.section	.bss.adcBuffer,"aw",%nobits
+ 780              		.align	2
+ 783              	adcBuffer:
+ 784 0000 00000000 		.space	600
+ 784      00000000 
+ 784      00000000 
+ 784      00000000 
+ 784      00000000 
+ 785              		.global	huart2
+ 786              		.section	.bss.huart2,"aw",%nobits
+ 787              		.align	2
+ 790              	huart2:
+ 791 0000 00000000 		.space	148
+ 791      00000000 
+ 791      00000000 
+ 791      00000000 
+ 791      00000000 
+ 792              		.global	hdma_adc1
+ 793              		.section	.bss.hdma_adc1,"aw",%nobits
+ 794              		.align	2
+ 797              	hdma_adc1:
+ 798 0000 00000000 		.space	92
+ 798      00000000 
+ 798      00000000 
+ 798      00000000 
+ 798      00000000 
+ 799              		.global	hadc1
+ 800              		.section	.bss.hadc1,"aw",%nobits
+ 801              		.align	2
+ 804              	hadc1:
+ 805 0000 00000000 		.space	100
+ 805      00000000 
+ 805      00000000 
+ 805      00000000 
+ 805      00000000 
+ 806              		.global	__aeabi_uidiv
+ 807              		.global	__aeabi_uldivmod
+ 808              		.global	__aeabi_idivmod
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 15
+
+
+ 809              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:16     .text.__NVIC_SystemReset:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:21     .text.__NVIC_SystemReset:00000000 __NVIC_SystemReset
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:52     .text.__NVIC_SystemReset:00000014 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:56     .text.MX_GPIO_Init:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:61     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:117    .text.MX_GPIO_Init:00000068 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:121    .text.MX_DMA_Init:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:126    .text.MX_DMA_Init:00000000 MX_DMA_Init
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:152    .text.MX_DMA_Init:0000002c $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:155    .text.computeMovingAverage:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:161    .text.computeMovingAverage:00000000 computeMovingAverage
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:209    .text.computeMovingAverage:00000058 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:776    .bss.bufferIndex:00000000 bufferIndex
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:783    .bss.adcBuffer:00000000 adcBuffer
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:751    .bss.sum.2:00000000 sum.2
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:214    .text.addRandomNoise:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:220    .text.addRandomNoise:00000000 addRandomNoise
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:245    .text.addRandomNoise:00000024 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:248    .text.Error_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:254    .text.Error_Handler:00000000 Error_Handler
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:269    .text.MX_ADC1_Init:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:274    .text.MX_ADC1_Init:00000000 MX_ADC1_Init
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:335    .text.MX_ADC1_Init:00000074 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:804    .bss.hadc1:00000000 hadc1
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:340    .text.MX_USART2_UART_Init:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:345    .text.MX_USART2_UART_Init:00000000 MX_USART2_UART_Init
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:376    .text.MX_USART2_UART_Init:00000034 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:790    .bss.huart2:00000000 huart2
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:380    .text.SystemClock_Config:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:386    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:438    .text.SystemClock_Config:00000064 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:441    .rodata.main.str1.4:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:457    .text.main:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:463    .text.main:00000000 main
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:494    .rodata.main:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:718    .text.main:000001f8 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:757    .bss.currentState:00000000 currentState
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:745    .data.buttonPrevState.1:00000000 buttonPrevState.1
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:740    .bss.highStart.0:00000000 highStart.0
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:737    .bss.highStart.0:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:748    .bss.sum.2:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:758    .bss.currentState:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:763    .data.currentMode:00000000 currentMode
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:769    .data.buttonPrevState:00000000 buttonPrevState
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:773    .bss.bufferIndex:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:780    .bss.adcBuffer:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:787    .bss.huart2:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:797    .bss.hdma_adc1:00000000 hdma_adc1
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:794    .bss.hdma_adc1:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s:801    .bss.hadc1:00000000 $d
+
+UNDEFINED SYMBOLS
+memset
+HAL_GPIO_Init
+HAL_NVIC_SetPriority
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccSaLDH1.s 			page 17
+
+
+HAL_NVIC_EnableIRQ
+__aeabi_idivmod
+__aeabi_uldivmod
+rand
+HAL_ADC_Init
+HAL_ADC_ConfigChannel
+HAL_UART_Init
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_Init
+BSP_LED_Init
+HAL_GPIO_ReadPin
+BSP_LED_Off
+HAL_Delay
+BSP_LED_On
+HAL_ADC_Start
+HAL_ADC_PollForConversion
+HAL_ADC_GetValue
+HAL_ADC_Stop
+__aeabi_uidiv
+sprintf
+strlen
+HAL_UART_Transmit
+HAL_GetTick
+BSP_LED_Toggle

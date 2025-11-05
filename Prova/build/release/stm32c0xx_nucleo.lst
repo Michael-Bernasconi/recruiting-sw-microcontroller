@@ -1,0 +1,654 @@
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32c0xx_nucleo.c"
+  14              		.text
+  15              		.section	.text.BSP_GetVersion,"ax",%progbits
+  16              		.align	1
+  17              		.global	BSP_GetVersion
+  18              		.syntax unified
+  19              		.code	16
+  20              		.thumb_func
+  22              	BSP_GetVersion:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26 0000 0048     		ldr	r0, .L2
+  27              		@ sp needed
+  28 0002 7047     		bx	lr
+  29              	.L3:
+  30              		.align	2
+  31              	.L2:
+  32 0004 00000101 		.word	16842752
+  34              		.section	.rodata.BSP_GetBoardName.str1.4,"aMS",%progbits,1
+  35              		.align	2
+  36              	.LC0:
+  37 0000 4E55434C 		.ascii	"NUCLEO-C071RB\000"
+  37      454F2D43 
+  37      30373152 
+  37      4200
+  38              		.section	.text.BSP_GetBoardName,"ax",%progbits
+  39              		.align	1
+  40              		.global	BSP_GetBoardName
+  41              		.syntax unified
+  42              		.code	16
+  43              		.thumb_func
+  45              	BSP_GetBoardName:
+  46              		@ args = 0, pretend = 0, frame = 0
+  47              		@ frame_needed = 0, uses_anonymous_args = 0
+  48              		@ link register save eliminated.
+  49 0000 0048     		ldr	r0, .L5
+  50              		@ sp needed
+  51 0002 7047     		bx	lr
+  52              	.L6:
+  53              		.align	2
+  54              	.L5:
+  55 0004 00000000 		.word	.LC0
+  57              		.section	.rodata.BSP_GetBoardID.str1.4,"aMS",%progbits,1
+  58              		.align	2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 2
+
+
+  59              	.LC2:
+  60 0000 4D423230 		.ascii	"MB2046B\000"
+  60      34364200 
+  61              		.section	.text.BSP_GetBoardID,"ax",%progbits
+  62              		.align	1
+  63              		.global	BSP_GetBoardID
+  64              		.syntax unified
+  65              		.code	16
+  66              		.thumb_func
+  68              	BSP_GetBoardID:
+  69              		@ args = 0, pretend = 0, frame = 0
+  70              		@ frame_needed = 0, uses_anonymous_args = 0
+  71              		@ link register save eliminated.
+  72 0000 0048     		ldr	r0, .L8
+  73              		@ sp needed
+  74 0002 7047     		bx	lr
+  75              	.L9:
+  76              		.align	2
+  77              	.L8:
+  78 0004 00000000 		.word	.LC2
+  80              		.section	.text.BSP_LED_Init,"ax",%progbits
+  81              		.align	1
+  82              		.global	BSP_LED_Init
+  83              		.syntax unified
+  84              		.code	16
+  85              		.thumb_func
+  87              	BSP_LED_Init:
+  88              		@ args = 0, pretend = 0, frame = 32
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90 0000 70B5     		push	{r4, r5, r6, lr}
+  91 0002 88B0     		sub	sp, sp, #32
+  92 0004 0400     		movs	r4, r0
+  93 0006 0128     		cmp	r0, #1
+  94 0008 32D8     		bhi	.L14
+  95 000a 0028     		cmp	r0, #0
+  96 000c 1DD1     		bne	.L12
+  97 000e 1A4A     		ldr	r2, .L17
+  98 0010 516B     		ldr	r1, [r2, #52]
+  99 0012 0123     		movs	r3, #1
+ 100 0014 1943     		orrs	r1, r3
+ 101 0016 5163     		str	r1, [r2, #52]
+ 102 0018 526B     		ldr	r2, [r2, #52]
+ 103 001a 1340     		ands	r3, r2
+ 104 001c 0193     		str	r3, [sp, #4]
+ 105 001e 019B     		ldr	r3, [sp, #4]
+ 106              	.L13:
+ 107 0020 164B     		ldr	r3, .L17+4
+ 108 0022 6200     		lsls	r2, r4, #1
+ 109 0024 D65A     		ldrh	r6, [r2, r3]
+ 110 0026 03A9     		add	r1, sp, #12
+ 111 0028 0396     		str	r6, [sp, #12]
+ 112 002a 0123     		movs	r3, #1
+ 113 002c 4B60     		str	r3, [r1, #4]
+ 114 002e 0023     		movs	r3, #0
+ 115 0030 8B60     		str	r3, [r1, #8]
+ 116 0032 0333     		adds	r3, r3, #3
+ 117 0034 CB60     		str	r3, [r1, #12]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 3
+
+
+ 118 0036 124B     		ldr	r3, .L17+8
+ 119 0038 A200     		lsls	r2, r4, #2
+ 120 003a D058     		ldr	r0, [r2, r3]
+ 121 003c FFF7FEFF 		bl	HAL_GPIO_Init
+ 122 0040 012C     		cmp	r4, #1
+ 123 0042 0CD0     		beq	.L16
+ 124 0044 0020     		movs	r0, #0
+ 125              	.L10:
+ 126 0046 08B0     		add	sp, sp, #32
+ 127              		@ sp needed
+ 128 0048 70BD     		pop	{r4, r5, r6, pc}
+ 129              	.L12:
+ 130 004a 0B4A     		ldr	r2, .L17
+ 131 004c 516B     		ldr	r1, [r2, #52]
+ 132 004e 0423     		movs	r3, #4
+ 133 0050 1943     		orrs	r1, r3
+ 134 0052 5163     		str	r1, [r2, #52]
+ 135 0054 526B     		ldr	r2, [r2, #52]
+ 136 0056 1340     		ands	r3, r2
+ 137 0058 0293     		str	r3, [sp, #8]
+ 138 005a 029B     		ldr	r3, [sp, #8]
+ 139 005c E0E7     		b	.L13
+ 140              	.L16:
+ 141 005e 084B     		ldr	r3, .L17+8
+ 142 0060 A400     		lsls	r4, r4, #2
+ 143 0062 E058     		ldr	r0, [r4, r3]
+ 144 0064 0122     		movs	r2, #1
+ 145 0066 3100     		movs	r1, r6
+ 146 0068 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 147 006c 0020     		movs	r0, #0
+ 148 006e EAE7     		b	.L10
+ 149              	.L14:
+ 150 0070 0220     		movs	r0, #2
+ 151 0072 4042     		rsbs	r0, r0, #0
+ 152 0074 E7E7     		b	.L10
+ 153              	.L18:
+ 154 0076 C046     		.align	2
+ 155              	.L17:
+ 156 0078 00100240 		.word	1073876992
+ 157 007c 00000000 		.word	LED_PIN
+ 158 0080 00000000 		.word	LED_PORT
+ 160              		.section	.text.BSP_LED_DeInit,"ax",%progbits
+ 161              		.align	1
+ 162              		.global	BSP_LED_DeInit
+ 163              		.syntax unified
+ 164              		.code	16
+ 165              		.thumb_func
+ 167              	BSP_LED_DeInit:
+ 168              		@ args = 0, pretend = 0, frame = 24
+ 169              		@ frame_needed = 0, uses_anonymous_args = 0
+ 170 0000 70B5     		push	{r4, r5, r6, lr}
+ 171 0002 86B0     		sub	sp, sp, #24
+ 172 0004 0400     		movs	r4, r0
+ 173 0006 0128     		cmp	r0, #1
+ 174 0008 1DD8     		bhi	.L22
+ 175 000a 104B     		ldr	r3, .L24
+ 176 000c 4200     		lsls	r2, r0, #1
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 4
+
+
+ 177 000e D55A     		ldrh	r5, [r2, r3]
+ 178 0010 0F4B     		ldr	r3, .L24+4
+ 179 0012 8200     		lsls	r2, r0, #2
+ 180 0014 D058     		ldr	r0, [r2, r3]
+ 181 0016 0022     		movs	r2, #0
+ 182 0018 2900     		movs	r1, r5
+ 183 001a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 184 001e 012C     		cmp	r4, #1
+ 185 0020 09D0     		beq	.L23
+ 186              	.L21:
+ 187 0022 0195     		str	r5, [sp, #4]
+ 188 0024 0A4B     		ldr	r3, .L24+4
+ 189 0026 A400     		lsls	r4, r4, #2
+ 190 0028 E058     		ldr	r0, [r4, r3]
+ 191 002a 2900     		movs	r1, r5
+ 192 002c FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 193 0030 0020     		movs	r0, #0
+ 194              	.L19:
+ 195 0032 06B0     		add	sp, sp, #24
+ 196              		@ sp needed
+ 197 0034 70BD     		pop	{r4, r5, r6, pc}
+ 198              	.L23:
+ 199 0036 064B     		ldr	r3, .L24+4
+ 200 0038 A200     		lsls	r2, r4, #2
+ 201 003a D058     		ldr	r0, [r2, r3]
+ 202 003c 0122     		movs	r2, #1
+ 203 003e 2900     		movs	r1, r5
+ 204 0040 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 205 0044 EDE7     		b	.L21
+ 206              	.L22:
+ 207 0046 0220     		movs	r0, #2
+ 208 0048 4042     		rsbs	r0, r0, #0
+ 209 004a F2E7     		b	.L19
+ 210              	.L25:
+ 211              		.align	2
+ 212              	.L24:
+ 213 004c 00000000 		.word	LED_PIN
+ 214 0050 00000000 		.word	LED_PORT
+ 216              		.section	.text.BSP_LED_On,"ax",%progbits
+ 217              		.align	1
+ 218              		.global	BSP_LED_On
+ 219              		.syntax unified
+ 220              		.code	16
+ 221              		.thumb_func
+ 223              	BSP_LED_On:
+ 224              		@ args = 0, pretend = 0, frame = 0
+ 225              		@ frame_needed = 0, uses_anonymous_args = 0
+ 226 0000 10B5     		push	{r4, lr}
+ 227 0002 0128     		cmp	r0, #1
+ 228 0004 17D8     		bhi	.L29
+ 229 0006 0028     		cmp	r0, #0
+ 230 0008 0AD1     		bne	.L28
+ 231 000a 0C4B     		ldr	r3, .L30
+ 232 000c 4200     		lsls	r2, r0, #1
+ 233 000e D15A     		ldrh	r1, [r2, r3]
+ 234 0010 0B4B     		ldr	r3, .L30+4
+ 235 0012 8000     		lsls	r0, r0, #2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 5
+
+
+ 236 0014 C058     		ldr	r0, [r0, r3]
+ 237 0016 0122     		movs	r2, #1
+ 238 0018 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 239 001c 0020     		movs	r0, #0
+ 240              	.L26:
+ 241              		@ sp needed
+ 242 001e 10BD     		pop	{r4, pc}
+ 243              	.L28:
+ 244 0020 064B     		ldr	r3, .L30
+ 245 0022 4200     		lsls	r2, r0, #1
+ 246 0024 D15A     		ldrh	r1, [r2, r3]
+ 247 0026 064B     		ldr	r3, .L30+4
+ 248 0028 8000     		lsls	r0, r0, #2
+ 249 002a C058     		ldr	r0, [r0, r3]
+ 250 002c 0022     		movs	r2, #0
+ 251 002e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 252 0032 0020     		movs	r0, #0
+ 253 0034 F3E7     		b	.L26
+ 254              	.L29:
+ 255 0036 0220     		movs	r0, #2
+ 256 0038 4042     		rsbs	r0, r0, #0
+ 257 003a F0E7     		b	.L26
+ 258              	.L31:
+ 259              		.align	2
+ 260              	.L30:
+ 261 003c 00000000 		.word	LED_PIN
+ 262 0040 00000000 		.word	LED_PORT
+ 264              		.section	.text.BSP_LED_Off,"ax",%progbits
+ 265              		.align	1
+ 266              		.global	BSP_LED_Off
+ 267              		.syntax unified
+ 268              		.code	16
+ 269              		.thumb_func
+ 271              	BSP_LED_Off:
+ 272              		@ args = 0, pretend = 0, frame = 0
+ 273              		@ frame_needed = 0, uses_anonymous_args = 0
+ 274 0000 10B5     		push	{r4, lr}
+ 275 0002 0128     		cmp	r0, #1
+ 276 0004 17D8     		bhi	.L35
+ 277 0006 0028     		cmp	r0, #0
+ 278 0008 0AD1     		bne	.L34
+ 279 000a 0C4B     		ldr	r3, .L36
+ 280 000c 4200     		lsls	r2, r0, #1
+ 281 000e D15A     		ldrh	r1, [r2, r3]
+ 282 0010 0B4B     		ldr	r3, .L36+4
+ 283 0012 8000     		lsls	r0, r0, #2
+ 284 0014 C058     		ldr	r0, [r0, r3]
+ 285 0016 0022     		movs	r2, #0
+ 286 0018 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 287 001c 0020     		movs	r0, #0
+ 288              	.L32:
+ 289              		@ sp needed
+ 290 001e 10BD     		pop	{r4, pc}
+ 291              	.L34:
+ 292 0020 064B     		ldr	r3, .L36
+ 293 0022 4200     		lsls	r2, r0, #1
+ 294 0024 D15A     		ldrh	r1, [r2, r3]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 6
+
+
+ 295 0026 064B     		ldr	r3, .L36+4
+ 296 0028 8000     		lsls	r0, r0, #2
+ 297 002a C058     		ldr	r0, [r0, r3]
+ 298 002c 0122     		movs	r2, #1
+ 299 002e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 300 0032 0020     		movs	r0, #0
+ 301 0034 F3E7     		b	.L32
+ 302              	.L35:
+ 303 0036 0220     		movs	r0, #2
+ 304 0038 4042     		rsbs	r0, r0, #0
+ 305 003a F0E7     		b	.L32
+ 306              	.L37:
+ 307              		.align	2
+ 308              	.L36:
+ 309 003c 00000000 		.word	LED_PIN
+ 310 0040 00000000 		.word	LED_PORT
+ 312              		.section	.text.BSP_LED_Toggle,"ax",%progbits
+ 313              		.align	1
+ 314              		.global	BSP_LED_Toggle
+ 315              		.syntax unified
+ 316              		.code	16
+ 317              		.thumb_func
+ 319              	BSP_LED_Toggle:
+ 320              		@ args = 0, pretend = 0, frame = 0
+ 321              		@ frame_needed = 0, uses_anonymous_args = 0
+ 322 0000 10B5     		push	{r4, lr}
+ 323 0002 0128     		cmp	r0, #1
+ 324 0004 09D8     		bhi	.L40
+ 325 0006 064B     		ldr	r3, .L41
+ 326 0008 4200     		lsls	r2, r0, #1
+ 327 000a D15A     		ldrh	r1, [r2, r3]
+ 328 000c 054B     		ldr	r3, .L41+4
+ 329 000e 8000     		lsls	r0, r0, #2
+ 330 0010 C058     		ldr	r0, [r0, r3]
+ 331 0012 FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 332 0016 0020     		movs	r0, #0
+ 333              	.L38:
+ 334              		@ sp needed
+ 335 0018 10BD     		pop	{r4, pc}
+ 336              	.L40:
+ 337 001a 0220     		movs	r0, #2
+ 338 001c 4042     		rsbs	r0, r0, #0
+ 339 001e FBE7     		b	.L38
+ 340              	.L42:
+ 341              		.align	2
+ 342              	.L41:
+ 343 0020 00000000 		.word	LED_PIN
+ 344 0024 00000000 		.word	LED_PORT
+ 346              		.section	.text.BSP_LED_GetState,"ax",%progbits
+ 347              		.align	1
+ 348              		.global	BSP_LED_GetState
+ 349              		.syntax unified
+ 350              		.code	16
+ 351              		.thumb_func
+ 353              	BSP_LED_GetState:
+ 354              		@ args = 0, pretend = 0, frame = 0
+ 355              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 7
+
+
+ 356 0000 10B5     		push	{r4, lr}
+ 357 0002 0300     		movs	r3, r0
+ 358 0004 0128     		cmp	r0, #1
+ 359 0006 08D8     		bhi	.L45
+ 360 0008 054A     		ldr	r2, .L46
+ 361 000a 8100     		lsls	r1, r0, #2
+ 362 000c 8858     		ldr	r0, [r1, r2]
+ 363 000e 054A     		ldr	r2, .L46+4
+ 364 0010 5B00     		lsls	r3, r3, #1
+ 365 0012 995A     		ldrh	r1, [r3, r2]
+ 366 0014 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 367              	.L43:
+ 368              		@ sp needed
+ 369 0018 10BD     		pop	{r4, pc}
+ 370              	.L45:
+ 371 001a 0220     		movs	r0, #2
+ 372 001c 4042     		rsbs	r0, r0, #0
+ 373 001e FBE7     		b	.L43
+ 374              	.L47:
+ 375              		.align	2
+ 376              	.L46:
+ 377 0020 00000000 		.word	LED_PORT
+ 378 0024 00000000 		.word	LED_PIN
+ 380              		.section	.text.BSP_PB_Init,"ax",%progbits
+ 381              		.align	1
+ 382              		.global	BSP_PB_Init
+ 383              		.syntax unified
+ 384              		.code	16
+ 385              		.thumb_func
+ 387              	BSP_PB_Init:
+ 388              		@ args = 0, pretend = 0, frame = 24
+ 389              		@ frame_needed = 0, uses_anonymous_args = 0
+ 390 0000 30B5     		push	{r4, r5, lr}
+ 391 0002 87B0     		sub	sp, sp, #28
+ 392 0004 0500     		movs	r5, r0
+ 393 0006 1C4A     		ldr	r2, .L51
+ 394 0008 506B     		ldr	r0, [r2, #52]
+ 395 000a 0423     		movs	r3, #4
+ 396 000c 1843     		orrs	r0, r3
+ 397 000e 5063     		str	r0, [r2, #52]
+ 398 0010 526B     		ldr	r2, [r2, #52]
+ 399 0012 1340     		ands	r3, r2
+ 400 0014 0093     		str	r3, [sp]
+ 401 0016 009B     		ldr	r3, [sp]
+ 402 0018 01AB     		add	r3, sp, #4
+ 403 001a 8022     		movs	r2, #128
+ 404 001c 9201     		lsls	r2, r2, #6
+ 405 001e 0192     		str	r2, [sp, #4]
+ 406 0020 0122     		movs	r2, #1
+ 407 0022 0392     		str	r2, [sp, #12]
+ 408 0024 0132     		adds	r2, r2, #1
+ 409 0026 0492     		str	r2, [sp, #16]
+ 410 0028 0029     		cmp	r1, #0
+ 411 002a 08D1     		bne	.L49
+ 412 002c 1900     		movs	r1, r3
+ 413 002e 0023     		movs	r3, #0
+ 414 0030 4B60     		str	r3, [r1, #4]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 8
+
+
+ 415 0032 1248     		ldr	r0, .L51+4
+ 416 0034 FFF7FEFF 		bl	HAL_GPIO_Init
+ 417              	.L50:
+ 418 0038 0020     		movs	r0, #0
+ 419 003a 07B0     		add	sp, sp, #28
+ 420              		@ sp needed
+ 421 003c 30BD     		pop	{r4, r5, pc}
+ 422              	.L49:
+ 423 003e 01A9     		add	r1, sp, #4
+ 424 0040 0F4B     		ldr	r3, .L51+8
+ 425 0042 4B60     		str	r3, [r1, #4]
+ 426 0044 0D48     		ldr	r0, .L51+4
+ 427 0046 FFF7FEFF 		bl	HAL_GPIO_Init
+ 428 004a 6C00     		lsls	r4, r5, #1
+ 429 004c 6419     		adds	r4, r4, r5
+ 430 004e A400     		lsls	r4, r4, #2
+ 431 0050 0C4B     		ldr	r3, .L51+12
+ 432 0052 E418     		adds	r4, r4, r3
+ 433 0054 0C49     		ldr	r1, .L51+16
+ 434 0056 2000     		movs	r0, r4
+ 435 0058 FFF7FEFF 		bl	HAL_EXTI_GetHandle
+ 436 005c 0B4A     		ldr	r2, .L51+20
+ 437 005e 0021     		movs	r1, #0
+ 438 0060 2000     		movs	r0, r4
+ 439 0062 FFF7FEFF 		bl	HAL_EXTI_RegisterCallback
+ 440 0066 0022     		movs	r2, #0
+ 441 0068 0F21     		movs	r1, #15
+ 442 006a 0720     		movs	r0, #7
+ 443 006c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 444 0070 0720     		movs	r0, #7
+ 445 0072 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 446 0076 DFE7     		b	.L50
+ 447              	.L52:
+ 448              		.align	2
+ 449              	.L51:
+ 450 0078 00100240 		.word	1073876992
+ 451 007c 00080050 		.word	1342179328
+ 452 0080 00002110 		.word	270598144
+ 453 0084 00000000 		.word	hpb_exti
+ 454 0088 0D000006 		.word	100663309
+ 455 008c 00000000 		.word	BUTTON_USER_EXTI_Callback
+ 457              		.section	.text.BSP_PB_DeInit,"ax",%progbits
+ 458              		.align	1
+ 459              		.global	BSP_PB_DeInit
+ 460              		.syntax unified
+ 461              		.code	16
+ 462              		.thumb_func
+ 464              	BSP_PB_DeInit:
+ 465              		@ args = 0, pretend = 0, frame = 24
+ 466              		@ frame_needed = 0, uses_anonymous_args = 0
+ 467 0000 10B5     		push	{r4, lr}
+ 468 0002 86B0     		sub	sp, sp, #24
+ 469 0004 8024     		movs	r4, #128
+ 470 0006 A401     		lsls	r4, r4, #6
+ 471 0008 0194     		str	r4, [sp, #4]
+ 472 000a 0720     		movs	r0, #7
+ 473 000c FFF7FEFF 		bl	HAL_NVIC_DisableIRQ
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 9
+
+
+ 474 0010 2100     		movs	r1, r4
+ 475 0012 0348     		ldr	r0, .L54
+ 476 0014 FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 477 0018 0020     		movs	r0, #0
+ 478 001a 06B0     		add	sp, sp, #24
+ 479              		@ sp needed
+ 480 001c 10BD     		pop	{r4, pc}
+ 481              	.L55:
+ 482 001e C046     		.align	2
+ 483              	.L54:
+ 484 0020 00080050 		.word	1342179328
+ 486              		.section	.text.BSP_PB_GetState,"ax",%progbits
+ 487              		.align	1
+ 488              		.global	BSP_PB_GetState
+ 489              		.syntax unified
+ 490              		.code	16
+ 491              		.thumb_func
+ 493              	BSP_PB_GetState:
+ 494              		@ args = 0, pretend = 0, frame = 0
+ 495              		@ frame_needed = 0, uses_anonymous_args = 0
+ 496 0000 10B5     		push	{r4, lr}
+ 497 0002 8021     		movs	r1, #128
+ 498 0004 8901     		lsls	r1, r1, #6
+ 499 0006 0248     		ldr	r0, .L57
+ 500 0008 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 501              		@ sp needed
+ 502 000c 10BD     		pop	{r4, pc}
+ 503              	.L58:
+ 504 000e C046     		.align	2
+ 505              	.L57:
+ 506 0010 00080050 		.word	1342179328
+ 508              		.section	.text.BSP_PB_IRQHandler,"ax",%progbits
+ 509              		.align	1
+ 510              		.global	BSP_PB_IRQHandler
+ 511              		.syntax unified
+ 512              		.code	16
+ 513              		.thumb_func
+ 515              	BSP_PB_IRQHandler:
+ 516              		@ args = 0, pretend = 0, frame = 0
+ 517              		@ frame_needed = 0, uses_anonymous_args = 0
+ 518 0000 10B5     		push	{r4, lr}
+ 519 0002 4300     		lsls	r3, r0, #1
+ 520 0004 1818     		adds	r0, r3, r0
+ 521 0006 8000     		lsls	r0, r0, #2
+ 522 0008 024B     		ldr	r3, .L60
+ 523 000a C018     		adds	r0, r0, r3
+ 524 000c FFF7FEFF 		bl	HAL_EXTI_IRQHandler
+ 525              		@ sp needed
+ 526 0010 10BD     		pop	{r4, pc}
+ 527              	.L61:
+ 528 0012 C046     		.align	2
+ 529              	.L60:
+ 530 0014 00000000 		.word	hpb_exti
+ 532              		.section	.text.BSP_PB_Callback,"ax",%progbits
+ 533              		.align	1
+ 534              		.weak	BSP_PB_Callback
+ 535              		.syntax unified
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 10
+
+
+ 536              		.code	16
+ 537              		.thumb_func
+ 539              	BSP_PB_Callback:
+ 540              		@ args = 0, pretend = 0, frame = 0
+ 541              		@ frame_needed = 0, uses_anonymous_args = 0
+ 542              		@ link register save eliminated.
+ 543              		@ sp needed
+ 544 0000 7047     		bx	lr
+ 546              		.section	.text.BUTTON_USER_EXTI_Callback,"ax",%progbits
+ 547              		.align	1
+ 548              		.syntax unified
+ 549              		.code	16
+ 550              		.thumb_func
+ 552              	BUTTON_USER_EXTI_Callback:
+ 553              		@ args = 0, pretend = 0, frame = 0
+ 554              		@ frame_needed = 0, uses_anonymous_args = 0
+ 555 0000 10B5     		push	{r4, lr}
+ 556 0002 0020     		movs	r0, #0
+ 557 0004 FFF7FEFF 		bl	BSP_PB_Callback
+ 558              		@ sp needed
+ 559 0008 10BD     		pop	{r4, pc}
+ 561              		.section	.rodata.LED_PIN,"a"
+ 562              		.align	2
+ 565              	LED_PIN:
+ 566 0000 2000     		.short	32
+ 567 0002 0002     		.short	512
+ 568              		.section	.rodata.LED_PORT,"a"
+ 569              		.align	2
+ 572              	LED_PORT:
+ 573 0000 00000050 		.word	1342177280
+ 574 0004 00080050 		.word	1342179328
+ 575              		.global	hpb_exti
+ 576              		.section	.bss.hpb_exti,"aw",%nobits
+ 577              		.align	2
+ 580              	hpb_exti:
+ 581 0000 00000000 		.space	12
+ 581      00000000 
+ 581      00000000 
+ 582              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32c0xx_nucleo.c
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:16     .text.BSP_GetVersion:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:22     .text.BSP_GetVersion:00000000 BSP_GetVersion
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:32     .text.BSP_GetVersion:00000004 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:35     .rodata.BSP_GetBoardName.str1.4:00000000 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:39     .text.BSP_GetBoardName:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:45     .text.BSP_GetBoardName:00000000 BSP_GetBoardName
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:55     .text.BSP_GetBoardName:00000004 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:58     .rodata.BSP_GetBoardID.str1.4:00000000 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:62     .text.BSP_GetBoardID:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:68     .text.BSP_GetBoardID:00000000 BSP_GetBoardID
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:78     .text.BSP_GetBoardID:00000004 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:81     .text.BSP_LED_Init:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:87     .text.BSP_LED_Init:00000000 BSP_LED_Init
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:156    .text.BSP_LED_Init:00000078 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:565    .rodata.LED_PIN:00000000 LED_PIN
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:572    .rodata.LED_PORT:00000000 LED_PORT
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:161    .text.BSP_LED_DeInit:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:167    .text.BSP_LED_DeInit:00000000 BSP_LED_DeInit
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:213    .text.BSP_LED_DeInit:0000004c $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:217    .text.BSP_LED_On:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:223    .text.BSP_LED_On:00000000 BSP_LED_On
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:261    .text.BSP_LED_On:0000003c $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:265    .text.BSP_LED_Off:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:271    .text.BSP_LED_Off:00000000 BSP_LED_Off
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:309    .text.BSP_LED_Off:0000003c $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:313    .text.BSP_LED_Toggle:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:319    .text.BSP_LED_Toggle:00000000 BSP_LED_Toggle
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:343    .text.BSP_LED_Toggle:00000020 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:347    .text.BSP_LED_GetState:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:353    .text.BSP_LED_GetState:00000000 BSP_LED_GetState
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:377    .text.BSP_LED_GetState:00000020 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:381    .text.BSP_PB_Init:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:387    .text.BSP_PB_Init:00000000 BSP_PB_Init
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:450    .text.BSP_PB_Init:00000078 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:580    .bss.hpb_exti:00000000 hpb_exti
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:552    .text.BUTTON_USER_EXTI_Callback:00000000 BUTTON_USER_EXTI_Callback
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:458    .text.BSP_PB_DeInit:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:464    .text.BSP_PB_DeInit:00000000 BSP_PB_DeInit
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:484    .text.BSP_PB_DeInit:00000020 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:487    .text.BSP_PB_GetState:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:493    .text.BSP_PB_GetState:00000000 BSP_PB_GetState
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:506    .text.BSP_PB_GetState:00000010 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:509    .text.BSP_PB_IRQHandler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:515    .text.BSP_PB_IRQHandler:00000000 BSP_PB_IRQHandler
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:530    .text.BSP_PB_IRQHandler:00000014 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:533    .text.BSP_PB_Callback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:539    .text.BSP_PB_Callback:00000000 BSP_PB_Callback
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:547    .text.BUTTON_USER_EXTI_Callback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:562    .rodata.LED_PIN:00000000 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:569    .rodata.LED_PORT:00000000 $d
+C:\Users\micha\AppData\Local\Temp\cc6G1veM.s:577    .bss.hpb_exti:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_Init
+HAL_GPIO_WritePin
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc6G1veM.s 			page 12
+
+
+HAL_GPIO_DeInit
+HAL_GPIO_TogglePin
+HAL_GPIO_ReadPin
+HAL_EXTI_GetHandle
+HAL_EXTI_RegisterCallback
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_NVIC_DisableIRQ
+HAL_EXTI_IRQHandler

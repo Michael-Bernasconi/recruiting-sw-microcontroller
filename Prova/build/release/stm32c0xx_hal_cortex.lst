@@ -1,0 +1,704 @@
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32c0xx_hal_cortex.c"
+  14              		.text
+  15              		.section	.text.__NVIC_SetPriority,"ax",%progbits
+  16              		.align	1
+  17              		.syntax unified
+  18              		.code	16
+  19              		.thumb_func
+  21              	__NVIC_SetPriority:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 70B5     		push	{r4, r5, r6, lr}
+  25 0002 0028     		cmp	r0, #0
+  26 0004 11DB     		blt	.L2
+  27 0006 8308     		lsrs	r3, r0, #2
+  28 0008 134D     		ldr	r5, .L4
+  29 000a C033     		adds	r3, r3, #192
+  30 000c 9B00     		lsls	r3, r3, #2
+  31 000e 5C59     		ldr	r4, [r3, r5]
+  32 0010 0322     		movs	r2, #3
+  33 0012 1040     		ands	r0, r2
+  34 0014 C000     		lsls	r0, r0, #3
+  35 0016 FC32     		adds	r2, r2, #252
+  36 0018 1600     		movs	r6, r2
+  37 001a 8640     		lsls	r6, r6, r0
+  38 001c B443     		bics	r4, r6
+  39 001e 8901     		lsls	r1, r1, #6
+  40 0020 0A40     		ands	r2, r1
+  41 0022 8240     		lsls	r2, r2, r0
+  42 0024 2243     		orrs	r2, r4
+  43 0026 5A51     		str	r2, [r3, r5]
+  44              	.L1:
+  45              		@ sp needed
+  46 0028 70BD     		pop	{r4, r5, r6, pc}
+  47              	.L2:
+  48 002a 0F23     		movs	r3, #15
+  49 002c 0340     		ands	r3, r0
+  50 002e 083B     		subs	r3, r3, #8
+  51 0030 9B08     		lsrs	r3, r3, #2
+  52 0032 0633     		adds	r3, r3, #6
+  53 0034 9B00     		lsls	r3, r3, #2
+  54 0036 094A     		ldr	r2, .L4+4
+  55 0038 9446     		mov	ip, r2
+  56 003a 6344     		add	r3, r3, ip
+  57 003c 5C68     		ldr	r4, [r3, #4]
+  58 003e 0322     		movs	r2, #3
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 2
+
+
+  59 0040 1040     		ands	r0, r2
+  60 0042 C000     		lsls	r0, r0, #3
+  61 0044 FC32     		adds	r2, r2, #252
+  62 0046 1500     		movs	r5, r2
+  63 0048 8540     		lsls	r5, r5, r0
+  64 004a AC43     		bics	r4, r5
+  65 004c 8901     		lsls	r1, r1, #6
+  66 004e 0A40     		ands	r2, r1
+  67 0050 8240     		lsls	r2, r2, r0
+  68 0052 2243     		orrs	r2, r4
+  69 0054 5A60     		str	r2, [r3, #4]
+  70 0056 E7E7     		b	.L1
+  71              	.L5:
+  72              		.align	2
+  73              	.L4:
+  74 0058 00E100E0 		.word	-536813312
+  75 005c 00ED00E0 		.word	-536810240
+  77              		.section	.text.__NVIC_GetPriority,"ax",%progbits
+  78              		.align	1
+  79              		.syntax unified
+  80              		.code	16
+  81              		.thumb_func
+  83              	__NVIC_GetPriority:
+  84              		@ args = 0, pretend = 0, frame = 0
+  85              		@ frame_needed = 0, uses_anonymous_args = 0
+  86              		@ link register save eliminated.
+  87 0000 0028     		cmp	r0, #0
+  88 0002 0CDB     		blt	.L7
+  89 0004 8308     		lsrs	r3, r0, #2
+  90 0006 C033     		adds	r3, r3, #192
+  91 0008 9B00     		lsls	r3, r3, #2
+  92 000a 0E4A     		ldr	r2, .L9
+  93 000c 9B58     		ldr	r3, [r3, r2]
+  94 000e 0322     		movs	r2, #3
+  95 0010 0240     		ands	r2, r0
+  96 0012 D200     		lsls	r2, r2, #3
+  97 0014 D340     		lsrs	r3, r3, r2
+  98 0016 9B09     		lsrs	r3, r3, #6
+  99 0018 0320     		movs	r0, #3
+ 100 001a 1840     		ands	r0, r3
+ 101              	.L6:
+ 102              		@ sp needed
+ 103 001c 7047     		bx	lr
+ 104              	.L7:
+ 105 001e 0F23     		movs	r3, #15
+ 106 0020 0340     		ands	r3, r0
+ 107 0022 083B     		subs	r3, r3, #8
+ 108 0024 9B08     		lsrs	r3, r3, #2
+ 109 0026 0633     		adds	r3, r3, #6
+ 110 0028 9B00     		lsls	r3, r3, #2
+ 111 002a 074A     		ldr	r2, .L9+4
+ 112 002c 9446     		mov	ip, r2
+ 113 002e 6344     		add	r3, r3, ip
+ 114 0030 5B68     		ldr	r3, [r3, #4]
+ 115 0032 0322     		movs	r2, #3
+ 116 0034 0240     		ands	r2, r0
+ 117 0036 D200     		lsls	r2, r2, #3
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 3
+
+
+ 118 0038 D340     		lsrs	r3, r3, r2
+ 119 003a 9B09     		lsrs	r3, r3, #6
+ 120 003c 0320     		movs	r0, #3
+ 121 003e 1840     		ands	r0, r3
+ 122 0040 ECE7     		b	.L6
+ 123              	.L10:
+ 124 0042 C046     		.align	2
+ 125              	.L9:
+ 126 0044 00E100E0 		.word	-536813312
+ 127 0048 00ED00E0 		.word	-536810240
+ 129              		.section	.text.__NVIC_SystemReset,"ax",%progbits
+ 130              		.align	1
+ 131              		.syntax unified
+ 132              		.code	16
+ 133              		.thumb_func
+ 135              	__NVIC_SystemReset:
+ 136              		@ Volatile: function does not return.
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 0, uses_anonymous_args = 0
+ 139              		@ link register save eliminated.
+ 140              		.syntax divided
+ 141              	@ 271 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 142 0000 BFF34F8F 		dsb 0xF
+ 143              	@ 0 "" 2
+ 144              		.thumb
+ 145              		.syntax unified
+ 146 0004 034B     		ldr	r3, .L13
+ 147 0006 044A     		ldr	r2, .L13+4
+ 148 0008 DA60     		str	r2, [r3, #12]
+ 149              		.syntax divided
+ 150              	@ 271 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 151 000a BFF34F8F 		dsb 0xF
+ 152              	@ 0 "" 2
+ 153              		.thumb
+ 154              		.syntax unified
+ 155              	.L12:
+ 156              		.syntax divided
+ 157              	@ 997 "Drivers/CMSIS/Include/core_cm0plus.h" 1
+ 158 000e C046     		nop
+ 159              	@ 0 "" 2
+ 160              		.thumb
+ 161              		.syntax unified
+ 162 0010 FDE7     		b	.L12
+ 163              	.L14:
+ 164 0012 C046     		.align	2
+ 165              	.L13:
+ 166 0014 00ED00E0 		.word	-536810240
+ 167 0018 0400FA05 		.word	100270084
+ 169              		.section	.text.SysTick_Config,"ax",%progbits
+ 170              		.align	1
+ 171              		.syntax unified
+ 172              		.code	16
+ 173              		.thumb_func
+ 175              	SysTick_Config:
+ 176              		@ args = 0, pretend = 0, frame = 0
+ 177              		@ frame_needed = 0, uses_anonymous_args = 0
+ 178              		@ link register save eliminated.
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 4
+
+
+ 179 0000 0138     		subs	r0, r0, #1
+ 180 0002 8023     		movs	r3, #128
+ 181 0004 5B04     		lsls	r3, r3, #17
+ 182 0006 9842     		cmp	r0, r3
+ 183 0008 0FD2     		bcs	.L17
+ 184 000a 094A     		ldr	r2, .L18
+ 185 000c 5060     		str	r0, [r2, #4]
+ 186 000e 0948     		ldr	r0, .L18+4
+ 187 0010 036A     		ldr	r3, [r0, #32]
+ 188 0012 1B02     		lsls	r3, r3, #8
+ 189 0014 1B0A     		lsrs	r3, r3, #8
+ 190 0016 C021     		movs	r1, #192
+ 191 0018 0906     		lsls	r1, r1, #24
+ 192 001a 0B43     		orrs	r3, r1
+ 193 001c 0362     		str	r3, [r0, #32]
+ 194 001e 0023     		movs	r3, #0
+ 195 0020 9360     		str	r3, [r2, #8]
+ 196 0022 0733     		adds	r3, r3, #7
+ 197 0024 1360     		str	r3, [r2]
+ 198 0026 0020     		movs	r0, #0
+ 199              	.L15:
+ 200              		@ sp needed
+ 201 0028 7047     		bx	lr
+ 202              	.L17:
+ 203 002a 0120     		movs	r0, #1
+ 204 002c FCE7     		b	.L15
+ 205              	.L19:
+ 206 002e C046     		.align	2
+ 207              	.L18:
+ 208 0030 10E000E0 		.word	-536813552
+ 209 0034 00ED00E0 		.word	-536810240
+ 211              		.section	.text.HAL_NVIC_SetPriority,"ax",%progbits
+ 212              		.align	1
+ 213              		.global	HAL_NVIC_SetPriority
+ 214              		.syntax unified
+ 215              		.code	16
+ 216              		.thumb_func
+ 218              	HAL_NVIC_SetPriority:
+ 219              		@ args = 0, pretend = 0, frame = 0
+ 220              		@ frame_needed = 0, uses_anonymous_args = 0
+ 221 0000 10B5     		push	{r4, lr}
+ 222 0002 FFF7FEFF 		bl	__NVIC_SetPriority
+ 223              		@ sp needed
+ 224 0006 10BD     		pop	{r4, pc}
+ 226              		.section	.text.HAL_NVIC_EnableIRQ,"ax",%progbits
+ 227              		.align	1
+ 228              		.global	HAL_NVIC_EnableIRQ
+ 229              		.syntax unified
+ 230              		.code	16
+ 231              		.thumb_func
+ 233              	HAL_NVIC_EnableIRQ:
+ 234              		@ args = 0, pretend = 0, frame = 0
+ 235              		@ frame_needed = 0, uses_anonymous_args = 0
+ 236              		@ link register save eliminated.
+ 237 0000 0028     		cmp	r0, #0
+ 238 0002 05DB     		blt	.L21
+ 239 0004 1F22     		movs	r2, #31
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 5
+
+
+ 240 0006 0240     		ands	r2, r0
+ 241 0008 0123     		movs	r3, #1
+ 242 000a 9340     		lsls	r3, r3, r2
+ 243 000c 014A     		ldr	r2, .L23
+ 244 000e 1360     		str	r3, [r2]
+ 245              	.L21:
+ 246              		@ sp needed
+ 247 0010 7047     		bx	lr
+ 248              	.L24:
+ 249 0012 C046     		.align	2
+ 250              	.L23:
+ 251 0014 00E100E0 		.word	-536813312
+ 253              		.section	.text.HAL_NVIC_DisableIRQ,"ax",%progbits
+ 254              		.align	1
+ 255              		.global	HAL_NVIC_DisableIRQ
+ 256              		.syntax unified
+ 257              		.code	16
+ 258              		.thumb_func
+ 260              	HAL_NVIC_DisableIRQ:
+ 261              		@ args = 0, pretend = 0, frame = 0
+ 262              		@ frame_needed = 0, uses_anonymous_args = 0
+ 263              		@ link register save eliminated.
+ 264 0000 0028     		cmp	r0, #0
+ 265 0002 0ADB     		blt	.L25
+ 266 0004 1F22     		movs	r2, #31
+ 267 0006 0240     		ands	r2, r0
+ 268 0008 0123     		movs	r3, #1
+ 269 000a 9340     		lsls	r3, r3, r2
+ 270 000c 0349     		ldr	r1, .L27
+ 271 000e 8022     		movs	r2, #128
+ 272 0010 8B50     		str	r3, [r1, r2]
+ 273              		.syntax divided
+ 274              	@ 271 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 275 0012 BFF34F8F 		dsb 0xF
+ 276              	@ 0 "" 2
+ 277              	@ 260 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 278 0016 BFF36F8F 		isb 0xF
+ 279              	@ 0 "" 2
+ 280              		.thumb
+ 281              		.syntax unified
+ 282              	.L25:
+ 283              		@ sp needed
+ 284 001a 7047     		bx	lr
+ 285              	.L28:
+ 286              		.align	2
+ 287              	.L27:
+ 288 001c 00E100E0 		.word	-536813312
+ 290              		.section	.text.HAL_NVIC_SystemReset,"ax",%progbits
+ 291              		.align	1
+ 292              		.global	HAL_NVIC_SystemReset
+ 293              		.syntax unified
+ 294              		.code	16
+ 295              		.thumb_func
+ 297              	HAL_NVIC_SystemReset:
+ 298              		@ Volatile: function does not return.
+ 299              		@ args = 0, pretend = 0, frame = 0
+ 300              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 6
+
+
+ 301 0000 10B5     		push	{r4, lr}
+ 302 0002 FFF7FEFF 		bl	__NVIC_SystemReset
+ 304              		.section	.text.HAL_SYSTICK_Config,"ax",%progbits
+ 305              		.align	1
+ 306              		.global	HAL_SYSTICK_Config
+ 307              		.syntax unified
+ 308              		.code	16
+ 309              		.thumb_func
+ 311              	HAL_SYSTICK_Config:
+ 312              		@ args = 0, pretend = 0, frame = 0
+ 313              		@ frame_needed = 0, uses_anonymous_args = 0
+ 314 0000 10B5     		push	{r4, lr}
+ 315 0002 FFF7FEFF 		bl	SysTick_Config
+ 316              		@ sp needed
+ 317 0006 10BD     		pop	{r4, pc}
+ 319              		.section	.text.HAL_NVIC_GetPriority,"ax",%progbits
+ 320              		.align	1
+ 321              		.global	HAL_NVIC_GetPriority
+ 322              		.syntax unified
+ 323              		.code	16
+ 324              		.thumb_func
+ 326              	HAL_NVIC_GetPriority:
+ 327              		@ args = 0, pretend = 0, frame = 0
+ 328              		@ frame_needed = 0, uses_anonymous_args = 0
+ 329 0000 10B5     		push	{r4, lr}
+ 330 0002 FFF7FEFF 		bl	__NVIC_GetPriority
+ 331              		@ sp needed
+ 332 0006 10BD     		pop	{r4, pc}
+ 334              		.section	.text.HAL_NVIC_SetPendingIRQ,"ax",%progbits
+ 335              		.align	1
+ 336              		.global	HAL_NVIC_SetPendingIRQ
+ 337              		.syntax unified
+ 338              		.code	16
+ 339              		.thumb_func
+ 341              	HAL_NVIC_SetPendingIRQ:
+ 342              		@ args = 0, pretend = 0, frame = 0
+ 343              		@ frame_needed = 0, uses_anonymous_args = 0
+ 344              		@ link register save eliminated.
+ 345 0000 0028     		cmp	r0, #0
+ 346 0002 07DB     		blt	.L32
+ 347 0004 1F22     		movs	r2, #31
+ 348 0006 0240     		ands	r2, r0
+ 349 0008 0123     		movs	r3, #1
+ 350 000a 9340     		lsls	r3, r3, r2
+ 351 000c 0249     		ldr	r1, .L34
+ 352 000e 8022     		movs	r2, #128
+ 353 0010 5200     		lsls	r2, r2, #1
+ 354 0012 8B50     		str	r3, [r1, r2]
+ 355              	.L32:
+ 356              		@ sp needed
+ 357 0014 7047     		bx	lr
+ 358              	.L35:
+ 359 0016 C046     		.align	2
+ 360              	.L34:
+ 361 0018 00E100E0 		.word	-536813312
+ 363              		.section	.text.HAL_NVIC_GetPendingIRQ,"ax",%progbits
+ 364              		.align	1
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 7
+
+
+ 365              		.global	HAL_NVIC_GetPendingIRQ
+ 366              		.syntax unified
+ 367              		.code	16
+ 368              		.thumb_func
+ 370              	HAL_NVIC_GetPendingIRQ:
+ 371              		@ args = 0, pretend = 0, frame = 0
+ 372              		@ frame_needed = 0, uses_anonymous_args = 0
+ 373              		@ link register save eliminated.
+ 374 0000 0028     		cmp	r0, #0
+ 375 0002 09DB     		blt	.L38
+ 376 0004 054A     		ldr	r2, .L39
+ 377 0006 8023     		movs	r3, #128
+ 378 0008 5B00     		lsls	r3, r3, #1
+ 379 000a D358     		ldr	r3, [r2, r3]
+ 380 000c 1F22     		movs	r2, #31
+ 381 000e 0240     		ands	r2, r0
+ 382 0010 D340     		lsrs	r3, r3, r2
+ 383 0012 0120     		movs	r0, #1
+ 384 0014 1840     		ands	r0, r3
+ 385              	.L36:
+ 386              		@ sp needed
+ 387 0016 7047     		bx	lr
+ 388              	.L38:
+ 389 0018 0020     		movs	r0, #0
+ 390 001a FCE7     		b	.L36
+ 391              	.L40:
+ 392              		.align	2
+ 393              	.L39:
+ 394 001c 00E100E0 		.word	-536813312
+ 396              		.section	.text.HAL_NVIC_ClearPendingIRQ,"ax",%progbits
+ 397              		.align	1
+ 398              		.global	HAL_NVIC_ClearPendingIRQ
+ 399              		.syntax unified
+ 400              		.code	16
+ 401              		.thumb_func
+ 403              	HAL_NVIC_ClearPendingIRQ:
+ 404              		@ args = 0, pretend = 0, frame = 0
+ 405              		@ frame_needed = 0, uses_anonymous_args = 0
+ 406              		@ link register save eliminated.
+ 407 0000 0028     		cmp	r0, #0
+ 408 0002 07DB     		blt	.L41
+ 409 0004 1F22     		movs	r2, #31
+ 410 0006 0240     		ands	r2, r0
+ 411 0008 0123     		movs	r3, #1
+ 412 000a 9340     		lsls	r3, r3, r2
+ 413 000c 0249     		ldr	r1, .L43
+ 414 000e C022     		movs	r2, #192
+ 415 0010 5200     		lsls	r2, r2, #1
+ 416 0012 8B50     		str	r3, [r1, r2]
+ 417              	.L41:
+ 418              		@ sp needed
+ 419 0014 7047     		bx	lr
+ 420              	.L44:
+ 421 0016 C046     		.align	2
+ 422              	.L43:
+ 423 0018 00E100E0 		.word	-536813312
+ 425              		.section	.text.HAL_SYSTICK_CLKSourceConfig,"ax",%progbits
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 8
+
+
+ 426              		.align	1
+ 427              		.global	HAL_SYSTICK_CLKSourceConfig
+ 428              		.syntax unified
+ 429              		.code	16
+ 430              		.thumb_func
+ 432              	HAL_SYSTICK_CLKSourceConfig:
+ 433              		@ args = 0, pretend = 0, frame = 0
+ 434              		@ frame_needed = 0, uses_anonymous_args = 0
+ 435              		@ link register save eliminated.
+ 436 0000 0428     		cmp	r0, #4
+ 437 0002 05D0     		beq	.L48
+ 438 0004 054A     		ldr	r2, .L49
+ 439 0006 1368     		ldr	r3, [r2]
+ 440 0008 0421     		movs	r1, #4
+ 441 000a 8B43     		bics	r3, r1
+ 442 000c 1360     		str	r3, [r2]
+ 443              	.L45:
+ 444              		@ sp needed
+ 445 000e 7047     		bx	lr
+ 446              	.L48:
+ 447 0010 024A     		ldr	r2, .L49
+ 448 0012 1368     		ldr	r3, [r2]
+ 449 0014 0421     		movs	r1, #4
+ 450 0016 0B43     		orrs	r3, r1
+ 451 0018 1360     		str	r3, [r2]
+ 452 001a F8E7     		b	.L45
+ 453              	.L50:
+ 454              		.align	2
+ 455              	.L49:
+ 456 001c 10E000E0 		.word	-536813552
+ 458              		.section	.text.HAL_SYSTICK_Callback,"ax",%progbits
+ 459              		.align	1
+ 460              		.weak	HAL_SYSTICK_Callback
+ 461              		.syntax unified
+ 462              		.code	16
+ 463              		.thumb_func
+ 465              	HAL_SYSTICK_Callback:
+ 466              		@ args = 0, pretend = 0, frame = 0
+ 467              		@ frame_needed = 0, uses_anonymous_args = 0
+ 468              		@ link register save eliminated.
+ 469              		@ sp needed
+ 470 0000 7047     		bx	lr
+ 472              		.section	.text.HAL_SYSTICK_IRQHandler,"ax",%progbits
+ 473              		.align	1
+ 474              		.global	HAL_SYSTICK_IRQHandler
+ 475              		.syntax unified
+ 476              		.code	16
+ 477              		.thumb_func
+ 479              	HAL_SYSTICK_IRQHandler:
+ 480              		@ args = 0, pretend = 0, frame = 0
+ 481              		@ frame_needed = 0, uses_anonymous_args = 0
+ 482 0000 10B5     		push	{r4, lr}
+ 483 0002 FFF7FEFF 		bl	HAL_SYSTICK_Callback
+ 484              		@ sp needed
+ 485 0006 10BD     		pop	{r4, pc}
+ 487              		.section	.text.HAL_MPU_Enable,"ax",%progbits
+ 488              		.align	1
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 9
+
+
+ 489              		.global	HAL_MPU_Enable
+ 490              		.syntax unified
+ 491              		.code	16
+ 492              		.thumb_func
+ 494              	HAL_MPU_Enable:
+ 495              		@ args = 0, pretend = 0, frame = 0
+ 496              		@ frame_needed = 0, uses_anonymous_args = 0
+ 497              		@ link register save eliminated.
+ 498 0000 0123     		movs	r3, #1
+ 499 0002 1843     		orrs	r0, r3
+ 500 0004 034B     		ldr	r3, .L54
+ 501 0006 5860     		str	r0, [r3, #4]
+ 502              		.syntax divided
+ 503              	@ 271 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 504 0008 BFF34F8F 		dsb 0xF
+ 505              	@ 0 "" 2
+ 506              	@ 260 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 507 000c BFF36F8F 		isb 0xF
+ 508              	@ 0 "" 2
+ 509              		.thumb
+ 510              		.syntax unified
+ 511              		@ sp needed
+ 512 0010 7047     		bx	lr
+ 513              	.L55:
+ 514 0012 C046     		.align	2
+ 515              	.L54:
+ 516 0014 90ED00E0 		.word	-536810096
+ 518              		.section	.text.HAL_MPU_Disable,"ax",%progbits
+ 519              		.align	1
+ 520              		.global	HAL_MPU_Disable
+ 521              		.syntax unified
+ 522              		.code	16
+ 523              		.thumb_func
+ 525              	HAL_MPU_Disable:
+ 526              		@ args = 0, pretend = 0, frame = 0
+ 527              		@ frame_needed = 0, uses_anonymous_args = 0
+ 528              		@ link register save eliminated.
+ 529              		.syntax divided
+ 530              	@ 282 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 531 0000 BFF35F8F 		dmb 0xF
+ 532              	@ 0 "" 2
+ 533              		.thumb
+ 534              		.syntax unified
+ 535 0004 014B     		ldr	r3, .L57
+ 536 0006 0022     		movs	r2, #0
+ 537 0008 5A60     		str	r2, [r3, #4]
+ 538              		@ sp needed
+ 539 000a 7047     		bx	lr
+ 540              	.L58:
+ 541              		.align	2
+ 542              	.L57:
+ 543 000c 90ED00E0 		.word	-536810096
+ 545              		.section	.text.HAL_MPU_EnableRegion,"ax",%progbits
+ 546              		.align	1
+ 547              		.global	HAL_MPU_EnableRegion
+ 548              		.syntax unified
+ 549              		.code	16
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 10
+
+
+ 550              		.thumb_func
+ 552              	HAL_MPU_EnableRegion:
+ 553              		@ args = 0, pretend = 0, frame = 0
+ 554              		@ frame_needed = 0, uses_anonymous_args = 0
+ 555              		@ link register save eliminated.
+ 556 0000 034B     		ldr	r3, .L60
+ 557 0002 9860     		str	r0, [r3, #8]
+ 558 0004 1A69     		ldr	r2, [r3, #16]
+ 559 0006 0121     		movs	r1, #1
+ 560 0008 0A43     		orrs	r2, r1
+ 561 000a 1A61     		str	r2, [r3, #16]
+ 562              		@ sp needed
+ 563 000c 7047     		bx	lr
+ 564              	.L61:
+ 565 000e C046     		.align	2
+ 566              	.L60:
+ 567 0010 90ED00E0 		.word	-536810096
+ 569              		.section	.text.HAL_MPU_DisableRegion,"ax",%progbits
+ 570              		.align	1
+ 571              		.global	HAL_MPU_DisableRegion
+ 572              		.syntax unified
+ 573              		.code	16
+ 574              		.thumb_func
+ 576              	HAL_MPU_DisableRegion:
+ 577              		@ args = 0, pretend = 0, frame = 0
+ 578              		@ frame_needed = 0, uses_anonymous_args = 0
+ 579              		@ link register save eliminated.
+ 580 0000 034B     		ldr	r3, .L63
+ 581 0002 9860     		str	r0, [r3, #8]
+ 582 0004 1A69     		ldr	r2, [r3, #16]
+ 583 0006 0121     		movs	r1, #1
+ 584 0008 8A43     		bics	r2, r1
+ 585 000a 1A61     		str	r2, [r3, #16]
+ 586              		@ sp needed
+ 587 000c 7047     		bx	lr
+ 588              	.L64:
+ 589 000e C046     		.align	2
+ 590              	.L63:
+ 591 0010 90ED00E0 		.word	-536810096
+ 593              		.section	.text.HAL_MPU_ConfigRegion,"ax",%progbits
+ 594              		.align	1
+ 595              		.global	HAL_MPU_ConfigRegion
+ 596              		.syntax unified
+ 597              		.code	16
+ 598              		.thumb_func
+ 600              	HAL_MPU_ConfigRegion:
+ 601              		@ args = 0, pretend = 0, frame = 0
+ 602              		@ frame_needed = 0, uses_anonymous_args = 0
+ 603              		@ link register save eliminated.
+ 604 0000 4378     		ldrb	r3, [r0, #1]
+ 605 0002 114A     		ldr	r2, .L66
+ 606 0004 9360     		str	r3, [r2, #8]
+ 607 0006 1369     		ldr	r3, [r2, #16]
+ 608 0008 0121     		movs	r1, #1
+ 609 000a 8B43     		bics	r3, r1
+ 610 000c 1361     		str	r3, [r2, #16]
+ 611 000e 4368     		ldr	r3, [r0, #4]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 11
+
+
+ 612 0010 D360     		str	r3, [r2, #12]
+ 613 0012 037B     		ldrb	r3, [r0, #12]
+ 614 0014 1B07     		lsls	r3, r3, #28
+ 615 0016 C17A     		ldrb	r1, [r0, #11]
+ 616 0018 0906     		lsls	r1, r1, #24
+ 617 001a 0B43     		orrs	r3, r1
+ 618 001c 817A     		ldrb	r1, [r0, #10]
+ 619 001e C904     		lsls	r1, r1, #19
+ 620 0020 0B43     		orrs	r3, r1
+ 621 0022 417B     		ldrb	r1, [r0, #13]
+ 622 0024 8904     		lsls	r1, r1, #18
+ 623 0026 0B43     		orrs	r3, r1
+ 624 0028 817B     		ldrb	r1, [r0, #14]
+ 625 002a 4904     		lsls	r1, r1, #17
+ 626 002c 0B43     		orrs	r3, r1
+ 627 002e C17B     		ldrb	r1, [r0, #15]
+ 628 0030 0904     		lsls	r1, r1, #16
+ 629 0032 0B43     		orrs	r3, r1
+ 630 0034 417A     		ldrb	r1, [r0, #9]
+ 631 0036 0902     		lsls	r1, r1, #8
+ 632 0038 0B43     		orrs	r3, r1
+ 633 003a 017A     		ldrb	r1, [r0, #8]
+ 634 003c 4900     		lsls	r1, r1, #1
+ 635 003e 0B43     		orrs	r3, r1
+ 636 0040 0178     		ldrb	r1, [r0]
+ 637 0042 0B43     		orrs	r3, r1
+ 638 0044 1361     		str	r3, [r2, #16]
+ 639              		@ sp needed
+ 640 0046 7047     		bx	lr
+ 641              	.L67:
+ 642              		.align	2
+ 643              	.L66:
+ 644 0048 90ED00E0 		.word	-536810096
+ 646              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32c0xx_hal_cortex.c
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:16     .text.__NVIC_SetPriority:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:21     .text.__NVIC_SetPriority:00000000 __NVIC_SetPriority
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:74     .text.__NVIC_SetPriority:00000058 $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:78     .text.__NVIC_GetPriority:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:83     .text.__NVIC_GetPriority:00000000 __NVIC_GetPriority
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:126    .text.__NVIC_GetPriority:00000044 $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:130    .text.__NVIC_SystemReset:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:135    .text.__NVIC_SystemReset:00000000 __NVIC_SystemReset
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:166    .text.__NVIC_SystemReset:00000014 $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:170    .text.SysTick_Config:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:175    .text.SysTick_Config:00000000 SysTick_Config
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:208    .text.SysTick_Config:00000030 $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:212    .text.HAL_NVIC_SetPriority:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:218    .text.HAL_NVIC_SetPriority:00000000 HAL_NVIC_SetPriority
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:227    .text.HAL_NVIC_EnableIRQ:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:233    .text.HAL_NVIC_EnableIRQ:00000000 HAL_NVIC_EnableIRQ
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:251    .text.HAL_NVIC_EnableIRQ:00000014 $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:254    .text.HAL_NVIC_DisableIRQ:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:260    .text.HAL_NVIC_DisableIRQ:00000000 HAL_NVIC_DisableIRQ
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:288    .text.HAL_NVIC_DisableIRQ:0000001c $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:291    .text.HAL_NVIC_SystemReset:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:297    .text.HAL_NVIC_SystemReset:00000000 HAL_NVIC_SystemReset
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:305    .text.HAL_SYSTICK_Config:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:311    .text.HAL_SYSTICK_Config:00000000 HAL_SYSTICK_Config
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:320    .text.HAL_NVIC_GetPriority:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:326    .text.HAL_NVIC_GetPriority:00000000 HAL_NVIC_GetPriority
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:335    .text.HAL_NVIC_SetPendingIRQ:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:341    .text.HAL_NVIC_SetPendingIRQ:00000000 HAL_NVIC_SetPendingIRQ
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:361    .text.HAL_NVIC_SetPendingIRQ:00000018 $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:364    .text.HAL_NVIC_GetPendingIRQ:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:370    .text.HAL_NVIC_GetPendingIRQ:00000000 HAL_NVIC_GetPendingIRQ
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:394    .text.HAL_NVIC_GetPendingIRQ:0000001c $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:397    .text.HAL_NVIC_ClearPendingIRQ:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:403    .text.HAL_NVIC_ClearPendingIRQ:00000000 HAL_NVIC_ClearPendingIRQ
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:423    .text.HAL_NVIC_ClearPendingIRQ:00000018 $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:426    .text.HAL_SYSTICK_CLKSourceConfig:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:432    .text.HAL_SYSTICK_CLKSourceConfig:00000000 HAL_SYSTICK_CLKSourceConfig
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:456    .text.HAL_SYSTICK_CLKSourceConfig:0000001c $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:459    .text.HAL_SYSTICK_Callback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:465    .text.HAL_SYSTICK_Callback:00000000 HAL_SYSTICK_Callback
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:473    .text.HAL_SYSTICK_IRQHandler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:479    .text.HAL_SYSTICK_IRQHandler:00000000 HAL_SYSTICK_IRQHandler
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:488    .text.HAL_MPU_Enable:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:494    .text.HAL_MPU_Enable:00000000 HAL_MPU_Enable
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:516    .text.HAL_MPU_Enable:00000014 $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:519    .text.HAL_MPU_Disable:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:525    .text.HAL_MPU_Disable:00000000 HAL_MPU_Disable
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:543    .text.HAL_MPU_Disable:0000000c $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:546    .text.HAL_MPU_EnableRegion:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:552    .text.HAL_MPU_EnableRegion:00000000 HAL_MPU_EnableRegion
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:567    .text.HAL_MPU_EnableRegion:00000010 $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:570    .text.HAL_MPU_DisableRegion:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:576    .text.HAL_MPU_DisableRegion:00000000 HAL_MPU_DisableRegion
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:591    .text.HAL_MPU_DisableRegion:00000010 $d
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:594    .text.HAL_MPU_ConfigRegion:00000000 $t
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s 			page 13
+
+
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:600    .text.HAL_MPU_ConfigRegion:00000000 HAL_MPU_ConfigRegion
+C:\Users\micha\AppData\Local\Temp\ccnmQFBk.s:644    .text.HAL_MPU_ConfigRegion:00000048 $d
+
+NO UNDEFINED SYMBOLS
