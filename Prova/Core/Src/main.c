@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
@@ -33,8 +32,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define USER_BUTTON_Pin       GPIO_PIN_13
-#define USER_BUTTON_GPIO_Port GPIOC
+#define USER_BUTTON_Pin       GPIO_PIN_13  //USER BUTTON PIN NUMBER
+#define USER_BUTTON_GPIO_Port GPIOC        //PORT FOR USER BOTTON
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -44,23 +43,21 @@
 
 /* Private variables ---------------------------------------------------------*/
 
-ADC_HandleTypeDef hadc1;
-DMA_HandleTypeDef hdma_adc1;
-
-UART_HandleTypeDef huart2;
+ADC_HandleTypeDef hadc1;     // ADC handle
+DMA_HandleTypeDef hdma_adc1; // DMA handle for ADC (not used in main loop)
+UART_HandleTypeDef huart2;   // UART handle
 
 /* USER CODE BEGIN PV */
-// Buffer per media mobile e indice
-#define MA_SIZE 150
-#define POT_THRESHOLD 2000   //WARNING
-#define POT_THRESHOLDERROR 3000  //ERROR
-uint32_t adcBuffer[MA_SIZE] = {0};
-uint16_t bufferIndex = 0;
-uint8_t buttonPrevState = GPIO_PIN_SET; // assume non premuto all'avvio
+#define MA_SIZE 150           // BUFFER FOR MOVING AVERAGE AND INDEX
+#define POT_THRESHOLD 2000    // Threshold for WARNING
+#define POT_THRESHOLDERROR 3000  // Threshold for ERROR
+uint32_t adcBuffer[MA_SIZE] = {0};  // Circular buffer for MA
+uint16_t bufferIndex = 0;        // Index in circular buffer
+uint8_t buttonPrevState = GPIO_PIN_SET; // Previous button state, default not pressed
 
 // Seleziona il tipo di filtro: RAW, MOVING_AVERAGE, RANDOM_NOISE
 typedef enum { RAW, MOVING_AVERAGE, RANDOM_NOISE } FilterMode;
-FilterMode currentMode = RANDOM_NOISE;  // RAW per default
+FilterMode currentMode = RAW;  // RAW default
 
 
 // -------------------- STATE MACHINE --------------------
@@ -72,7 +69,7 @@ typedef enum {
     STATE_WARNING,
     STATE_ERROR
 } SystemState;
-SystemState currentState = STATE_INIT; // variabile globale per lo stato corrente
+SystemState currentState = STATE_INIT;// Current system state
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -88,25 +85,19 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-// Funzione per calcolo media mobile
+// FUNCTION TO COMPUTE MOVING AVERAGE
 uint32_t computeMovingAverage(uint32_t newSample) {
     static uint64_t sum = 0;
-
-    // Togli il vecchio valore
-    sum -= adcBuffer[bufferIndex];
-
-    // Metti il nuovo
-    adcBuffer[bufferIndex] = newSample;
+    sum -= adcBuffer[bufferIndex];     // SUBTRACT THE OLD VALUE FROM SUM
+    adcBuffer[bufferIndex] = newSample;      // ADD THE NEW VALUE INTO BUFFER AND SUM
     sum += newSample;
-
-    bufferIndex = (bufferIndex + 1) % MA_SIZE;
-
+    bufferIndex = (bufferIndex + 1) % MA_SIZE;      // ADVANCE BUFFER INDEX IN CIRCULAR MANNER
     return (uint32_t)(sum / MA_SIZE);
 }
 
-// Funzione per aggiungere rumore casuale
+// FUNCTION TO ADD RANDOM NOISE
 uint32_t addRandomNoise(uint32_t value) {
-    int32_t noise = (rand()%40)+250; // rumore
+    int32_t noise = (rand()%40)+250;  // Random noise between 250 and 289
     int32_t result = (int32_t)value + noise;
     if (result < 0) result = 0;
     if (result > 4095) result = 4095;
@@ -155,11 +146,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 while (1)
 {
-    // --- Lettura bottone con rilevamento fronte di discesa ---
-    static uint8_t buttonPrevState = GPIO_PIN_SET; // inizialmente non premuto
+    // --- READ BUTTON AND DETECT FALLING EDGE ---
+    static uint8_t buttonPrevState = GPIO_PIN_SET; // initially not pressed
     uint8_t buttonState = HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin);
 
-    if(buttonPrevState == GPIO_PIN_SET && buttonState == GPIO_PIN_RESET) // bottone premuto
+    if(buttonPrevState == GPIO_PIN_SET && buttonState == GPIO_PIN_RESET) // CHECK IF BUTTON WAS JUST PRESSED
     {
         if(currentState == STATE_WAIT_REQUEST)
             currentState = STATE_LISTENING;
@@ -170,83 +161,82 @@ while (1)
         else if(currentState == STATE_WARNING)
             currentState = STATE_WAIT_REQUEST;
         else if(currentState == STATE_ERROR)
-            NVIC_SystemReset(); // se in errore, reset MCU
+            NVIC_SystemReset(); // RESET MCU IN CASE OF ERROR
     }
-    buttonPrevState = buttonState;
+    buttonPrevState = buttonState; // UPDATE BUTTON STATE
 
-    // --- Gestione stati ---
+    // --- STATE MACHINE HANDLER ---
     switch(currentState)
     {
         case STATE_INIT:
-            currentState = STATE_WAIT_REQUEST;
+            currentState = STATE_WAIT_REQUEST;  // IMMEDIATELY TRANSITION TO WAIT_REQUEST
             break;
 
         case STATE_WAIT_REQUEST:
-            BSP_LED_Off(LED_GREEN); // LED spento
+            BSP_LED_Off(LED_GREEN); // LED OFF
             HAL_Delay(100);
             break;
 
         case STATE_LISTENING:
        {
-    BSP_LED_On(LED_GREEN); // LED acceso fisso
+    BSP_LED_On(LED_GREEN); // LED ON
 
-    // Lettura ADC potenziometro
+    //START ADC CONVERSION
     HAL_ADC_Start(&hadc1);
     HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
     uint32_t rawValue = HAL_ADC_GetValue(&hadc1);
     HAL_ADC_Stop(&hadc1);
 
-    // Calcoli tutti e tre i segnali
     uint32_t maValue = computeMovingAverage(rawValue);
     uint32_t noiseValue = addRandomNoise(rawValue);
-
+    // CONVERT TO MILLIVOLTS
     uint32_t raw_mv   = (rawValue   * 3300) / 4095;
     uint32_t ma_mv    = (maValue    * 3300) / 4095;
     uint32_t noise_mv = (noiseValue * 3300) / 4095;
 
     char msg[100];
 
-    // --- INVIA RAW ---
+    // SEND RAW VALUE OVER UART
     sprintf(msg, "Mode=RAW | ADC=%lu -> %lu mV\r\n", rawValue, raw_mv);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    // --- INVIA MA ---
+    // SEND MOVING AVERAGE VALUE OVER UART
     sprintf(msg, "Mode=MA | ADC=%lu -> %lu mV\r\n", maValue, ma_mv);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    // --- INVIA NOISE ---
+    // SEND NOISE VALUE OVER UART
     sprintf(msg, "Mode=NOISE | ADC=%lu -> %lu mV\r\n", noiseValue, noise_mv);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    // Controllo soglie sugli originali o MA:
+    // CHECK THRESHOLDS
     static uint32_t highStart = 0;
     if(rawValue > POT_THRESHOLDERROR)
     {
-        currentState = STATE_ERROR;
+        currentState = STATE_ERROR; // TRANSITION TO ERROR
     }
     else if(rawValue > POT_THRESHOLD)
     {
         if(highStart == 0) highStart = HAL_GetTick();
         else if(HAL_GetTick() - highStart >= 5000)
         {
-            currentState = STATE_WARNING;
+            currentState = STATE_WARNING;  // TRANSITION TO WARNING
             highStart = 0;
         }
     }
     else highStart = 0;
 
-    HAL_Delay(100); // aggiornamento più fluido
+    HAL_Delay(100);
 }
 break;
 
         case STATE_PAUSE:
-            BSP_LED_Toggle(LED_GREEN); // LED lampeggiante
+            BSP_LED_Toggle(LED_GREEN); // LED BLINKING
             HAL_Delay(500); // 50% duty
 
             break;
 
         case STATE_WARNING:
-            BSP_LED_Off(LED_GREEN);
+            BSP_LED_Off(LED_GREEN); //LED OFF
             HAL_UART_Transmit(&huart2, (uint8_t*)"WARNING\r\n", 9, HAL_MAX_DELAY);
             HAL_Delay(200);
             break;
@@ -261,12 +251,10 @@ break;
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-  // non necessario, ciclo infinito
   /* USER CODE END 3 */
 }
 
-/* ------------------------ Funzioni STM32 generate ------------------------- */
-
+/* ------------------------ STM32 GENERATED FUNCTIONS ------------------------ */
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -381,17 +369,17 @@ static void MX_GPIO_Init(void)
     __HAL_RCC_GPIOF_CLK_ENABLE();
      GPIO_InitTypeDef GPIO_InitStruct = {0};
 
-    // Abilita clock GPIO
+    // ACTIVE clock GPIO
     __HAL_RCC_GPIOC_CLK_ENABLE();
     __HAL_RCC_GPIOA_CLK_ENABLE();
 
-    // Configura USER BUTTON (PC13) come input
+    // Configure USER BUTTON (PC13) as input
     GPIO_InitStruct.Pin = USER_BUTTON_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(USER_BUTTON_GPIO_Port, &GPIO_InitStruct);
 
-    // Configura LED integrato (PA5) come output
+    // Configure LED (PA5) as output
     GPIO_InitStruct.Pin = GPIO_PIN_5;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
