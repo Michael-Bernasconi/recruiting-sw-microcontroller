@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
   29:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****       available in file of generic functions "stm32c0xx_hal_adc.c".
   30:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****   [..]
   31:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****   @endverbatim
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 2
 
 
   32:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****   ******************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
   86:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****     [..]  This section provides functions allowing to:
   87:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** 
   88:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****       (+) Perform the ADC self-calibration.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 3
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 3
 
 
   89:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****       (+) Get calibration factors.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  116:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****   /* Check the parameters */
  117:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****   assert_param(IS_ADC_ALL_INSTANCE(hadc->Instance));
   55              		.loc 1 117 3 view .LVU11
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 4
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 4
 
 
  118:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
   17:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
   18:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
   19:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* Define to prevent recursive inclusion -------------------------------------*/
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 5
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 5
 
 
   20:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #ifndef STM32C0xx_LL_ADC_H
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
   74:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* Mask containing trigger source masks for each of possible                  */
   75:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* trigger edge selection duplicated with shifts [0; 4; 8; 12]                */
   76:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* corresponding to {SW start; ext trigger; ext trigger; ext trigger}.        */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 6
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 6
 
 
   77:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define ADC_REG_TRIG_SOURCE_MASK           (((LL_ADC_REG_TRIG_SOFTWARE & ADC_CFGR1_EXTSEL) << (4U *
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  131:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define ADC_CHANNEL_10_NUMBER              (ADC_CFGR1_AWD1CH_3 | ADC_CFGR1_AWD1CH_1)
  132:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define ADC_CHANNEL_11_NUMBER              (ADC_CFGR1_AWD1CH_3 | ADC_CFGR1_AWD1CH_1 | ADC_CFGR1_AWD
  133:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define ADC_CHANNEL_12_NUMBER              (ADC_CFGR1_AWD1CH_3 | ADC_CFGR1_AWD1CH_2)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 7
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 7
 
 
  134:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define ADC_CHANNEL_13_NUMBER              (ADC_CFGR1_AWD1CH_3 | ADC_CFGR1_AWD1CH_2 | ADC_CFGR1_AWD
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  188:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* (feature of several watchdogs not available on all STM32 series)).         */
  189:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* - analog watchdog 1: monitored channel defined by number,                  */
  190:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /*   selection of ADC group (ADC group regular).                              */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 8
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 8
 
 
  191:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* - analog watchdog 2 and 3: monitored channel defined by bitfield, no       */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  245:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define ADC_CHSELR_CHSEL11_BITOFFSET_POS   (11UL) /* Equivalent to bitfield "ADC_CHSELR_CHSEL11" po
  246:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define ADC_CHSELR_CHSEL12_BITOFFSET_POS   (12UL) /* Equivalent to bitfield "ADC_CHSELR_CHSEL12" po
  247:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define ADC_CHSELR_CHSEL13_BITOFFSET_POS   (13UL) /* Equivalent to bitfield "ADC_CHSELR_CHSEL13" po
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 9
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 9
 
 
  248:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define ADC_CHSELR_CHSEL14_BITOFFSET_POS   (14UL) /* Equivalent to bitfield "ADC_CHSELR_CHSEL14" po
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  302:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /** @defgroup ADC_LL_Private_Macros ADC Private Macros
  303:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @{
  304:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 10
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 10
 
 
  305:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  359:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC enabled with conversion on going, ...)
  360:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         Each feature can be updated afterwards with a unitary function
  361:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         and potentially with ADC in a different state than disabled,
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 11
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 11
 
 
  362:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         refer to description of each function for setting
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  416:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   uint32_t TriggerSource;               /*!< Set ADC group regular conversion trigger source: inter
  417:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                              from external peripheral (timer event, external interr
  418:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                              This parameter can be a value of @ref ADC_LL_EC_REG_TR
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 12
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 12
 
 
  419:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                              @note On this STM32 series, setting trigger source to 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  473:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #endif /* USE_FULL_LL_DRIVER */
  474:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
  475:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* Exported constants --------------------------------------------------------*/
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 13
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 13
 
 
  476:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /** @defgroup ADC_LL_Exported_Constants ADC Exported Constants
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  530:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                            @ref LL_ADC_REG_ReadConversionData32() and other
  531:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                            functions @ref LL_ADC_REG_ReadConversionDatax() */
  532:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /**
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 14
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 14
 
 
  533:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @}
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  587:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /**
  588:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @}
  589:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 15
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 15
 
 
  590:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  644:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
  645:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /** @defgroup ADC_LL_EC_LP_MODE  ADC instance - Low power mode
  646:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @{
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 16
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 16
 
 
  647:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  701:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @}
  702:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
  703:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 17
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 17
 
 
  704:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /** @defgroup ADC_LL_EC_GROUPS  ADC instance - Groups
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  758:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                             | ADC_CHANNEL_21_BITFIELD) /*!< ADC channel ADCx_IN21 *
  759:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_CHANNEL_22                  (ADC_CHANNEL_22_NUMBER \
  760:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                             | ADC_CHANNEL_22_BITFIELD) /*!< ADC channel ADCx_IN22 *
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 18
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 18
 
 
  761:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_CHANNEL_VREFINT             (LL_ADC_CHANNEL_10 | ADC_CHANNEL_ID_INTERNAL_CH)  /*!< A
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  815:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @{
  816:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
  817:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_REG_CONV_SINGLE             (0x00000000UL)     /*!< ADC conversions performed in sin
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 19
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 19
 
 
  818:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                            one conversion per trigger */
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  872:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_REG_SEQ_SCAN_ENABLE_2RANKS  (ADC_CHSELR_SQ3)               /*!< ADC group regular se
  873:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                            with 2 ranks in the sequence */
  874:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_REG_SEQ_SCAN_ENABLE_3RANKS  (ADC_CHSELR_SQ4)               /*!< ADC group regular se
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 20
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 20
 
 
  875:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                            with 3 ranks in the sequence */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  929:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_REG_RANK_6                  (ADC_REG_RANK_6_SQRX_BITOFFSET_POS) /*!< ADC group regul
  930:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_REG_RANK_7                  (ADC_REG_RANK_7_SQRX_BITOFFSET_POS) /*!< ADC group regul
  931:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_REG_RANK_8                  (ADC_REG_RANK_8_SQRX_BITOFFSET_POS) /*!< ADC group regul
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 21
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 21
 
 
  932:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /**
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  986:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_AWD_CHANNEL_3_REG           ((LL_ADC_CHANNEL_3  & ADC_CHANNEL_ID_MASK) \
  987:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                             | ADC_CFGR1_AWD1EN | ADC_CFGR1_AWD1SGL)  /*!< ADC analo
  988:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                            of ADC channel ADCx_IN3, converted by group regular only
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 22
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 22
 
 
  989:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_AWD_CHANNEL_4_REG           ((LL_ADC_CHANNEL_4  & ADC_CHANNEL_ID_MASK) \
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1043:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_AWD_CHANNEL_22_REG          ((LL_ADC_CHANNEL_22 & ADC_CHANNEL_ID_MASK) \
 1044:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                             | ADC_CFGR1_AWD1EN | ADC_CFGR1_AWD1SGL) /*!< ADC analog
 1045:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                            of ADC channel ADCx_IN22, converted by group regular onl
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 23
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 23
 
 
 1046:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_AWD_CH_VREFINT_REG          ((LL_ADC_CHANNEL_VREFINT    & ADC_CHANNEL_ID_MASK) \
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1100:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
 1101:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /** @defgroup ADC_LL_EC_OVS_RATIO  Oversampling - Ratio
 1102:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @{
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 24
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 24
 
 
 1103:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1157:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_OVS_SHIFT_RIGHT_7           (ADC_CFGR2_OVSS_2 | ADC_CFGR2_OVSS_1 \
 1158:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                             | ADC_CFGR2_OVSS_0)                   /*!< ADC oversamp
 1159:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                            (sum of the ADC conversions data (after OVS ratio) is di
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 25
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 25
 
 
 1160:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                            to result as oversampling conversion data) */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1214:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* Delay set to maximum value (refer to device datasheet,                     */
 1215:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* parameter "tstart_vrefint").                                               */
 1216:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /* Unit: us                                                                   */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 26
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 26
 
 
 1217:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_DELAY_VREFINT_STAB_US           ( 12UL)        /*!< Delay for internal voltage refer
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1271:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  __REG__ Register to be read
 1272:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @retval Register value
 1273:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 27
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 27
 
 
 1274:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define LL_ADC_ReadReg(__INSTANCE__, __REG__) READ_REG(__INSTANCE__->__REG__)
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1328:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @retval Value between Min_Data=0 and Max_Data=18
 1329:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
 1330:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define __LL_ADC_CHANNEL_TO_DECIMAL_NB(__CHANNEL__)                                                
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 28
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 28
 
 
 1331:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   ((((__CHANNEL__) & ADC_CHANNEL_ID_BITFIELD_MASK) == 0UL) ?                                       
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1385:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_16          (1)
 1386:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_17          (3)
 1387:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_18          (3)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 29
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 29
 
 
 1388:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_19          (3)
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1442:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_15          (1)
 1443:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_16          (1)
 1444:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_17          (3)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 30
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 30
 
 
 1445:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_18          (3)
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1499:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_16          (1)
 1500:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_17          (3)
 1501:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_18          (3)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 31
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 31
 
 
 1502:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_19          (3)
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1556:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         because internal and external channels share the same channel
 1557:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         number in ADC registers. The differentiation is made only with
 1558:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         parameters definitions of driver.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 32
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 32
 
 
 1559:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  __ADC_INSTANCE__ ADC instance
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1613:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *             only if sequencer is set in mode "not fully configurable",
 1614:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *             refer to function @ref LL_ADC_REG_SetSequencerConfigurable().\n
 1615:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         (2) For ADC channel read back from ADC register,
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 33
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 33
 
 
 1616:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *             comparison with internal channel parameter to be done
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1670:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_RESOLUTION_10B
 1671:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_RESOLUTION_8B
 1672:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_RESOLUTION_6B
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 34
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 34
 
 
 1673:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  __AWD_THRESHOLD__ Value between Min_Data=0x000 and Max_Data=0xFFF
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1727:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define __LL_ADC_COMMON_INSTANCE(__ADCx__)                                     \
 1728:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   (ADC1_COMMON)
 1729:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 35
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 35
 
 
 1730:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /**
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1784:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** #define __LL_ADC_CONVERT_DATA_RESOLUTION(__DATA__,\
 1785:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                          __ADC_RESOLUTION_CURRENT__,\
 1786:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                          __ADC_RESOLUTION_TARGET__)          \
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 36
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 36
 
 
 1787:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** (((__DATA__)                                                                 \
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1841:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                          __ADC_RESOLUTION__)                 \
 1842:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** (((uint32_t)(*VREFINT_CAL_ADDR) * VREFINT_CAL_VREF)                          \
 1843:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****  / __LL_ADC_CONVERT_DATA_RESOLUTION((__VREFINT_ADC_DATA__),                  \
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 37
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 37
 
 
 1844:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                     (__ADC_RESOLUTION__),                    \
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1898:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                              __VREFANALOG_VOLTAGE__,\
 1899:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                              __TEMPSENSOR_ADC_DATA__,\
 1900:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****                                              __ADC_RESOLUTION__)            \
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 38
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 38
 
 
 1901:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** (((((int32_t)((((__TEMPSENSOR_ADC_DATA__) * (__VREFANALOG_VOLTAGE__))       \
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 1955:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_DMA_REG_REGULAR_DATA
 1956:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @retval ADC register address
 1957:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 39
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 39
 
 
 1958:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** __STATIC_INLINE uint32_t LL_ADC_DMA_GetRegAddr(const ADC_TypeDef *ADCx, uint32_t Register)
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2012:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /**
 2013:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @brief  Get parameter common to several ADC: Clock source and prescaler.
 2014:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll CCR      PRESC          LL_ADC_GetCommonClock
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 40
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 40
 
 
 2015:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCxy_COMMON ADC common instance
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2069:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CCR      VBATEN         LL_ADC_SetCommonPathInternalCh
 2070:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCxy_COMMON ADC common instance
 2071:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         (can be set directly from CMSIS definition or by using helper macro @ref __LL_ADC_COMMO
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 41
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 41
 
 
 2072:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  PathInternal This parameter can be a combination of the following values:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2126:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         Remove paths to the current configuration.
 2127:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   One or several values can be selected.
 2128:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         Example: (LL_ADC_PATH_INTERNAL_VREFINT |
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 42
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 42
 
 
 2129:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *                   LL_ADC_PATH_INTERNAL_TEMPSENSOR)
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2183:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC state:
 2184:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC must be disabled.
 2185:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll CFGR2    CKMODE         LL_ADC_SetClock
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 43
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 43
 
 
 2186:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCx ADC instance
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2240:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC must be enabled, without calibration on going, without conversion
 2241:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         on going on group regular.
 2242:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll CALFACT  CALFACT        LL_ADC_SetCalibrationFactor
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 44
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 44
 
 
 2243:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCx ADC instance
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2297:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_RESOLUTION_10B
 2298:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_RESOLUTION_8B
 2299:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_RESOLUTION_6B
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 45
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 45
 
 
 2300:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2354:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *           applications.
 2355:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *           How to use this low power mode:
 2356:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *           - It is not recommended to use with interruption or DMA
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 46
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 46
 
 
 2357:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *             since these modes have to clear immediately the EOC flag
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2411:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *           applications.
 2412:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *           How to use this low power mode:
 2413:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *           - It is not recommended to use with interruption or DMA
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 47
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 47
 
 
 2414:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *             since these modes have to clear immediately the EOC flag
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2468:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll CFGR2    LFTRIG         LL_ADC_SetTriggerFrequencyMode
 2469:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCx ADC instance
 2470:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  TriggerFrequencyMode This parameter can be one of the following values:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 48
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 48
 
 
 2471:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_TRIGGER_FREQ_HIGH
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2525:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_SAMPLINGTIME_COMMON_2
 2526:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  SamplingTime This parameter can be one of the following values:
 2527:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_SAMPLINGTIME_1CYCLE_5
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 49
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 49
 
 
 2528:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_SAMPLINGTIME_3CYCLES_5
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2582:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
 2583:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
 2584:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /**
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 50
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 50
 
 
 2585:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @brief  Set ADC group regular conversion trigger source:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2639:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_TRIG_EXT_TIM1_CH4
 2640:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_TRIG_EXT_TIM2_TRGO (1)
 2641:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_TRIG_EXT_TIM3_TRGO
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 51
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 51
 
 
 2642:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_TRIG_EXT_EXTI_LINE11
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2696:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
 2697:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /**
 2698:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @brief  Get ADC group regular conversion trigger polarity.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 52
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 52
 
 
 2699:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   Applicable only for trigger source set to external trigger.
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2753:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         available:
 2754:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         - sequencer configured to fully configurable:
 2755:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *           sequencer length and each rank
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 53
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 53
 
 
 2756:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *           affectation to a channel are configurable.
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2810:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @ref LL_ADC_REG_SetSequencerRanks(), ...)
 2811:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         it is mandatory to wait for the assertion of CCRDY flag
 2812:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         using @ref LL_ADC_IsActiveFlag_CCRDY().
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 54
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 54
 
 
 2813:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         Otherwise, some actions may be ignored.
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2867:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *             rank of each channel is fixed by channel HW number.
 2868:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *             (channel 0 fixed on rank 0, channel 1 fixed on rank1, ...).
 2869:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *           - Sequence direction: Unless specified in parameters, sequencer
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 55
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 55
 
 
 2870:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *             scan direction is forward (from lowest channel number to
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2924:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         refer to function @ref LL_ADC_REG_SetSequencerConfigurable().
 2925:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   On some other STM32 series, this setting is not available and
 2926:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         the default scan direction is forward.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 56
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 56
 
 
 2927:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   On this STM32 series, after modifying sequencer (functions
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 2981:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_SEQ_DISCONT_1RANK
 2982:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @retval None
 2983:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 57
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 57
 
 
 2984:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** __STATIC_INLINE void LL_ADC_REG_SetSequencerDiscont(ADC_TypeDef *ADCx, uint32_t SeqDiscont)
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3038:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CHSELR   SQ7            LL_ADC_REG_SetSequencerRanks\n
 3039:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CHSELR   SQ8            LL_ADC_REG_SetSequencerRanks
 3040:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCx ADC instance
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 58
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 58
 
 
 3041:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  Rank This parameter can be one of the following values:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3095:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****              ADC_CHSELR_SQ1 << (Rank & ADC_REG_RANK_ID_SQRX_MASK),
 3096:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****              ((Channel & ADC_CHANNEL_ID_NUMBER_MASK_SEQ) >> ADC_CHANNEL_ID_NUMBER_BITOFFSET_POS)
 3097:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****              << (Rank & ADC_REG_RANK_ID_SQRX_MASK));
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 59
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 59
 
 
 3098:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** }
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3152:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_13
 3153:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_14
 3154:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_15          (1)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 60
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 60
 
 
 3155:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_16          (1)
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3209:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         Refer to device datasheet for channels availability.
 3210:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   On this STM32 series, to measure internal channels (VrefInt,
 3211:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         TempSensor, ...), measurement paths to internal channels must be
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 61
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 61
 
 
 3212:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         enabled separately.
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3266:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_VDDA        (2)
 3267:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_VSSA        (2)
 3268:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 62
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 62
 
 
 3269:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         (1) On STM32C0, parameter can be set in ADC group sequencer
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3323:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CHSELR   CHSEL2         LL_ADC_REG_SetSequencerChAdd\n
 3324:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CHSELR   CHSEL3         LL_ADC_REG_SetSequencerChAdd\n
 3325:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CHSELR   CHSEL4         LL_ADC_REG_SetSequencerChAdd\n
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 63
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 63
 
 
 3326:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CHSELR   CHSEL5         LL_ADC_REG_SetSequencerChAdd\n
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3380:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** {
 3381:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* Parameter "Channel" is used with masks because containing                */
 3382:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* other bits reserved for other purpose.                                   */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 64
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 64
 
 
 3383:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   SET_BIT(ADCx->CHSELR, (Channel & ADC_CHANNEL_ID_BITFIELD_MASK));
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3437:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CHSELR   CHSEL15        LL_ADC_REG_SetSequencerChRem\n
 3438:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CHSELR   CHSEL16        LL_ADC_REG_SetSequencerChRem\n
 3439:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CHSELR   CHSEL17        LL_ADC_REG_SetSequencerChRem\n
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 65
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 65
 
 
 3440:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CHSELR   CHSEL18        LL_ADC_REG_SetSequencerChRem
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3494:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   On this STM32 series, ADC group regular sequencer both modes
 3495:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         "fully configurable" or "not fully configurable"
 3496:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         are available, they can be chosen using
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 66
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 66
 
 
 3497:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         function @ref LL_ADC_REG_SetSequencerConfigurable().
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3551:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_17          (3)
 3552:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_18          (3)
 3553:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_19          (3)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 67
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 67
 
 
 3554:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_20          (3)
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3608:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   On this STM32 series, setting of this feature is conditioned to
 3609:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC state:
 3610:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC must be disabled.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 68
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 68
 
 
 3611:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll CFGR1    CONT           LL_ADC_REG_SetContinuousMode
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3665:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCx ADC instance
 3666:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  DMATransfer This parameter can be one of the following values:
 3667:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_DMA_TRANSFER_NONE
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 69
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 69
 
 
 3668:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_DMA_TRANSFER_LIMITED
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3722:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll CFGR1    OVRMOD         LL_ADC_REG_SetOverrun
 3723:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCx ADC instance
 3724:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  Overrun This parameter can be one of the following values:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 70
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 70
 
 
 3725:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_REG_OVR_DATA_PRESERVED
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3779:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll SMPR     SMPSEL0        LL_ADC_SetChannelSamplingTime\n
 3780:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         SMPR     SMPSEL1        LL_ADC_SetChannelSamplingTime\n
 3781:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         SMPR     SMPSEL2        LL_ADC_SetChannelSamplingTime\n
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 71
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 71
 
 
 3782:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         SMPR     SMPSEL3        LL_ADC_SetChannelSamplingTime\n
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3836:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_SAMPLINGTIME_COMMON_1
 3837:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_SAMPLINGTIME_COMMON_2
 3838:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @retval None
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 72
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 72
 
 
 3839:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3893:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_14
 3894:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_15          (1)
 3895:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_16          (1)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 73
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 73
 
 
 3896:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref ADC_CHANNEL_17          (3)
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 3950:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         use helper macro @ref __LL_ADC_ANALOGWD_CHANNEL_GROUP().
 3951:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   On this STM32 series, there is only 1 kind of analog watchdog
 3952:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         instance:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 74
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 74
 
 
 3953:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         - AWD standard (instance AWD1):
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4007:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* in register and register position depending on parameter "AWDy".         */
 4008:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* Parameters "AWDChannelGroup" and "AWDy" are used with masks because      */
 4009:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* containing other bits reserved for other purpose.                        */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 75
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 75
 
 
 4010:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   register __IO uint32_t *preg;
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4064:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC must be disabled or enabled without conversion on going
 4065:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         on group regular.
 4066:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll CFGR1    AWD1CH         LL_ADC_GetAnalogWDMonitChannels\n
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 76
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 76
 
 
 4067:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         CFGR1    AWD1SGL        LL_ADC_GetAnalogWDMonitChannels\n
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4121:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** 
 4122:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* If "AnalogWDMonitChannels" == 0, then the selected AWD is disabled       */
 4123:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* (parameter value LL_ADC_AWD_DISABLE).                                    */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 77
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 77
 
 
 4124:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* Else, the selected AWD is enabled and is monitoring a group of channels  */
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4178:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   On this STM32 series, there is only 2 kind of analog watchdog
 4179:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         instance:
 4180:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         - AWD standard (instance AWD1):
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 78
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 78
 
 
 4181:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *           - channels monitored: can monitor 1 channel or all channels.
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4235:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* position in register and register position depending on parameter        */
 4236:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* "AWDy".                                                                  */
 4237:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* Parameters "AWDy" and "AWDThresholdxxxValue" are used with masks because */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 79
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 79
 
 
 4238:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   /* containing other bits reserved for other purpose.                        */
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4292:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   On this STM32 series, setting of this feature is not conditioned to
 4293:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC state:
 4294:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC can be disabled, enabled with or without conversion on going
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 80
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 80
 
 
 4295:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         on ADC group regular.
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4349:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCx ADC instance
 4350:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  AWDy This parameter can be one of the following values:
 4351:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD1
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 81
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 81
 
 
 4352:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_AWD2
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4406:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @brief  Get ADC oversampling scope.
 4407:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll CFGR2    OVSE           LL_ADC_GetOverSamplingScope
 4408:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCx ADC instance
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 82
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 82
 
 
 4409:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @retval Returned value can be one of the following values:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4463:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         - ratio
 4464:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         - shift
 4465:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   On this STM32 series, setting of this feature is conditioned to
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 83
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 83
 
 
 4466:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC state:
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4520:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @retval Shift This parameter can be one of the following values:
 4521:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_OVS_SHIFT_NONE
 4522:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_OVS_SHIFT_RIGHT_1
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 84
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 84
 
 
 4523:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         @arg @ref LL_ADC_OVS_SHIFT_RIGHT_2
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4577:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @brief  Disable ADC internal voltage regulator.
 4578:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   On this STM32 series, setting of this feature is conditioned to
 4579:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC state:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 85
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 85
 
 
 4580:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC must be ADC disabled.
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4634:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCx ADC instance
 4635:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @retval None
 4636:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 86
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 86
 
 
 4637:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** __STATIC_INLINE void LL_ADC_Disable(ADC_TypeDef *ADCx)
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  147:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****     /* Note: Perform an averaging of 8 calibrations for optimized accuracy */
  148:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****     for (calibration_index = 0UL; calibration_index < 8UL; calibration_index++)
  149:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****     {
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 87
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 87
 
 
  150:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****       /* Start ADC calibration */
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  204:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****     tickstart = HAL_GetTick();
  205:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** 
  206:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****     while (LL_ADC_IsEnabled(hadc->Instance) != 0UL)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 88
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 88
 
 
  207:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****     {
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  245:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** }
  113              		.loc 1 245 1 is_stmt 0 view .LVU31
  114 003a 2800     		movs	r0, r5
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 89
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 89
 
 
  115 003c 03B0     		add	sp, sp, #12
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  157              		.loc 2 2265 3 view .LVU44
 2265:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** }
  158              		.loc 2 2265 21 is_stmt 0 view .LVU45
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 90
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 90
 
 
  159 0060 B422     		movs	r2, #180
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4677:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         Refer to literal @ref LL_ADC_DELAY_CALIB_ENABLE_ADC_CYCLES.
 4678:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @note   In case of usage of ADC with DMA transfer:
 4679:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         On this STM32 series, ADC DMA transfer request should be disabled
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 91
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 91
 
 
 4680:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         during calibration:
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4710:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** /**
 4711:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @brief  Get ADC calibration state.
 4712:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll CR       ADCAL          LL_ADC_IsCalibrationOnGoing
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 92
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 92
 
 
 4713:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @param  ADCx ADC instance
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  246              		.loc 1 166 11 view .LVU74
  166:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****         }
  247              		.loc 1 166 18 is_stmt 0 view .LVU75
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 93
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 93
 
 
  248 00aa 0125     		movs	r5, #1
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  289              	.LBB43:
 2229:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** }
  290              		.loc 2 2229 3 view .LVU89
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 94
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 94
 
 
 2229:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h **** }
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  331 00e4 033B     		subs	r3, r3, #3
  188:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****         /* Divide variable by 2 to compensate partially CPU processing cycles */
  332              		.loc 1 188 33 view .LVU104
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 95
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 95
 
 
  333 00e6 0121     		movs	r1, #1
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  374              	.LBE47:
  375              	.LBE46:
  200:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 96
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 96
 
 
  376              		.loc 1 200 5 is_stmt 1 view .LVU118
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  417              		.loc 2 4658 68 view .LVU131
  418              	.LBE51:
  419              	.LBE50:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 97
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 97
 
 
  225:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** 
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  461              	.LBE52:
  214:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** 
  462              		.loc 1 214 11 is_stmt 1 view .LVU145
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 98
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 98
 
 
  463 014e A36D     		ldr	r3, [r4, #88]
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  506              		@ args = 0, pretend = 0, frame = 0
  507              		@ frame_needed = 0, uses_anonymous_args = 0
  508              		@ link register save eliminated.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 99
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 99
 
 
  254:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****   /* Check the parameters */
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  548              		.loc 1 270 3 is_stmt 1 view .LVU161
  549              	.LVL52:
  271:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****   uint32_t tmp_adc_is_conversion_on_going_regular;
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 100
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 100
 
 
  550              		.loc 1 271 3 view .LVU162
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
 4740:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         ADC must be enabled without conversion on going on group regular,
 4741:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         without conversion stop command on going on group regular,
 4742:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   *         without ADC disable command on going.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 101
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 101
 
 
 4743:Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_adc.h ****   * @rmtoll CR       ADSTART        LL_ADC_REG_StartConversion
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  583              		.loc 2 4785 74 discriminator 1 view .LVU176
  584 0020 0125     		movs	r5, #1
  585              	.L25:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 102
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 102
 
 
  586              	.LVL55:
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  627 003e 0020     		movs	r0, #0
  628              		.loc 1 289 29 view .LVU194
  629 0040 08E0     		b	.L27
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 103
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 103
 
 
  630              	.LVL58:
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  665 005c 0220     		movs	r0, #2
  666              	.LVL64:
  278:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 104
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 104
 
 
  667              		.loc 1 278 3 discriminator 1 view .LVU206
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  329:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** __weak void HAL_ADCEx_LevelOutOfWindow3Callback(ADC_HandleTypeDef *hadc)
  330:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** {
  704              		.loc 1 330 1 is_stmt 1 view -0
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 105
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 105
 
 
  705              		.cfi_startproc
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  739              		.align	1
  740              		.weak	HAL_ADCEx_ChannelConfigReadyCallback
  741              		.syntax unified
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 106
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 106
 
 
  742              		.code	16
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  383:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** HAL_StatusTypeDef HAL_ADCEx_DisableVoltageRegulator(ADC_HandleTypeDef *hadc)
  384:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c **** {
  770              		.loc 1 384 1 is_stmt 1 view -0
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 107
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 107
 
 
  771              		.cfi_startproc
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  808              	.LBE60:
  394:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c ****     tmp_hal_status = HAL_OK;
  809              		.loc 1 394 5 is_stmt 1 view .LVU233
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 108
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 108
 
 
  810              		.loc 1 394 20 is_stmt 0 view .LVU234
@@ -6462,29 +6462,29 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 1
  839              		.file 8 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_dma.h"
  840              		.file 9 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_adc.h"
  841              		.file 10 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h"
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccoH97AE.s 			page 109
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccDHSuca.s 			page 109
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32c0xx_hal_adc_ex.c
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:19     .text.HAL_ADCEx_Calibration_Start:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:25     .text.HAL_ADCEx_Calibration_Start:00000000 HAL_ADCEx_Calibration_Start
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:486    .text.HAL_ADCEx_Calibration_Start:00000168 $d
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:495    .text.HAL_ADCEx_Calibration_GetValue:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:501    .text.HAL_ADCEx_Calibration_GetValue:00000000 HAL_ADCEx_Calibration_GetValue
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:528    .text.HAL_ADCEx_Calibration_SetValue:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:534    .text.HAL_ADCEx_Calibration_SetValue:00000000 HAL_ADCEx_Calibration_SetValue
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:673    .text.HAL_ADCEx_LevelOutOfWindow2Callback:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:679    .text.HAL_ADCEx_LevelOutOfWindow2Callback:00000000 HAL_ADCEx_LevelOutOfWindow2Callback
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:695    .text.HAL_ADCEx_LevelOutOfWindow3Callback:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:701    .text.HAL_ADCEx_LevelOutOfWindow3Callback:00000000 HAL_ADCEx_LevelOutOfWindow3Callback
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:717    .text.HAL_ADCEx_EndOfSamplingCallback:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:723    .text.HAL_ADCEx_EndOfSamplingCallback:00000000 HAL_ADCEx_EndOfSamplingCallback
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:739    .text.HAL_ADCEx_ChannelConfigReadyCallback:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:745    .text.HAL_ADCEx_ChannelConfigReadyCallback:00000000 HAL_ADCEx_ChannelConfigReadyCallback
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:761    .text.HAL_ADCEx_DisableVoltageRegulator:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:767    .text.HAL_ADCEx_DisableVoltageRegulator:00000000 HAL_ADCEx_DisableVoltageRegulator
-C:\Users\micha\AppData\Local\Temp\ccoH97AE.s:828    .text.HAL_ADCEx_DisableVoltageRegulator:00000018 $d
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:19     .text.HAL_ADCEx_Calibration_Start:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:25     .text.HAL_ADCEx_Calibration_Start:00000000 HAL_ADCEx_Calibration_Start
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:486    .text.HAL_ADCEx_Calibration_Start:00000168 $d
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:495    .text.HAL_ADCEx_Calibration_GetValue:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:501    .text.HAL_ADCEx_Calibration_GetValue:00000000 HAL_ADCEx_Calibration_GetValue
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:528    .text.HAL_ADCEx_Calibration_SetValue:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:534    .text.HAL_ADCEx_Calibration_SetValue:00000000 HAL_ADCEx_Calibration_SetValue
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:673    .text.HAL_ADCEx_LevelOutOfWindow2Callback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:679    .text.HAL_ADCEx_LevelOutOfWindow2Callback:00000000 HAL_ADCEx_LevelOutOfWindow2Callback
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:695    .text.HAL_ADCEx_LevelOutOfWindow3Callback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:701    .text.HAL_ADCEx_LevelOutOfWindow3Callback:00000000 HAL_ADCEx_LevelOutOfWindow3Callback
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:717    .text.HAL_ADCEx_EndOfSamplingCallback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:723    .text.HAL_ADCEx_EndOfSamplingCallback:00000000 HAL_ADCEx_EndOfSamplingCallback
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:739    .text.HAL_ADCEx_ChannelConfigReadyCallback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:745    .text.HAL_ADCEx_ChannelConfigReadyCallback:00000000 HAL_ADCEx_ChannelConfigReadyCallback
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:761    .text.HAL_ADCEx_DisableVoltageRegulator:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:767    .text.HAL_ADCEx_DisableVoltageRegulator:00000000 HAL_ADCEx_DisableVoltageRegulator
+C:\Users\micha\AppData\Local\Temp\ccDHSuca.s:828    .text.HAL_ADCEx_DisableVoltageRegulator:00000018 $d
 
 UNDEFINED SYMBOLS
 ADC_Disable
