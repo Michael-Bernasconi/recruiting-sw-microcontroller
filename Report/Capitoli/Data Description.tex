@@ -1,0 +1,49 @@
+\chapter{Data Description}
+
+The dataset used in this project contains detailed information about Uber pickups in \textit{New York City} and is publicly available on \href{https://www.kaggle.com/datasets/fivethirtyeight/uber-pickups-in-new-york-city}{Kaggle}. 
+It includes records collected throughout 2014, providing a comprehensive overview of the spatial and temporal distribution of Uber rides across the city.
+
+\section{Dataset Overview}
+
+The analysis focuses specifically on the following five monthly files:
+
+\begin{itemize}
+    \item \texttt{uber-raw-data-may14.csv}
+    \item \texttt{uber-raw-data-jun14.csv}
+    \item \texttt{uber-raw-data-jul14.csv}
+    \item \texttt{uber-raw-data-aug14.csv}
+    \item \texttt{uber-raw-data-sep14.csv}
+\end{itemize}
+
+These files were selected because they cover the months with the highest ride activity (from \textit{May to September 2014}), allowing for a consistent and representative analysis of pickup patterns during the warmer and busier period of the year.
+
+\section{Data Structure}
+
+Each file contains the same structure, with the following columns:
+
+\begin{itemize}
+    \item \textbf{Date/Time} — timestamp of the pickup (e.g., \texttt{6/1/2014 0:00:00})
+    \item \textbf{Lat} — latitude of the pickup location (e.g., \texttt{40.7293})
+    \item \textbf{Lon} — longitude of the pickup location (e.g., \texttt{-73.992})
+    \item \textbf{Base} — unique identifier of the operational base (e.g., \texttt{B02512})
+\end{itemize}
+
+An example of a single record is shown in Table~\ref{tab:record-example}.
+
+\begin{table}[h!]
+\centering
+\caption{Example of a single record in the dataset}
+\label{tab:record-example}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Date/Time} & \textbf{Lat} & \textbf{Lon} & \textbf{Base} \\
+\hline
+6/1/2014 0:00:00 & 40.7293 & -73.992 & B02512 \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Dataset Characteristics}
+
+Overall, each monthly dataset contains \textit{hundreds of thousands of pickup events}, making it suitable for large-scale \textit{spatial-temporal analysis}, clustering, and predictive modeling.  
+The simplicity and consistency of the data format allow for efficient processing and integration of the different monthly files into a unified dataset for subsequent analysis.
