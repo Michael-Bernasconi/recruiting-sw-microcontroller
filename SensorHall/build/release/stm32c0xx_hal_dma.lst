@@ -1,0 +1,1203 @@
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32c0xx_hal_dma.c"
+  14              		.text
+  15              		.section	.text.DMA_SetConfig,"ax",%progbits
+  16              		.align	1
+  17              		.syntax unified
+  18              		.code	16
+  19              		.thumb_func
+  21              	DMA_SetConfig:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  25 0002 846C     		ldr	r4, [r0, #72]
+  26 0004 C56C     		ldr	r5, [r0, #76]
+  27 0006 6560     		str	r5, [r4, #4]
+  28 0008 046D     		ldr	r4, [r0, #80]
+  29 000a 002C     		cmp	r4, #0
+  30 000c 02D0     		beq	.L2
+  31 000e 446D     		ldr	r4, [r0, #84]
+  32 0010 856D     		ldr	r5, [r0, #88]
+  33 0012 6560     		str	r5, [r4, #4]
+  34              	.L2:
+  35 0014 0B4F     		ldr	r7, .L6
+  36 0016 7C68     		ldr	r4, [r7, #4]
+  37 0018 056C     		ldr	r5, [r0, #64]
+  38 001a 1C26     		movs	r6, #28
+  39 001c 2E40     		ands	r6, r5
+  40 001e 0125     		movs	r5, #1
+  41 0020 B540     		lsls	r5, r5, r6
+  42 0022 2C43     		orrs	r4, r5
+  43 0024 7C60     		str	r4, [r7, #4]
+  44 0026 0468     		ldr	r4, [r0]
+  45 0028 6360     		str	r3, [r4, #4]
+  46 002a 8368     		ldr	r3, [r0, #8]
+  47 002c 102B     		cmp	r3, #16
+  48 002e 04D0     		beq	.L5
+  49 0030 0368     		ldr	r3, [r0]
+  50 0032 9960     		str	r1, [r3, #8]
+  51 0034 0368     		ldr	r3, [r0]
+  52 0036 DA60     		str	r2, [r3, #12]
+  53              	.L1:
+  54              		@ sp needed
+  55 0038 F0BD     		pop	{r4, r5, r6, r7, pc}
+  56              	.L5:
+  57 003a 0368     		ldr	r3, [r0]
+  58 003c 9A60     		str	r2, [r3, #8]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 2
+
+
+  59 003e 0368     		ldr	r3, [r0]
+  60 0040 D960     		str	r1, [r3, #12]
+  61 0042 F9E7     		b	.L1
+  62              	.L7:
+  63              		.align	2
+  64              	.L6:
+  65 0044 00000240 		.word	1073872896
+  67              		.section	.text.DMA_CalcDMAMUXChannelBaseAndMask,"ax",%progbits
+  68              		.align	1
+  69              		.syntax unified
+  70              		.code	16
+  71              		.thumb_func
+  73              	DMA_CalcDMAMUXChannelBaseAndMask:
+  74              		@ args = 0, pretend = 0, frame = 0
+  75              		@ frame_needed = 0, uses_anonymous_args = 0
+  76 0000 10B5     		push	{r4, lr}
+  77 0002 0400     		movs	r4, r0
+  78 0004 0368     		ldr	r3, [r0]
+  79 0006 FF20     		movs	r0, #255
+  80 0008 1840     		ands	r0, r3
+  81 000a 0838     		subs	r0, r0, #8
+  82 000c 1421     		movs	r1, #20
+  83 000e FFF7FEFF 		bl	__aeabi_uidiv
+  84 0012 236C     		ldr	r3, [r4, #64]
+  85 0014 9B08     		lsrs	r3, r3, #2
+  86 0016 064A     		ldr	r2, .L9
+  87 0018 9446     		mov	ip, r2
+  88 001a 6344     		add	r3, r3, ip
+  89 001c 9B00     		lsls	r3, r3, #2
+  90 001e 6364     		str	r3, [r4, #68]
+  91 0020 044B     		ldr	r3, .L9+4
+  92 0022 A364     		str	r3, [r4, #72]
+  93 0024 1C23     		movs	r3, #28
+  94 0026 1840     		ands	r0, r3
+  95 0028 1B3B     		subs	r3, r3, #27
+  96 002a 8340     		lsls	r3, r3, r0
+  97 002c E364     		str	r3, [r4, #76]
+  98              		@ sp needed
+  99 002e 10BD     		pop	{r4, pc}
+ 100              	.L10:
+ 101              		.align	2
+ 102              	.L9:
+ 103 0030 00820010 		.word	268468736
+ 104 0034 80080240 		.word	1073875072
+ 106              		.section	.text.DMA_CalcDMAMUXRequestGenBaseAndMask,"ax",%progbits
+ 107              		.align	1
+ 108              		.syntax unified
+ 109              		.code	16
+ 110              		.thumb_func
+ 112              	DMA_CalcDMAMUXRequestGenBaseAndMask:
+ 113              		@ args = 0, pretend = 0, frame = 0
+ 114              		@ frame_needed = 0, uses_anonymous_args = 0
+ 115              		@ link register save eliminated.
+ 116 0000 4268     		ldr	r2, [r0, #4]
+ 117 0002 FF23     		movs	r3, #255
+ 118 0004 1340     		ands	r3, r2
+ 119 0006 064A     		ldr	r2, .L12
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 3
+
+
+ 120 0008 9A18     		adds	r2, r3, r2
+ 121 000a 9200     		lsls	r2, r2, #2
+ 122 000c 0265     		str	r2, [r0, #80]
+ 123 000e 054A     		ldr	r2, .L12+4
+ 124 0010 4265     		str	r2, [r0, #84]
+ 125 0012 013B     		subs	r3, r3, #1
+ 126 0014 0322     		movs	r2, #3
+ 127 0016 1A40     		ands	r2, r3
+ 128 0018 0123     		movs	r3, #1
+ 129 001a 9340     		lsls	r3, r3, r2
+ 130 001c 8365     		str	r3, [r0, #88]
+ 131              		@ sp needed
+ 132 001e 7047     		bx	lr
+ 133              	.L13:
+ 134              		.align	2
+ 135              	.L12:
+ 136 0020 3F820010 		.word	268468799
+ 137 0024 40090240 		.word	1073875264
+ 139              		.section	.text.HAL_DMA_Init,"ax",%progbits
+ 140              		.align	1
+ 141              		.global	HAL_DMA_Init
+ 142              		.syntax unified
+ 143              		.code	16
+ 144              		.thumb_func
+ 146              	HAL_DMA_Init:
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149 0000 70B5     		push	{r4, r5, r6, lr}
+ 150 0002 041E     		subs	r4, r0, #0
+ 151 0004 4DD0     		beq	.L19
+ 152 0006 0568     		ldr	r5, [r0]
+ 153 0008 274B     		ldr	r3, .L22
+ 154 000a E818     		adds	r0, r5, r3
+ 155 000c 1421     		movs	r1, #20
+ 156 000e FFF7FEFF 		bl	__aeabi_uidiv
+ 157 0012 8000     		lsls	r0, r0, #2
+ 158 0014 2064     		str	r0, [r4, #64]
+ 159 0016 2523     		movs	r3, #37
+ 160 0018 0222     		movs	r2, #2
+ 161 001a E254     		strb	r2, [r4, r3]
+ 162 001c 2B68     		ldr	r3, [r5]
+ 163 001e 234A     		ldr	r2, .L22+4
+ 164 0020 1340     		ands	r3, r2
+ 165 0022 2B60     		str	r3, [r5]
+ 166 0024 2168     		ldr	r1, [r4]
+ 167 0026 0A68     		ldr	r2, [r1]
+ 168 0028 A368     		ldr	r3, [r4, #8]
+ 169 002a E068     		ldr	r0, [r4, #12]
+ 170 002c 0343     		orrs	r3, r0
+ 171 002e 2069     		ldr	r0, [r4, #16]
+ 172 0030 0343     		orrs	r3, r0
+ 173 0032 6069     		ldr	r0, [r4, #20]
+ 174 0034 0343     		orrs	r3, r0
+ 175 0036 A069     		ldr	r0, [r4, #24]
+ 176 0038 0343     		orrs	r3, r0
+ 177 003a E069     		ldr	r0, [r4, #28]
+ 178 003c 0343     		orrs	r3, r0
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 4
+
+
+ 179 003e 206A     		ldr	r0, [r4, #32]
+ 180 0040 0343     		orrs	r3, r0
+ 181 0042 1343     		orrs	r3, r2
+ 182 0044 0B60     		str	r3, [r1]
+ 183 0046 2000     		movs	r0, r4
+ 184 0048 FFF7FEFF 		bl	DMA_CalcDMAMUXChannelBaseAndMask
+ 185 004c A268     		ldr	r2, [r4, #8]
+ 186 004e 8023     		movs	r3, #128
+ 187 0050 DB01     		lsls	r3, r3, #7
+ 188 0052 9A42     		cmp	r2, r3
+ 189 0054 18D0     		beq	.L20
+ 190              	.L16:
+ 191 0056 6168     		ldr	r1, [r4, #4]
+ 192 0058 626C     		ldr	r2, [r4, #68]
+ 193 005a FF23     		movs	r3, #255
+ 194 005c 0B40     		ands	r3, r1
+ 195 005e 1360     		str	r3, [r2]
+ 196 0060 A36C     		ldr	r3, [r4, #72]
+ 197 0062 E26C     		ldr	r2, [r4, #76]
+ 198 0064 5A60     		str	r2, [r3, #4]
+ 199 0066 6368     		ldr	r3, [r4, #4]
+ 200 0068 013B     		subs	r3, r3, #1
+ 201 006a 032B     		cmp	r3, #3
+ 202 006c 0FD9     		bls	.L21
+ 203 006e 0023     		movs	r3, #0
+ 204 0070 2365     		str	r3, [r4, #80]
+ 205 0072 6365     		str	r3, [r4, #84]
+ 206 0074 A365     		str	r3, [r4, #88]
+ 207              	.L18:
+ 208 0076 0023     		movs	r3, #0
+ 209 0078 E363     		str	r3, [r4, #60]
+ 210 007a 2522     		movs	r2, #37
+ 211 007c 0121     		movs	r1, #1
+ 212 007e A154     		strb	r1, [r4, r2]
+ 213 0080 013A     		subs	r2, r2, #1
+ 214 0082 A354     		strb	r3, [r4, r2]
+ 215 0084 0020     		movs	r0, #0
+ 216              	.L15:
+ 217              		@ sp needed
+ 218 0086 70BD     		pop	{r4, r5, r6, pc}
+ 219              	.L20:
+ 220 0088 0023     		movs	r3, #0
+ 221 008a 6360     		str	r3, [r4, #4]
+ 222 008c E3E7     		b	.L16
+ 223              	.L21:
+ 224 008e 2000     		movs	r0, r4
+ 225 0090 FFF7FEFF 		bl	DMA_CalcDMAMUXRequestGenBaseAndMask
+ 226 0094 236D     		ldr	r3, [r4, #80]
+ 227 0096 0022     		movs	r2, #0
+ 228 0098 1A60     		str	r2, [r3]
+ 229 009a 636D     		ldr	r3, [r4, #84]
+ 230 009c A26D     		ldr	r2, [r4, #88]
+ 231 009e 5A60     		str	r2, [r3, #4]
+ 232 00a0 E9E7     		b	.L18
+ 233              	.L19:
+ 234 00a2 0120     		movs	r0, #1
+ 235 00a4 EFE7     		b	.L15
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 5
+
+
+ 236              	.L23:
+ 237 00a6 C046     		.align	2
+ 238              	.L22:
+ 239 00a8 F8FFFDBF 		.word	-1073872904
+ 240 00ac 0F80FFFF 		.word	-32753
+ 242              		.section	.text.HAL_DMA_DeInit,"ax",%progbits
+ 243              		.align	1
+ 244              		.global	HAL_DMA_DeInit
+ 245              		.syntax unified
+ 246              		.code	16
+ 247              		.thumb_func
+ 249              	HAL_DMA_DeInit:
+ 250              		@ args = 0, pretend = 0, frame = 0
+ 251              		@ frame_needed = 0, uses_anonymous_args = 0
+ 252 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 253 0002 041E     		subs	r4, r0, #0
+ 254 0004 3BD0     		beq	.L27
+ 255 0006 0268     		ldr	r2, [r0]
+ 256 0008 1368     		ldr	r3, [r2]
+ 257 000a 0125     		movs	r5, #1
+ 258 000c AB43     		bics	r3, r5
+ 259 000e 1360     		str	r3, [r2]
+ 260 0010 0768     		ldr	r7, [r0]
+ 261 0012 1C4B     		ldr	r3, .L29
+ 262 0014 F818     		adds	r0, r7, r3
+ 263 0016 1421     		movs	r1, #20
+ 264 0018 FFF7FEFF 		bl	__aeabi_uidiv
+ 265 001c 8000     		lsls	r0, r0, #2
+ 266 001e 2064     		str	r0, [r4, #64]
+ 267 0020 0026     		movs	r6, #0
+ 268 0022 3E60     		str	r6, [r7]
+ 269 0024 1849     		ldr	r1, .L29+4
+ 270 0026 4B68     		ldr	r3, [r1, #4]
+ 271 0028 206C     		ldr	r0, [r4, #64]
+ 272 002a 1C22     		movs	r2, #28
+ 273 002c 0240     		ands	r2, r0
+ 274 002e 9540     		lsls	r5, r5, r2
+ 275 0030 2B43     		orrs	r3, r5
+ 276 0032 4B60     		str	r3, [r1, #4]
+ 277 0034 2000     		movs	r0, r4
+ 278 0036 FFF7FEFF 		bl	DMA_CalcDMAMUXChannelBaseAndMask
+ 279 003a 636C     		ldr	r3, [r4, #68]
+ 280 003c 1E60     		str	r6, [r3]
+ 281 003e A36C     		ldr	r3, [r4, #72]
+ 282 0040 E26C     		ldr	r2, [r4, #76]
+ 283 0042 5A60     		str	r2, [r3, #4]
+ 284 0044 6368     		ldr	r3, [r4, #4]
+ 285 0046 013B     		subs	r3, r3, #1
+ 286 0048 032B     		cmp	r3, #3
+ 287 004a 0ED9     		bls	.L28
+ 288              	.L26:
+ 289 004c 0023     		movs	r3, #0
+ 290 004e E362     		str	r3, [r4, #44]
+ 291 0050 2363     		str	r3, [r4, #48]
+ 292 0052 6363     		str	r3, [r4, #52]
+ 293 0054 A363     		str	r3, [r4, #56]
+ 294 0056 2365     		str	r3, [r4, #80]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 6
+
+
+ 295 0058 6365     		str	r3, [r4, #84]
+ 296 005a A365     		str	r3, [r4, #88]
+ 297 005c E363     		str	r3, [r4, #60]
+ 298 005e 2522     		movs	r2, #37
+ 299 0060 A354     		strb	r3, [r4, r2]
+ 300 0062 013A     		subs	r2, r2, #1
+ 301 0064 A354     		strb	r3, [r4, r2]
+ 302 0066 0020     		movs	r0, #0
+ 303              	.L25:
+ 304              		@ sp needed
+ 305 0068 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 306              	.L28:
+ 307 006a 2000     		movs	r0, r4
+ 308 006c FFF7FEFF 		bl	DMA_CalcDMAMUXRequestGenBaseAndMask
+ 309 0070 236D     		ldr	r3, [r4, #80]
+ 310 0072 0022     		movs	r2, #0
+ 311 0074 1A60     		str	r2, [r3]
+ 312 0076 636D     		ldr	r3, [r4, #84]
+ 313 0078 A26D     		ldr	r2, [r4, #88]
+ 314 007a 5A60     		str	r2, [r3, #4]
+ 315 007c E6E7     		b	.L26
+ 316              	.L27:
+ 317 007e 0120     		movs	r0, #1
+ 318 0080 F2E7     		b	.L25
+ 319              	.L30:
+ 320 0082 C046     		.align	2
+ 321              	.L29:
+ 322 0084 F8FFFDBF 		.word	-1073872904
+ 323 0088 00000240 		.word	1073872896
+ 325              		.section	.text.HAL_DMA_Start,"ax",%progbits
+ 326              		.align	1
+ 327              		.global	HAL_DMA_Start
+ 328              		.syntax unified
+ 329              		.code	16
+ 330              		.thumb_func
+ 332              	HAL_DMA_Start:
+ 333              		@ args = 0, pretend = 0, frame = 0
+ 334              		@ frame_needed = 0, uses_anonymous_args = 0
+ 335 0000 70B5     		push	{r4, r5, r6, lr}
+ 336 0002 0400     		movs	r4, r0
+ 337 0004 2420     		movs	r0, #36
+ 338 0006 205C     		ldrb	r0, [r4, r0]
+ 339 0008 0128     		cmp	r0, #1
+ 340 000a 21D0     		beq	.L35
+ 341 000c 2420     		movs	r0, #36
+ 342 000e 0125     		movs	r5, #1
+ 343 0010 2554     		strb	r5, [r4, r0]
+ 344 0012 0130     		adds	r0, r0, #1
+ 345 0014 205C     		ldrb	r0, [r4, r0]
+ 346 0016 0128     		cmp	r0, #1
+ 347 0018 07D0     		beq	.L36
+ 348 001a 2423     		movs	r3, #36
+ 349 001c 0022     		movs	r2, #0
+ 350 001e E254     		strb	r2, [r4, r3]
+ 351 0020 0220     		movs	r0, #2
+ 352              	.L34:
+ 353 0022 2423     		movs	r3, #36
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 7
+
+
+ 354 0024 0022     		movs	r2, #0
+ 355 0026 E254     		strb	r2, [r4, r3]
+ 356              	.L32:
+ 357              		@ sp needed
+ 358 0028 70BD     		pop	{r4, r5, r6, pc}
+ 359              	.L36:
+ 360 002a 2430     		adds	r0, r0, #36
+ 361 002c 0135     		adds	r5, r5, #1
+ 362 002e 2554     		strb	r5, [r4, r0]
+ 363 0030 0020     		movs	r0, #0
+ 364 0032 E063     		str	r0, [r4, #60]
+ 365 0034 2668     		ldr	r6, [r4]
+ 366 0036 3068     		ldr	r0, [r6]
+ 367 0038 013D     		subs	r5, r5, #1
+ 368 003a A843     		bics	r0, r5
+ 369 003c 3060     		str	r0, [r6]
+ 370 003e 2000     		movs	r0, r4
+ 371 0040 FFF7FEFF 		bl	DMA_SetConfig
+ 372 0044 2268     		ldr	r2, [r4]
+ 373 0046 1368     		ldr	r3, [r2]
+ 374 0048 2B43     		orrs	r3, r5
+ 375 004a 1360     		str	r3, [r2]
+ 376 004c 0020     		movs	r0, #0
+ 377 004e E8E7     		b	.L34
+ 378              	.L35:
+ 379 0050 0220     		movs	r0, #2
+ 380 0052 E9E7     		b	.L32
+ 382              		.section	.text.HAL_DMA_Start_IT,"ax",%progbits
+ 383              		.align	1
+ 384              		.global	HAL_DMA_Start_IT
+ 385              		.syntax unified
+ 386              		.code	16
+ 387              		.thumb_func
+ 389              	HAL_DMA_Start_IT:
+ 390              		@ args = 0, pretend = 0, frame = 0
+ 391              		@ frame_needed = 0, uses_anonymous_args = 0
+ 392 0000 70B5     		push	{r4, r5, r6, lr}
+ 393 0002 0400     		movs	r4, r0
+ 394 0004 2420     		movs	r0, #36
+ 395 0006 205C     		ldrb	r0, [r4, r0]
+ 396 0008 0128     		cmp	r0, #1
+ 397 000a 46D0     		beq	.L45
+ 398 000c 2420     		movs	r0, #36
+ 399 000e 0125     		movs	r5, #1
+ 400 0010 2554     		strb	r5, [r4, r0]
+ 401 0012 0130     		adds	r0, r0, #1
+ 402 0014 205C     		ldrb	r0, [r4, r0]
+ 403 0016 0128     		cmp	r0, #1
+ 404 0018 07D0     		beq	.L47
+ 405 001a 2423     		movs	r3, #36
+ 406 001c 0022     		movs	r2, #0
+ 407 001e E254     		strb	r2, [r4, r3]
+ 408 0020 0220     		movs	r0, #2
+ 409              	.L44:
+ 410 0022 2423     		movs	r3, #36
+ 411 0024 0022     		movs	r2, #0
+ 412 0026 E254     		strb	r2, [r4, r3]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 8
+
+
+ 413              	.L38:
+ 414              		@ sp needed
+ 415 0028 70BD     		pop	{r4, r5, r6, pc}
+ 416              	.L47:
+ 417 002a 2430     		adds	r0, r0, #36
+ 418 002c 0135     		adds	r5, r5, #1
+ 419 002e 2554     		strb	r5, [r4, r0]
+ 420 0030 0020     		movs	r0, #0
+ 421 0032 E063     		str	r0, [r4, #60]
+ 422 0034 2568     		ldr	r5, [r4]
+ 423 0036 2868     		ldr	r0, [r5]
+ 424 0038 0126     		movs	r6, #1
+ 425 003a B043     		bics	r0, r6
+ 426 003c 2860     		str	r0, [r5]
+ 427 003e 2000     		movs	r0, r4
+ 428 0040 FFF7FEFF 		bl	DMA_SetConfig
+ 429 0044 236B     		ldr	r3, [r4, #48]
+ 430 0046 002B     		cmp	r3, #0
+ 431 0048 1CD0     		beq	.L40
+ 432 004a 2268     		ldr	r2, [r4]
+ 433 004c 1368     		ldr	r3, [r2]
+ 434 004e 0E21     		movs	r1, #14
+ 435 0050 0B43     		orrs	r3, r1
+ 436 0052 1360     		str	r3, [r2]
+ 437              	.L41:
+ 438 0054 626C     		ldr	r2, [r4, #68]
+ 439 0056 1368     		ldr	r3, [r2]
+ 440 0058 DB03     		lsls	r3, r3, #15
+ 441 005a 04D5     		bpl	.L42
+ 442 005c 1168     		ldr	r1, [r2]
+ 443 005e 8023     		movs	r3, #128
+ 444 0060 5B00     		lsls	r3, r3, #1
+ 445 0062 0B43     		orrs	r3, r1
+ 446 0064 1360     		str	r3, [r2]
+ 447              	.L42:
+ 448 0066 236D     		ldr	r3, [r4, #80]
+ 449 0068 002B     		cmp	r3, #0
+ 450 006a 04D0     		beq	.L43
+ 451 006c 1968     		ldr	r1, [r3]
+ 452 006e 8022     		movs	r2, #128
+ 453 0070 5200     		lsls	r2, r2, #1
+ 454 0072 0A43     		orrs	r2, r1
+ 455 0074 1A60     		str	r2, [r3]
+ 456              	.L43:
+ 457 0076 2268     		ldr	r2, [r4]
+ 458 0078 1368     		ldr	r3, [r2]
+ 459 007a 0121     		movs	r1, #1
+ 460 007c 0B43     		orrs	r3, r1
+ 461 007e 1360     		str	r3, [r2]
+ 462 0080 0020     		movs	r0, #0
+ 463 0082 CEE7     		b	.L44
+ 464              	.L40:
+ 465 0084 2268     		ldr	r2, [r4]
+ 466 0086 1368     		ldr	r3, [r2]
+ 467 0088 0421     		movs	r1, #4
+ 468 008a 8B43     		bics	r3, r1
+ 469 008c 1360     		str	r3, [r2]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 9
+
+
+ 470 008e 2268     		ldr	r2, [r4]
+ 471 0090 1368     		ldr	r3, [r2]
+ 472 0092 0631     		adds	r1, r1, #6
+ 473 0094 0B43     		orrs	r3, r1
+ 474 0096 1360     		str	r3, [r2]
+ 475 0098 DCE7     		b	.L41
+ 476              	.L45:
+ 477 009a 0220     		movs	r0, #2
+ 478 009c C4E7     		b	.L38
+ 480              		.section	.text.HAL_DMA_Abort,"ax",%progbits
+ 481              		.align	1
+ 482              		.global	HAL_DMA_Abort
+ 483              		.syntax unified
+ 484              		.code	16
+ 485              		.thumb_func
+ 487              	HAL_DMA_Abort:
+ 488              		@ args = 0, pretend = 0, frame = 0
+ 489              		@ frame_needed = 0, uses_anonymous_args = 0
+ 490 0000 30B5     		push	{r4, r5, lr}
+ 491 0002 0028     		cmp	r0, #0
+ 492 0004 36D0     		beq	.L52
+ 493 0006 2523     		movs	r3, #37
+ 494 0008 C35C     		ldrb	r3, [r0, r3]
+ 495 000a 022B     		cmp	r3, #2
+ 496 000c 06D0     		beq	.L50
+ 497 000e 0423     		movs	r3, #4
+ 498 0010 C363     		str	r3, [r0, #60]
+ 499 0012 2033     		adds	r3, r3, #32
+ 500 0014 0022     		movs	r2, #0
+ 501 0016 C254     		strb	r2, [r0, r3]
+ 502 0018 0120     		movs	r0, #1
+ 503              	.L49:
+ 504              		@ sp needed
+ 505 001a 30BD     		pop	{r4, r5, pc}
+ 506              	.L50:
+ 507 001c 0268     		ldr	r2, [r0]
+ 508 001e 1368     		ldr	r3, [r2]
+ 509 0020 0E21     		movs	r1, #14
+ 510 0022 8B43     		bics	r3, r1
+ 511 0024 1360     		str	r3, [r2]
+ 512 0026 426C     		ldr	r2, [r0, #68]
+ 513 0028 1368     		ldr	r3, [r2]
+ 514 002a 1349     		ldr	r1, .L53
+ 515 002c 0B40     		ands	r3, r1
+ 516 002e 1360     		str	r3, [r2]
+ 517 0030 0168     		ldr	r1, [r0]
+ 518 0032 0A68     		ldr	r2, [r1]
+ 519 0034 0123     		movs	r3, #1
+ 520 0036 9A43     		bics	r2, r3
+ 521 0038 0A60     		str	r2, [r1]
+ 522 003a 104C     		ldr	r4, .L53+4
+ 523 003c 6268     		ldr	r2, [r4, #4]
+ 524 003e 056C     		ldr	r5, [r0, #64]
+ 525 0040 1C21     		movs	r1, #28
+ 526 0042 2940     		ands	r1, r5
+ 527 0044 8B40     		lsls	r3, r3, r1
+ 528 0046 1343     		orrs	r3, r2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 10
+
+
+ 529 0048 6360     		str	r3, [r4, #4]
+ 530 004a 836C     		ldr	r3, [r0, #72]
+ 531 004c C26C     		ldr	r2, [r0, #76]
+ 532 004e 5A60     		str	r2, [r3, #4]
+ 533 0050 036D     		ldr	r3, [r0, #80]
+ 534 0052 002B     		cmp	r3, #0
+ 535 0054 06D0     		beq	.L51
+ 536 0056 1A68     		ldr	r2, [r3]
+ 537 0058 0749     		ldr	r1, .L53
+ 538 005a 0A40     		ands	r2, r1
+ 539 005c 1A60     		str	r2, [r3]
+ 540 005e 436D     		ldr	r3, [r0, #84]
+ 541 0060 826D     		ldr	r2, [r0, #88]
+ 542 0062 5A60     		str	r2, [r3, #4]
+ 543              	.L51:
+ 544 0064 2523     		movs	r3, #37
+ 545 0066 0122     		movs	r2, #1
+ 546 0068 C254     		strb	r2, [r0, r3]
+ 547 006a 013B     		subs	r3, r3, #1
+ 548 006c 0022     		movs	r2, #0
+ 549 006e C254     		strb	r2, [r0, r3]
+ 550 0070 0020     		movs	r0, #0
+ 551 0072 D2E7     		b	.L49
+ 552              	.L52:
+ 553 0074 0120     		movs	r0, #1
+ 554 0076 D0E7     		b	.L49
+ 555              	.L54:
+ 556              		.align	2
+ 557              	.L53:
+ 558 0078 FFFEFFFF 		.word	-257
+ 559 007c 00000240 		.word	1073872896
+ 561              		.section	.text.HAL_DMA_Abort_IT,"ax",%progbits
+ 562              		.align	1
+ 563              		.global	HAL_DMA_Abort_IT
+ 564              		.syntax unified
+ 565              		.code	16
+ 566              		.thumb_func
+ 568              	HAL_DMA_Abort_IT:
+ 569              		@ args = 0, pretend = 0, frame = 0
+ 570              		@ frame_needed = 0, uses_anonymous_args = 0
+ 571 0000 70B5     		push	{r4, r5, r6, lr}
+ 572 0002 2423     		movs	r3, #36
+ 573 0004 0022     		movs	r2, #0
+ 574 0006 C254     		strb	r2, [r0, r3]
+ 575 0008 0132     		adds	r2, r2, #1
+ 576 000a C254     		strb	r2, [r0, r3]
+ 577 000c 0133     		adds	r3, r3, #1
+ 578 000e C35C     		ldrb	r3, [r0, r3]
+ 579 0010 022B     		cmp	r3, #2
+ 580 0012 03D0     		beq	.L56
+ 581 0014 0423     		movs	r3, #4
+ 582 0016 C363     		str	r3, [r0, #60]
+ 583 0018 0120     		movs	r0, #1
+ 584              	.L57:
+ 585              		@ sp needed
+ 586 001a 70BD     		pop	{r4, r5, r6, pc}
+ 587              	.L56:
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 11
+
+
+ 588 001c 0268     		ldr	r2, [r0]
+ 589 001e 1368     		ldr	r3, [r2]
+ 590 0020 0E21     		movs	r1, #14
+ 591 0022 8B43     		bics	r3, r1
+ 592 0024 1360     		str	r3, [r2]
+ 593 0026 0168     		ldr	r1, [r0]
+ 594 0028 0A68     		ldr	r2, [r1]
+ 595 002a 0123     		movs	r3, #1
+ 596 002c 9A43     		bics	r2, r3
+ 597 002e 0A60     		str	r2, [r1]
+ 598 0030 416C     		ldr	r1, [r0, #68]
+ 599 0032 0A68     		ldr	r2, [r1]
+ 600 0034 124C     		ldr	r4, .L60
+ 601 0036 2240     		ands	r2, r4
+ 602 0038 0A60     		str	r2, [r1]
+ 603 003a 124C     		ldr	r4, .L60+4
+ 604 003c 6268     		ldr	r2, [r4, #4]
+ 605 003e 056C     		ldr	r5, [r0, #64]
+ 606 0040 1C21     		movs	r1, #28
+ 607 0042 2940     		ands	r1, r5
+ 608 0044 8B40     		lsls	r3, r3, r1
+ 609 0046 1343     		orrs	r3, r2
+ 610 0048 6360     		str	r3, [r4, #4]
+ 611 004a 836C     		ldr	r3, [r0, #72]
+ 612 004c C26C     		ldr	r2, [r0, #76]
+ 613 004e 5A60     		str	r2, [r3, #4]
+ 614 0050 036D     		ldr	r3, [r0, #80]
+ 615 0052 002B     		cmp	r3, #0
+ 616 0054 06D0     		beq	.L58
+ 617 0056 1A68     		ldr	r2, [r3]
+ 618 0058 0949     		ldr	r1, .L60
+ 619 005a 0A40     		ands	r2, r1
+ 620 005c 1A60     		str	r2, [r3]
+ 621 005e 436D     		ldr	r3, [r0, #84]
+ 622 0060 826D     		ldr	r2, [r0, #88]
+ 623 0062 5A60     		str	r2, [r3, #4]
+ 624              	.L58:
+ 625 0064 2523     		movs	r3, #37
+ 626 0066 0122     		movs	r2, #1
+ 627 0068 C254     		strb	r2, [r0, r3]
+ 628 006a 013B     		subs	r3, r3, #1
+ 629 006c 0022     		movs	r2, #0
+ 630 006e C254     		strb	r2, [r0, r3]
+ 631 0070 836B     		ldr	r3, [r0, #56]
+ 632 0072 002B     		cmp	r3, #0
+ 633 0074 02D0     		beq	.L59
+ 634 0076 9847     		blx	r3
+ 635 0078 0020     		movs	r0, #0
+ 636 007a CEE7     		b	.L57
+ 637              	.L59:
+ 638 007c 0020     		movs	r0, #0
+ 639 007e CCE7     		b	.L57
+ 640              	.L61:
+ 641              		.align	2
+ 642              	.L60:
+ 643 0080 FFFEFFFF 		.word	-257
+ 644 0084 00000240 		.word	1073872896
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 12
+
+
+ 646              		.section	.text.HAL_DMA_PollForTransfer,"ax",%progbits
+ 647              		.align	1
+ 648              		.global	HAL_DMA_PollForTransfer
+ 649              		.syntax unified
+ 650              		.code	16
+ 651              		.thumb_func
+ 653              	HAL_DMA_PollForTransfer:
+ 654              		@ args = 0, pretend = 0, frame = 8
+ 655              		@ frame_needed = 0, uses_anonymous_args = 0
+ 656 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 657 0002 83B0     		sub	sp, sp, #12
+ 658 0004 0600     		movs	r6, r0
+ 659 0006 0C00     		movs	r4, r1
+ 660 0008 1700     		movs	r7, r2
+ 661 000a 2423     		movs	r3, #36
+ 662 000c 0022     		movs	r2, #0
+ 663 000e C254     		strb	r2, [r0, r3]
+ 664 0010 0133     		adds	r3, r3, #1
+ 665 0012 C35C     		ldrb	r3, [r0, r3]
+ 666 0014 022B     		cmp	r3, #2
+ 667 0016 04D0     		beq	.L63
+ 668 0018 0423     		movs	r3, #4
+ 669 001a C363     		str	r3, [r0, #60]
+ 670 001c 0120     		movs	r0, #1
+ 671              	.L64:
+ 672 001e 03B0     		add	sp, sp, #12
+ 673              		@ sp needed
+ 674 0020 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 675              	.L63:
+ 676 0022 0368     		ldr	r3, [r0]
+ 677 0024 1B68     		ldr	r3, [r3]
+ 678 0026 9B06     		lsls	r3, r3, #26
+ 679 0028 2AD4     		bmi	.L78
+ 680 002a 0029     		cmp	r1, #0
+ 681 002c 2DD1     		bne	.L66
+ 682 002e 026C     		ldr	r2, [r0, #64]
+ 683 0030 1C23     		movs	r3, #28
+ 684 0032 1340     		ands	r3, r2
+ 685 0034 0225     		movs	r5, #2
+ 686 0036 9D40     		lsls	r5, r5, r3
+ 687              	.L67:
+ 688 0038 FFF7FEFF 		bl	HAL_GetTick
+ 689 003c 0190     		str	r0, [sp, #4]
+ 690              	.L70:
+ 691 003e 3C4B     		ldr	r3, .L81
+ 692 0040 1B68     		ldr	r3, [r3]
+ 693 0042 1D42     		tst	r5, r3
+ 694 0044 37D1     		bne	.L79
+ 695 0046 3A4B     		ldr	r3, .L81
+ 696 0048 1A68     		ldr	r2, [r3]
+ 697 004a 316C     		ldr	r1, [r6, #64]
+ 698 004c 1C23     		movs	r3, #28
+ 699 004e 0B40     		ands	r3, r1
+ 700 0050 0821     		movs	r1, #8
+ 701 0052 9940     		lsls	r1, r1, r3
+ 702 0054 1142     		tst	r1, r2
+ 703 0056 1ED1     		bne	.L80
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 13
+
+
+ 704 0058 7B1C     		adds	r3, r7, #1
+ 705 005a F0D0     		beq	.L70
+ 706 005c FFF7FEFF 		bl	HAL_GetTick
+ 707 0060 019B     		ldr	r3, [sp, #4]
+ 708 0062 C01A     		subs	r0, r0, r3
+ 709 0064 B842     		cmp	r0, r7
+ 710 0066 01D8     		bhi	.L71
+ 711 0068 002F     		cmp	r7, #0
+ 712 006a E8D1     		bne	.L70
+ 713              	.L71:
+ 714 006c 2023     		movs	r3, #32
+ 715 006e F363     		str	r3, [r6, #60]
+ 716 0070 0533     		adds	r3, r3, #5
+ 717 0072 0122     		movs	r2, #1
+ 718 0074 F254     		strb	r2, [r6, r3]
+ 719 0076 013B     		subs	r3, r3, #1
+ 720 0078 0022     		movs	r2, #0
+ 721 007a F254     		strb	r2, [r6, r3]
+ 722 007c 0120     		movs	r0, #1
+ 723 007e CEE7     		b	.L64
+ 724              	.L78:
+ 725 0080 8023     		movs	r3, #128
+ 726 0082 5B00     		lsls	r3, r3, #1
+ 727 0084 C363     		str	r3, [r0, #60]
+ 728 0086 0120     		movs	r0, #1
+ 729 0088 C9E7     		b	.L64
+ 730              	.L66:
+ 731 008a 026C     		ldr	r2, [r0, #64]
+ 732 008c 1C23     		movs	r3, #28
+ 733 008e 1340     		ands	r3, r2
+ 734 0090 0425     		movs	r5, #4
+ 735 0092 9D40     		lsls	r5, r5, r3
+ 736 0094 D0E7     		b	.L67
+ 737              	.L80:
+ 738 0096 2648     		ldr	r0, .L81
+ 739 0098 4168     		ldr	r1, [r0, #4]
+ 740 009a 0122     		movs	r2, #1
+ 741 009c 1400     		movs	r4, r2
+ 742 009e 9C40     		lsls	r4, r4, r3
+ 743 00a0 2300     		movs	r3, r4
+ 744 00a2 0B43     		orrs	r3, r1
+ 745 00a4 4360     		str	r3, [r0, #4]
+ 746 00a6 F263     		str	r2, [r6, #60]
+ 747 00a8 2523     		movs	r3, #37
+ 748 00aa F254     		strb	r2, [r6, r3]
+ 749 00ac 013B     		subs	r3, r3, #1
+ 750 00ae 0022     		movs	r2, #0
+ 751 00b0 F254     		strb	r2, [r6, r3]
+ 752 00b2 0120     		movs	r0, #1
+ 753 00b4 B3E7     		b	.L64
+ 754              	.L79:
+ 755 00b6 336D     		ldr	r3, [r6, #80]
+ 756 00b8 002B     		cmp	r3, #0
+ 757 00ba 11D0     		beq	.L73
+ 758 00bc 726D     		ldr	r2, [r6, #84]
+ 759 00be 1268     		ldr	r2, [r2]
+ 760 00c0 B16D     		ldr	r1, [r6, #88]
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 14
+
+
+ 761 00c2 1142     		tst	r1, r2
+ 762 00c4 0CD0     		beq	.L73
+ 763 00c6 1968     		ldr	r1, [r3]
+ 764 00c8 8022     		movs	r2, #128
+ 765 00ca 5200     		lsls	r2, r2, #1
+ 766 00cc 0A43     		orrs	r2, r1
+ 767 00ce 1A60     		str	r2, [r3]
+ 768 00d0 736D     		ldr	r3, [r6, #84]
+ 769 00d2 B26D     		ldr	r2, [r6, #88]
+ 770 00d4 5A60     		str	r2, [r3, #4]
+ 771 00d6 F26B     		ldr	r2, [r6, #60]
+ 772 00d8 8023     		movs	r3, #128
+ 773 00da DB00     		lsls	r3, r3, #3
+ 774 00dc 1343     		orrs	r3, r2
+ 775 00de F363     		str	r3, [r6, #60]
+ 776              	.L73:
+ 777 00e0 B36C     		ldr	r3, [r6, #72]
+ 778 00e2 1968     		ldr	r1, [r3]
+ 779 00e4 F26C     		ldr	r2, [r6, #76]
+ 780 00e6 0A42     		tst	r2, r1
+ 781 00e8 05D0     		beq	.L74
+ 782 00ea 5A60     		str	r2, [r3, #4]
+ 783 00ec F26B     		ldr	r2, [r6, #60]
+ 784 00ee 8023     		movs	r3, #128
+ 785 00f0 9B00     		lsls	r3, r3, #2
+ 786 00f2 1343     		orrs	r3, r2
+ 787 00f4 F363     		str	r3, [r6, #60]
+ 788              	.L74:
+ 789 00f6 002C     		cmp	r4, #0
+ 790 00f8 10D1     		bne	.L75
+ 791 00fa 0D48     		ldr	r0, .L81
+ 792 00fc 4368     		ldr	r3, [r0, #4]
+ 793 00fe 326C     		ldr	r2, [r6, #64]
+ 794 0100 1C21     		movs	r1, #28
+ 795 0102 1140     		ands	r1, r2
+ 796 0104 0222     		movs	r2, #2
+ 797 0106 8A40     		lsls	r2, r2, r1
+ 798 0108 1343     		orrs	r3, r2
+ 799 010a 4360     		str	r3, [r0, #4]
+ 800 010c 2523     		movs	r3, #37
+ 801 010e 0122     		movs	r2, #1
+ 802 0110 F254     		strb	r2, [r6, r3]
+ 803              	.L76:
+ 804 0112 2423     		movs	r3, #36
+ 805 0114 0022     		movs	r2, #0
+ 806 0116 F254     		strb	r2, [r6, r3]
+ 807 0118 0020     		movs	r0, #0
+ 808 011a 80E7     		b	.L64
+ 809              	.L75:
+ 810 011c 0448     		ldr	r0, .L81
+ 811 011e 4368     		ldr	r3, [r0, #4]
+ 812 0120 326C     		ldr	r2, [r6, #64]
+ 813 0122 1C21     		movs	r1, #28
+ 814 0124 1140     		ands	r1, r2
+ 815 0126 0422     		movs	r2, #4
+ 816 0128 8A40     		lsls	r2, r2, r1
+ 817 012a 1343     		orrs	r3, r2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 15
+
+
+ 818 012c 4360     		str	r3, [r0, #4]
+ 819 012e F0E7     		b	.L76
+ 820              	.L82:
+ 821              		.align	2
+ 822              	.L81:
+ 823 0130 00000240 		.word	1073872896
+ 825              		.section	.text.HAL_DMA_IRQHandler,"ax",%progbits
+ 826              		.align	1
+ 827              		.global	HAL_DMA_IRQHandler
+ 828              		.syntax unified
+ 829              		.code	16
+ 830              		.thumb_func
+ 832              	HAL_DMA_IRQHandler:
+ 833              		@ args = 0, pretend = 0, frame = 0
+ 834              		@ frame_needed = 0, uses_anonymous_args = 0
+ 835 0000 70B5     		push	{r4, r5, r6, lr}
+ 836 0002 314B     		ldr	r3, .L94
+ 837 0004 1968     		ldr	r1, [r3]
+ 838 0006 0468     		ldr	r4, [r0]
+ 839 0008 2568     		ldr	r5, [r4]
+ 840 000a 026C     		ldr	r2, [r0, #64]
+ 841 000c 1C23     		movs	r3, #28
+ 842 000e 1340     		ands	r3, r2
+ 843 0010 0422     		movs	r2, #4
+ 844 0012 9A40     		lsls	r2, r2, r3
+ 845 0014 1142     		tst	r1, r2
+ 846 0016 16D0     		beq	.L84
+ 847 0018 6A07     		lsls	r2, r5, #29
+ 848 001a 14D5     		bpl	.L84
+ 849 001c 2368     		ldr	r3, [r4]
+ 850 001e 9B06     		lsls	r3, r3, #26
+ 851 0020 03D4     		bmi	.L85
+ 852 0022 2368     		ldr	r3, [r4]
+ 853 0024 0422     		movs	r2, #4
+ 854 0026 9343     		bics	r3, r2
+ 855 0028 2360     		str	r3, [r4]
+ 856              	.L85:
+ 857 002a 274C     		ldr	r4, .L94
+ 858 002c 6368     		ldr	r3, [r4, #4]
+ 859 002e 026C     		ldr	r2, [r0, #64]
+ 860 0030 1C21     		movs	r1, #28
+ 861 0032 1140     		ands	r1, r2
+ 862 0034 0422     		movs	r2, #4
+ 863 0036 8A40     		lsls	r2, r2, r1
+ 864 0038 1343     		orrs	r3, r2
+ 865 003a 6360     		str	r3, [r4, #4]
+ 866 003c 036B     		ldr	r3, [r0, #48]
+ 867 003e 002B     		cmp	r3, #0
+ 868 0040 00D0     		beq	.L83
+ 869 0042 9847     		blx	r3
+ 870              	.L83:
+ 871              		@ sp needed
+ 872 0044 70BD     		pop	{r4, r5, r6, pc}
+ 873              	.L84:
+ 874 0046 0222     		movs	r2, #2
+ 875 0048 9A40     		lsls	r2, r2, r3
+ 876 004a 1142     		tst	r1, r2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 16
+
+
+ 877 004c 1CD0     		beq	.L87
+ 878 004e AA07     		lsls	r2, r5, #30
+ 879 0050 1AD5     		bpl	.L87
+ 880 0052 2368     		ldr	r3, [r4]
+ 881 0054 9B06     		lsls	r3, r3, #26
+ 882 0056 06D4     		bmi	.L88
+ 883 0058 2368     		ldr	r3, [r4]
+ 884 005a 0A22     		movs	r2, #10
+ 885 005c 9343     		bics	r3, r2
+ 886 005e 2360     		str	r3, [r4]
+ 887 0060 2523     		movs	r3, #37
+ 888 0062 093A     		subs	r2, r2, #9
+ 889 0064 C254     		strb	r2, [r0, r3]
+ 890              	.L88:
+ 891 0066 184C     		ldr	r4, .L94
+ 892 0068 6368     		ldr	r3, [r4, #4]
+ 893 006a 026C     		ldr	r2, [r0, #64]
+ 894 006c 1C21     		movs	r1, #28
+ 895 006e 1140     		ands	r1, r2
+ 896 0070 0222     		movs	r2, #2
+ 897 0072 8A40     		lsls	r2, r2, r1
+ 898 0074 1343     		orrs	r3, r2
+ 899 0076 6360     		str	r3, [r4, #4]
+ 900 0078 2423     		movs	r3, #36
+ 901 007a 0022     		movs	r2, #0
+ 902 007c C254     		strb	r2, [r0, r3]
+ 903 007e C36A     		ldr	r3, [r0, #44]
+ 904 0080 002B     		cmp	r3, #0
+ 905 0082 DFD0     		beq	.L83
+ 906 0084 9847     		blx	r3
+ 907 0086 DDE7     		b	.L83
+ 908              	.L87:
+ 909 0088 0822     		movs	r2, #8
+ 910 008a 9A40     		lsls	r2, r2, r3
+ 911 008c 1142     		tst	r1, r2
+ 912 008e D9D0     		beq	.L83
+ 913 0090 2D07     		lsls	r5, r5, #28
+ 914 0092 D7D5     		bpl	.L83
+ 915 0094 2368     		ldr	r3, [r4]
+ 916 0096 0E22     		movs	r2, #14
+ 917 0098 9343     		bics	r3, r2
+ 918 009a 2360     		str	r3, [r4]
+ 919 009c 0A4C     		ldr	r4, .L94
+ 920 009e 6268     		ldr	r2, [r4, #4]
+ 921 00a0 036C     		ldr	r3, [r0, #64]
+ 922 00a2 1C21     		movs	r1, #28
+ 923 00a4 1940     		ands	r1, r3
+ 924 00a6 0123     		movs	r3, #1
+ 925 00a8 1D00     		movs	r5, r3
+ 926 00aa 8D40     		lsls	r5, r5, r1
+ 927 00ac 2A43     		orrs	r2, r5
+ 928 00ae 6260     		str	r2, [r4, #4]
+ 929 00b0 C363     		str	r3, [r0, #60]
+ 930 00b2 2522     		movs	r2, #37
+ 931 00b4 8354     		strb	r3, [r0, r2]
+ 932 00b6 2333     		adds	r3, r3, #35
+ 933 00b8 0022     		movs	r2, #0
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 17
+
+
+ 934 00ba C254     		strb	r2, [r0, r3]
+ 935 00bc 436B     		ldr	r3, [r0, #52]
+ 936 00be 002B     		cmp	r3, #0
+ 937 00c0 C0D0     		beq	.L83
+ 938 00c2 9847     		blx	r3
+ 939 00c4 BEE7     		b	.L83
+ 940              	.L95:
+ 941 00c6 C046     		.align	2
+ 942              	.L94:
+ 943 00c8 00000240 		.word	1073872896
+ 945              		.section	.text.HAL_DMA_RegisterCallback,"ax",%progbits
+ 946              		.align	1
+ 947              		.global	HAL_DMA_RegisterCallback
+ 948              		.syntax unified
+ 949              		.code	16
+ 950              		.thumb_func
+ 952              	HAL_DMA_RegisterCallback:
+ 953              		@ args = 0, pretend = 0, frame = 0
+ 954              		@ frame_needed = 0, uses_anonymous_args = 0
+ 955 0000 10B5     		push	{r4, lr}
+ 956 0002 0300     		movs	r3, r0
+ 957 0004 2420     		movs	r0, #36
+ 958 0006 185C     		ldrb	r0, [r3, r0]
+ 959 0008 0128     		cmp	r0, #1
+ 960 000a 21D0     		beq	.L104
+ 961 000c 2420     		movs	r0, #36
+ 962 000e 0124     		movs	r4, #1
+ 963 0010 1C54     		strb	r4, [r3, r0]
+ 964 0012 0130     		adds	r0, r0, #1
+ 965 0014 1C5C     		ldrb	r4, [r3, r0]
+ 966 0016 E0B2     		uxtb	r0, r4
+ 967 0018 012C     		cmp	r4, #1
+ 968 001a 04D0     		beq	.L106
+ 969 001c 0120     		movs	r0, #1
+ 970              	.L98:
+ 971 001e 2422     		movs	r2, #36
+ 972 0020 0021     		movs	r1, #0
+ 973 0022 9954     		strb	r1, [r3, r2]
+ 974              	.L97:
+ 975              		@ sp needed
+ 976 0024 10BD     		pop	{r4, pc}
+ 977              	.L106:
+ 978 0026 0229     		cmp	r1, #2
+ 979 0028 0FD0     		beq	.L99
+ 980 002a 06D8     		bhi	.L100
+ 981 002c 0029     		cmp	r1, #0
+ 982 002e 09D0     		beq	.L101
+ 983 0030 0129     		cmp	r1, #1
+ 984 0032 F4D1     		bne	.L98
+ 985 0034 1A63     		str	r2, [r3, #48]
+ 986 0036 0020     		movs	r0, #0
+ 987 0038 F1E7     		b	.L98
+ 988              	.L100:
+ 989 003a 0329     		cmp	r1, #3
+ 990 003c EFD1     		bne	.L98
+ 991 003e 9A63     		str	r2, [r3, #56]
+ 992 0040 0020     		movs	r0, #0
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 18
+
+
+ 993 0042 ECE7     		b	.L98
+ 994              	.L101:
+ 995 0044 DA62     		str	r2, [r3, #44]
+ 996 0046 0800     		movs	r0, r1
+ 997 0048 E9E7     		b	.L98
+ 998              	.L99:
+ 999 004a 5A63     		str	r2, [r3, #52]
+ 1000 004c 0020     		movs	r0, #0
+ 1001 004e E6E7     		b	.L98
+ 1002              	.L104:
+ 1003 0050 0220     		movs	r0, #2
+ 1004 0052 E7E7     		b	.L97
+ 1006              		.section	.text.HAL_DMA_UnRegisterCallback,"ax",%progbits
+ 1007              		.align	1
+ 1008              		.global	HAL_DMA_UnRegisterCallback
+ 1009              		.syntax unified
+ 1010              		.code	16
+ 1011              		.thumb_func
+ 1013              	HAL_DMA_UnRegisterCallback:
+ 1014              		@ args = 0, pretend = 0, frame = 0
+ 1015              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1016              		@ link register save eliminated.
+ 1017 0000 0300     		movs	r3, r0
+ 1018 0002 2422     		movs	r2, #36
+ 1019 0004 825C     		ldrb	r2, [r0, r2]
+ 1020 0006 012A     		cmp	r2, #1
+ 1021 0008 29D0     		beq	.L116
+ 1022 000a 2422     		movs	r2, #36
+ 1023 000c 0120     		movs	r0, #1
+ 1024 000e 9854     		strb	r0, [r3, r2]
+ 1025 0010 0132     		adds	r2, r2, #1
+ 1026 0012 9A5C     		ldrb	r2, [r3, r2]
+ 1027 0014 D0B2     		uxtb	r0, r2
+ 1028 0016 012A     		cmp	r2, #1
+ 1029 0018 04D0     		beq	.L118
+ 1030 001a 0120     		movs	r0, #1
+ 1031              	.L109:
+ 1032 001c 2422     		movs	r2, #36
+ 1033 001e 0021     		movs	r1, #0
+ 1034 0020 9954     		strb	r1, [r3, r2]
+ 1035              	.L108:
+ 1036              		@ sp needed
+ 1037 0022 7047     		bx	lr
+ 1038              	.L118:
+ 1039 0024 0429     		cmp	r1, #4
+ 1040 0026 F9D8     		bhi	.L109
+ 1041 0028 8A00     		lsls	r2, r1, #2
+ 1042 002a 0E48     		ldr	r0, .L119
+ 1043 002c 8258     		ldr	r2, [r0, r2]
+ 1044 002e 9746     		mov	pc, r2
+ 1045              		.section	.rodata.HAL_DMA_UnRegisterCallback,"a",%progbits
+ 1046              		.align	2
+ 1047              	.L111:
+ 1048 0000 30000000 		.word	.L115
+ 1049 0004 38000000 		.word	.L114
+ 1050 0008 40000000 		.word	.L113
+ 1051 000c 48000000 		.word	.L112
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 19
+
+
+ 1052 0010 50000000 		.word	.L110
+ 1053              		.section	.text.HAL_DMA_UnRegisterCallback
+ 1054              	.L115:
+ 1055 0030 0022     		movs	r2, #0
+ 1056 0032 DA62     		str	r2, [r3, #44]
+ 1057 0034 0800     		movs	r0, r1
+ 1058 0036 F1E7     		b	.L109
+ 1059              	.L114:
+ 1060 0038 0022     		movs	r2, #0
+ 1061 003a 1A63     		str	r2, [r3, #48]
+ 1062 003c 0020     		movs	r0, #0
+ 1063 003e EDE7     		b	.L109
+ 1064              	.L113:
+ 1065 0040 0022     		movs	r2, #0
+ 1066 0042 5A63     		str	r2, [r3, #52]
+ 1067 0044 0020     		movs	r0, #0
+ 1068 0046 E9E7     		b	.L109
+ 1069              	.L112:
+ 1070 0048 0022     		movs	r2, #0
+ 1071 004a 9A63     		str	r2, [r3, #56]
+ 1072 004c 0020     		movs	r0, #0
+ 1073 004e E5E7     		b	.L109
+ 1074              	.L110:
+ 1075 0050 0022     		movs	r2, #0
+ 1076 0052 DA62     		str	r2, [r3, #44]
+ 1077 0054 1A63     		str	r2, [r3, #48]
+ 1078 0056 5A63     		str	r2, [r3, #52]
+ 1079 0058 9A63     		str	r2, [r3, #56]
+ 1080 005a 0020     		movs	r0, #0
+ 1081 005c DEE7     		b	.L109
+ 1082              	.L116:
+ 1083 005e 0220     		movs	r0, #2
+ 1084 0060 DFE7     		b	.L108
+ 1085              	.L120:
+ 1086 0062 C046     		.align	2
+ 1087              	.L119:
+ 1088 0064 00000000 		.word	.L111
+ 1090              		.section	.text.HAL_DMA_GetState,"ax",%progbits
+ 1091              		.align	1
+ 1092              		.global	HAL_DMA_GetState
+ 1093              		.syntax unified
+ 1094              		.code	16
+ 1095              		.thumb_func
+ 1097              	HAL_DMA_GetState:
+ 1098              		@ args = 0, pretend = 0, frame = 0
+ 1099              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1100              		@ link register save eliminated.
+ 1101 0000 2523     		movs	r3, #37
+ 1102 0002 C05C     		ldrb	r0, [r0, r3]
+ 1103 0004 C0B2     		uxtb	r0, r0
+ 1104              		@ sp needed
+ 1105 0006 7047     		bx	lr
+ 1107              		.section	.text.HAL_DMA_GetError,"ax",%progbits
+ 1108              		.align	1
+ 1109              		.global	HAL_DMA_GetError
+ 1110              		.syntax unified
+ 1111              		.code	16
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 20
+
+
+ 1112              		.thumb_func
+ 1114              	HAL_DMA_GetError:
+ 1115              		@ args = 0, pretend = 0, frame = 0
+ 1116              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1117              		@ link register save eliminated.
+ 1118 0000 C06B     		ldr	r0, [r0, #60]
+ 1119              		@ sp needed
+ 1120 0002 7047     		bx	lr
+ 1122              		.global	__aeabi_uidiv
+ 1123              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s 			page 21
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32c0xx_hal_dma.c
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:16     .text.DMA_SetConfig:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:21     .text.DMA_SetConfig:00000000 DMA_SetConfig
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:65     .text.DMA_SetConfig:00000044 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:68     .text.DMA_CalcDMAMUXChannelBaseAndMask:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:73     .text.DMA_CalcDMAMUXChannelBaseAndMask:00000000 DMA_CalcDMAMUXChannelBaseAndMask
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:103    .text.DMA_CalcDMAMUXChannelBaseAndMask:00000030 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:107    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:112    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000000 DMA_CalcDMAMUXRequestGenBaseAndMask
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:136    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000020 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:140    .text.HAL_DMA_Init:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:146    .text.HAL_DMA_Init:00000000 HAL_DMA_Init
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:239    .text.HAL_DMA_Init:000000a8 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:243    .text.HAL_DMA_DeInit:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:249    .text.HAL_DMA_DeInit:00000000 HAL_DMA_DeInit
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:322    .text.HAL_DMA_DeInit:00000084 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:326    .text.HAL_DMA_Start:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:332    .text.HAL_DMA_Start:00000000 HAL_DMA_Start
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:383    .text.HAL_DMA_Start_IT:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:389    .text.HAL_DMA_Start_IT:00000000 HAL_DMA_Start_IT
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:481    .text.HAL_DMA_Abort:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:487    .text.HAL_DMA_Abort:00000000 HAL_DMA_Abort
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:558    .text.HAL_DMA_Abort:00000078 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:562    .text.HAL_DMA_Abort_IT:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:568    .text.HAL_DMA_Abort_IT:00000000 HAL_DMA_Abort_IT
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:643    .text.HAL_DMA_Abort_IT:00000080 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:647    .text.HAL_DMA_PollForTransfer:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:653    .text.HAL_DMA_PollForTransfer:00000000 HAL_DMA_PollForTransfer
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:823    .text.HAL_DMA_PollForTransfer:00000130 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:826    .text.HAL_DMA_IRQHandler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:832    .text.HAL_DMA_IRQHandler:00000000 HAL_DMA_IRQHandler
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:943    .text.HAL_DMA_IRQHandler:000000c8 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:946    .text.HAL_DMA_RegisterCallback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:952    .text.HAL_DMA_RegisterCallback:00000000 HAL_DMA_RegisterCallback
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:1007   .text.HAL_DMA_UnRegisterCallback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:1013   .text.HAL_DMA_UnRegisterCallback:00000000 HAL_DMA_UnRegisterCallback
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:1046   .rodata.HAL_DMA_UnRegisterCallback:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:1088   .text.HAL_DMA_UnRegisterCallback:00000064 $d
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:1091   .text.HAL_DMA_GetState:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:1097   .text.HAL_DMA_GetState:00000000 HAL_DMA_GetState
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:1108   .text.HAL_DMA_GetError:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccG4TBgT.s:1114   .text.HAL_DMA_GetError:00000000 HAL_DMA_GetError
+
+UNDEFINED SYMBOLS
+__aeabi_uidiv
+HAL_GetTick

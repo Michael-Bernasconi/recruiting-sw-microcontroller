@@ -1,0 +1,142 @@
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32c0xx_it.c"
+  14              		.text
+  15              		.section	.text.NMI_Handler,"ax",%progbits
+  16              		.align	1
+  17              		.global	NMI_Handler
+  18              		.syntax unified
+  19              		.code	16
+  20              		.thumb_func
+  22              	NMI_Handler:
+  23              		@ Volatile: function does not return.
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27              	.L2:
+  28 0000 FEE7     		b	.L2
+  30              		.section	.text.HardFault_Handler,"ax",%progbits
+  31              		.align	1
+  32              		.global	HardFault_Handler
+  33              		.syntax unified
+  34              		.code	16
+  35              		.thumb_func
+  37              	HardFault_Handler:
+  38              		@ Volatile: function does not return.
+  39              		@ args = 0, pretend = 0, frame = 0
+  40              		@ frame_needed = 0, uses_anonymous_args = 0
+  41              		@ link register save eliminated.
+  42              	.L4:
+  43 0000 FEE7     		b	.L4
+  45              		.section	.text.SVC_Handler,"ax",%progbits
+  46              		.align	1
+  47              		.global	SVC_Handler
+  48              		.syntax unified
+  49              		.code	16
+  50              		.thumb_func
+  52              	SVC_Handler:
+  53              		@ args = 0, pretend = 0, frame = 0
+  54              		@ frame_needed = 0, uses_anonymous_args = 0
+  55              		@ link register save eliminated.
+  56              		@ sp needed
+  57 0000 7047     		bx	lr
+  59              		.section	.text.PendSV_Handler,"ax",%progbits
+  60              		.align	1
+  61              		.global	PendSV_Handler
+  62              		.syntax unified
+  63              		.code	16
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s 			page 2
+
+
+  64              		.thumb_func
+  66              	PendSV_Handler:
+  67              		@ args = 0, pretend = 0, frame = 0
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69              		@ link register save eliminated.
+  70              		@ sp needed
+  71 0000 7047     		bx	lr
+  73              		.section	.text.SysTick_Handler,"ax",%progbits
+  74              		.align	1
+  75              		.global	SysTick_Handler
+  76              		.syntax unified
+  77              		.code	16
+  78              		.thumb_func
+  80              	SysTick_Handler:
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83 0000 10B5     		push	{r4, lr}
+  84 0002 FFF7FEFF 		bl	HAL_IncTick
+  85              		@ sp needed
+  86 0006 10BD     		pop	{r4, pc}
+  88              		.section	.text.EXTI4_15_IRQHandler,"ax",%progbits
+  89              		.align	1
+  90              		.global	EXTI4_15_IRQHandler
+  91              		.syntax unified
+  92              		.code	16
+  93              		.thumb_func
+  95              	EXTI4_15_IRQHandler:
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98 0000 10B5     		push	{r4, lr}
+  99 0002 0020     		movs	r0, #0
+ 100 0004 FFF7FEFF 		bl	BSP_PB_IRQHandler
+ 101              		@ sp needed
+ 102 0008 10BD     		pop	{r4, pc}
+ 104              		.section	.text.DMA1_Channel1_IRQHandler,"ax",%progbits
+ 105              		.align	1
+ 106              		.global	DMA1_Channel1_IRQHandler
+ 107              		.syntax unified
+ 108              		.code	16
+ 109              		.thumb_func
+ 111              	DMA1_Channel1_IRQHandler:
+ 112              		@ args = 0, pretend = 0, frame = 0
+ 113              		@ frame_needed = 0, uses_anonymous_args = 0
+ 114 0000 10B5     		push	{r4, lr}
+ 115 0002 0248     		ldr	r0, .L10
+ 116 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 117              		@ sp needed
+ 118 0008 10BD     		pop	{r4, pc}
+ 119              	.L11:
+ 120 000a C046     		.align	2
+ 121              	.L10:
+ 122 000c 00000000 		.word	hdma_adc1
+ 124              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32c0xx_it.c
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:16     .text.NMI_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:22     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:31     .text.HardFault_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:37     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:46     .text.SVC_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:52     .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:60     .text.PendSV_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:66     .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:74     .text.SysTick_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:80     .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:89     .text.EXTI4_15_IRQHandler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:95     .text.EXTI4_15_IRQHandler:00000000 EXTI4_15_IRQHandler
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:105    .text.DMA1_Channel1_IRQHandler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:111    .text.DMA1_Channel1_IRQHandler:00000000 DMA1_Channel1_IRQHandler
+C:\Users\micha\AppData\Local\Temp\ccHkSp9r.s:122    .text.DMA1_Channel1_IRQHandler:0000000c $d
+
+UNDEFINED SYMBOLS
+HAL_IncTick
+BSP_PB_IRQHandler
+HAL_DMA_IRQHandler
+hdma_adc1

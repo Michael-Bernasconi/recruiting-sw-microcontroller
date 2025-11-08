@@ -1,0 +1,390 @@
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccbco18v.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"syscalls.c"
+  14              		.text
+  15              		.section	.text.initialise_monitor_handles,"ax",%progbits
+  16              		.align	1
+  17              		.global	initialise_monitor_handles
+  18              		.syntax unified
+  19              		.code	16
+  20              		.thumb_func
+  22              	initialise_monitor_handles:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26              		@ sp needed
+  27 0000 7047     		bx	lr
+  29              		.section	.text._getpid,"ax",%progbits
+  30              		.align	1
+  31              		.global	_getpid
+  32              		.syntax unified
+  33              		.code	16
+  34              		.thumb_func
+  36              	_getpid:
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  39              		@ link register save eliminated.
+  40 0000 0120     		movs	r0, #1
+  41              		@ sp needed
+  42 0002 7047     		bx	lr
+  44              		.section	.text._kill,"ax",%progbits
+  45              		.align	1
+  46              		.global	_kill
+  47              		.syntax unified
+  48              		.code	16
+  49              		.thumb_func
+  51              	_kill:
+  52              		@ args = 0, pretend = 0, frame = 0
+  53              		@ frame_needed = 0, uses_anonymous_args = 0
+  54 0000 10B5     		push	{r4, lr}
+  55 0002 FFF7FEFF 		bl	__errno
+  56 0006 1623     		movs	r3, #22
+  57 0008 0360     		str	r3, [r0]
+  58 000a 0120     		movs	r0, #1
+  59 000c 4042     		rsbs	r0, r0, #0
+  60              		@ sp needed
+  61 000e 10BD     		pop	{r4, pc}
+  63              		.section	.text._exit,"ax",%progbits
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccbco18v.s 			page 2
+
+
+  64              		.align	1
+  65              		.global	_exit
+  66              		.syntax unified
+  67              		.code	16
+  68              		.thumb_func
+  70              	_exit:
+  71              		@ Volatile: function does not return.
+  72              		@ args = 0, pretend = 0, frame = 0
+  73              		@ frame_needed = 0, uses_anonymous_args = 0
+  74 0000 10B5     		push	{r4, lr}
+  75 0002 0121     		movs	r1, #1
+  76 0004 4942     		rsbs	r1, r1, #0
+  77 0006 FFF7FEFF 		bl	_kill
+  78              	.L5:
+  79 000a FEE7     		b	.L5
+  81              		.section	.text._read,"ax",%progbits
+  82              		.align	1
+  83              		.weak	_read
+  84              		.syntax unified
+  85              		.code	16
+  86              		.thumb_func
+  88              	_read:
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91 0000 70B5     		push	{r4, r5, r6, lr}
+  92 0002 0C00     		movs	r4, r1
+  93 0004 1600     		movs	r6, r2
+  94 0006 0025     		movs	r5, #0
+  95 0008 04E0     		b	.L7
+  96              	.L8:
+  97 000a FFF7FEFF 		bl	__io_getchar
+  98 000e 2070     		strb	r0, [r4]
+  99 0010 0135     		adds	r5, r5, #1
+ 100 0012 0134     		adds	r4, r4, #1
+ 101              	.L7:
+ 102 0014 B542     		cmp	r5, r6
+ 103 0016 F8DB     		blt	.L8
+ 104 0018 3000     		movs	r0, r6
+ 105              		@ sp needed
+ 106 001a 70BD     		pop	{r4, r5, r6, pc}
+ 108              		.section	.text._write,"ax",%progbits
+ 109              		.align	1
+ 110              		.weak	_write
+ 111              		.syntax unified
+ 112              		.code	16
+ 113              		.thumb_func
+ 115              	_write:
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118 0000 70B5     		push	{r4, r5, r6, lr}
+ 119 0002 1600     		movs	r6, r2
+ 120 0004 0024     		movs	r4, #0
+ 121 0006 05E0     		b	.L10
+ 122              	.L11:
+ 123 0008 4D1C     		adds	r5, r1, #1
+ 124 000a 0878     		ldrb	r0, [r1]
+ 125 000c FFF7FEFF 		bl	__io_putchar
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccbco18v.s 			page 3
+
+
+ 126 0010 0134     		adds	r4, r4, #1
+ 127 0012 2900     		movs	r1, r5
+ 128              	.L10:
+ 129 0014 B442     		cmp	r4, r6
+ 130 0016 F7DB     		blt	.L11
+ 131 0018 3000     		movs	r0, r6
+ 132              		@ sp needed
+ 133 001a 70BD     		pop	{r4, r5, r6, pc}
+ 135              		.section	.text._close,"ax",%progbits
+ 136              		.align	1
+ 137              		.global	_close
+ 138              		.syntax unified
+ 139              		.code	16
+ 140              		.thumb_func
+ 142              	_close:
+ 143              		@ args = 0, pretend = 0, frame = 0
+ 144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 145              		@ link register save eliminated.
+ 146 0000 0120     		movs	r0, #1
+ 147 0002 4042     		rsbs	r0, r0, #0
+ 148              		@ sp needed
+ 149 0004 7047     		bx	lr
+ 151              		.section	.text._fstat,"ax",%progbits
+ 152              		.align	1
+ 153              		.global	_fstat
+ 154              		.syntax unified
+ 155              		.code	16
+ 156              		.thumb_func
+ 158              	_fstat:
+ 159              		@ args = 0, pretend = 0, frame = 0
+ 160              		@ frame_needed = 0, uses_anonymous_args = 0
+ 161              		@ link register save eliminated.
+ 162 0000 8023     		movs	r3, #128
+ 163 0002 9B01     		lsls	r3, r3, #6
+ 164 0004 4B60     		str	r3, [r1, #4]
+ 165 0006 0020     		movs	r0, #0
+ 166              		@ sp needed
+ 167 0008 7047     		bx	lr
+ 169              		.section	.text._isatty,"ax",%progbits
+ 170              		.align	1
+ 171              		.global	_isatty
+ 172              		.syntax unified
+ 173              		.code	16
+ 174              		.thumb_func
+ 176              	_isatty:
+ 177              		@ args = 0, pretend = 0, frame = 0
+ 178              		@ frame_needed = 0, uses_anonymous_args = 0
+ 179              		@ link register save eliminated.
+ 180 0000 0120     		movs	r0, #1
+ 181              		@ sp needed
+ 182 0002 7047     		bx	lr
+ 184              		.section	.text._lseek,"ax",%progbits
+ 185              		.align	1
+ 186              		.global	_lseek
+ 187              		.syntax unified
+ 188              		.code	16
+ 189              		.thumb_func
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccbco18v.s 			page 4
+
+
+ 191              	_lseek:
+ 192              		@ args = 0, pretend = 0, frame = 0
+ 193              		@ frame_needed = 0, uses_anonymous_args = 0
+ 194              		@ link register save eliminated.
+ 195 0000 0020     		movs	r0, #0
+ 196              		@ sp needed
+ 197 0002 7047     		bx	lr
+ 199              		.section	.text._open,"ax",%progbits
+ 200              		.align	1
+ 201              		.global	_open
+ 202              		.syntax unified
+ 203              		.code	16
+ 204              		.thumb_func
+ 206              	_open:
+ 207              		@ args = 4, pretend = 12, frame = 0
+ 208              		@ frame_needed = 0, uses_anonymous_args = 1
+ 209              		@ link register save eliminated.
+ 210 0000 0EB4     		push	{r1, r2, r3}
+ 211 0002 0120     		movs	r0, #1
+ 212 0004 4042     		rsbs	r0, r0, #0
+ 213              		@ sp needed
+ 214 0006 03B0     		add	sp, sp, #12
+ 215 0008 7047     		bx	lr
+ 217              		.section	.text._wait,"ax",%progbits
+ 218              		.align	1
+ 219              		.global	_wait
+ 220              		.syntax unified
+ 221              		.code	16
+ 222              		.thumb_func
+ 224              	_wait:
+ 225              		@ args = 0, pretend = 0, frame = 0
+ 226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 227 0000 10B5     		push	{r4, lr}
+ 228 0002 FFF7FEFF 		bl	__errno
+ 229 0006 0A23     		movs	r3, #10
+ 230 0008 0360     		str	r3, [r0]
+ 231 000a 0120     		movs	r0, #1
+ 232 000c 4042     		rsbs	r0, r0, #0
+ 233              		@ sp needed
+ 234 000e 10BD     		pop	{r4, pc}
+ 236              		.section	.text._unlink,"ax",%progbits
+ 237              		.align	1
+ 238              		.global	_unlink
+ 239              		.syntax unified
+ 240              		.code	16
+ 241              		.thumb_func
+ 243              	_unlink:
+ 244              		@ args = 0, pretend = 0, frame = 0
+ 245              		@ frame_needed = 0, uses_anonymous_args = 0
+ 246 0000 10B5     		push	{r4, lr}
+ 247 0002 FFF7FEFF 		bl	__errno
+ 248 0006 0223     		movs	r3, #2
+ 249 0008 0360     		str	r3, [r0]
+ 250 000a 0120     		movs	r0, #1
+ 251 000c 4042     		rsbs	r0, r0, #0
+ 252              		@ sp needed
+ 253 000e 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccbco18v.s 			page 5
+
+
+ 255              		.section	.text._times,"ax",%progbits
+ 256              		.align	1
+ 257              		.global	_times
+ 258              		.syntax unified
+ 259              		.code	16
+ 260              		.thumb_func
+ 262              	_times:
+ 263              		@ args = 0, pretend = 0, frame = 0
+ 264              		@ frame_needed = 0, uses_anonymous_args = 0
+ 265              		@ link register save eliminated.
+ 266 0000 0120     		movs	r0, #1
+ 267 0002 4042     		rsbs	r0, r0, #0
+ 268              		@ sp needed
+ 269 0004 7047     		bx	lr
+ 271              		.section	.text._stat,"ax",%progbits
+ 272              		.align	1
+ 273              		.global	_stat
+ 274              		.syntax unified
+ 275              		.code	16
+ 276              		.thumb_func
+ 278              	_stat:
+ 279              		@ args = 0, pretend = 0, frame = 0
+ 280              		@ frame_needed = 0, uses_anonymous_args = 0
+ 281              		@ link register save eliminated.
+ 282 0000 8023     		movs	r3, #128
+ 283 0002 9B01     		lsls	r3, r3, #6
+ 284 0004 4B60     		str	r3, [r1, #4]
+ 285 0006 0020     		movs	r0, #0
+ 286              		@ sp needed
+ 287 0008 7047     		bx	lr
+ 289              		.section	.text._link,"ax",%progbits
+ 290              		.align	1
+ 291              		.global	_link
+ 292              		.syntax unified
+ 293              		.code	16
+ 294              		.thumb_func
+ 296              	_link:
+ 297              		@ args = 0, pretend = 0, frame = 0
+ 298              		@ frame_needed = 0, uses_anonymous_args = 0
+ 299 0000 10B5     		push	{r4, lr}
+ 300 0002 FFF7FEFF 		bl	__errno
+ 301 0006 1F23     		movs	r3, #31
+ 302 0008 0360     		str	r3, [r0]
+ 303 000a 0120     		movs	r0, #1
+ 304 000c 4042     		rsbs	r0, r0, #0
+ 305              		@ sp needed
+ 306 000e 10BD     		pop	{r4, pc}
+ 308              		.section	.text._fork,"ax",%progbits
+ 309              		.align	1
+ 310              		.global	_fork
+ 311              		.syntax unified
+ 312              		.code	16
+ 313              		.thumb_func
+ 315              	_fork:
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccbco18v.s 			page 6
+
+
+ 319 0002 FFF7FEFF 		bl	__errno
+ 320 0006 0B23     		movs	r3, #11
+ 321 0008 0360     		str	r3, [r0]
+ 322 000a 0120     		movs	r0, #1
+ 323 000c 4042     		rsbs	r0, r0, #0
+ 324              		@ sp needed
+ 325 000e 10BD     		pop	{r4, pc}
+ 327              		.section	.text._execve,"ax",%progbits
+ 328              		.align	1
+ 329              		.global	_execve
+ 330              		.syntax unified
+ 331              		.code	16
+ 332              		.thumb_func
+ 334              	_execve:
+ 335              		@ args = 0, pretend = 0, frame = 0
+ 336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 337 0000 10B5     		push	{r4, lr}
+ 338 0002 FFF7FEFF 		bl	__errno
+ 339 0006 0C23     		movs	r3, #12
+ 340 0008 0360     		str	r3, [r0]
+ 341 000a 0120     		movs	r0, #1
+ 342 000c 4042     		rsbs	r0, r0, #0
+ 343              		@ sp needed
+ 344 000e 10BD     		pop	{r4, pc}
+ 346              		.global	environ
+ 347              		.section	.data.environ,"aw"
+ 348              		.align	2
+ 351              	environ:
+ 352 0000 00000000 		.word	__env
+ 353              		.global	__env
+ 354              		.section	.bss.__env,"aw",%nobits
+ 355              		.align	2
+ 358              	__env:
+ 359 0000 00000000 		.space	4
+ 360              		.weak	__io_putchar
+ 361              		.weak	__io_getchar
+ 362              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccbco18v.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 syscalls.c
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:16     .text.initialise_monitor_handles:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:22     .text.initialise_monitor_handles:00000000 initialise_monitor_handles
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:30     .text._getpid:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:36     .text._getpid:00000000 _getpid
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:45     .text._kill:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:51     .text._kill:00000000 _kill
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:64     .text._exit:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:70     .text._exit:00000000 _exit
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:82     .text._read:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:88     .text._read:00000000 _read
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:109    .text._write:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:115    .text._write:00000000 _write
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:136    .text._close:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:142    .text._close:00000000 _close
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:152    .text._fstat:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:158    .text._fstat:00000000 _fstat
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:170    .text._isatty:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:176    .text._isatty:00000000 _isatty
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:185    .text._lseek:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:191    .text._lseek:00000000 _lseek
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:200    .text._open:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:206    .text._open:00000000 _open
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:218    .text._wait:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:224    .text._wait:00000000 _wait
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:237    .text._unlink:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:243    .text._unlink:00000000 _unlink
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:256    .text._times:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:262    .text._times:00000000 _times
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:272    .text._stat:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:278    .text._stat:00000000 _stat
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:290    .text._link:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:296    .text._link:00000000 _link
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:309    .text._fork:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:315    .text._fork:00000000 _fork
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:328    .text._execve:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:334    .text._execve:00000000 _execve
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:351    .data.environ:00000000 environ
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:348    .data.environ:00000000 $d
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:358    .bss.__env:00000000 __env
+C:\Users\micha\AppData\Local\Temp\ccbco18v.s:355    .bss.__env:00000000 $d
+
+UNDEFINED SYMBOLS
+__errno
+__io_getchar
+__io_putchar
