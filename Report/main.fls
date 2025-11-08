@@ -184,6 +184,17 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/textgreek/textgreek.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/textgreek/textgreek.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/greek-fontenc/lgrenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/greek-fontenc/lgrenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/greek-fontenc/lgrenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/greek-inputenc/lgrenc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/greek-inputenc/lgrenc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/greek-inputenc/lgrenc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/greek-fontenc/greek-fontenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/greek-fontenc/greek-fontenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/greek-fontenc/greek-fontenc.def
 INPUT /usr/share/texmf/tex/latex/lm/t1lmr.fd
 INPUT /usr/share/texmf/tex/latex/lm/t1lmr.fd
 INPUT /usr/share/texmf/tex/latex/lm/t1lmr.fd
@@ -192,13 +203,14 @@ INPUT ./main.aux
 INPUT ./main.aux
 INPUT main.aux
 OUTPUT main.aux
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
@@ -276,6 +288,55 @@ INPUT ./Capitoli/Introduction.tex
 INPUT ./Capitoli/Introduction.tex
 INPUT ./Capitoli/Introduction.tex
 INPUT Capitoli/Introduction.tex
+INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
+INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
+INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ts1-lmr12.tfm
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt12.tfm
+INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT ./Capitoli/Project description.tex
+INPUT ./Capitoli/Project description.tex
+INPUT ./Capitoli/Project description.tex
+INPUT ./Capitoli/Project description.tex
+INPUT Capitoli/Project description.tex
+INPUT ./Capitoli/Implementation.tex
+INPUT ./Capitoli/Implementation.tex
+INPUT ./Capitoli/Implementation.tex
+INPUT ./Capitoli/Implementation.tex
+INPUT Capitoli/Implementation.tex
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrlmr.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrlmr.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrlmr.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cbfonts/grmn1200.tfm
+INPUT ./Immagini/circuit.png
+INPUT ./Immagini/circuit.png
+INPUT ./Immagini/circuit.png
+INPUT ./Immagini/circuit.png
+INPUT ./Immagini/circuit.png
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr9.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr17.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT ./Immagini/adc-raw-plot.png
+INPUT ./Immagini/adc-raw-plot.png
+INPUT ./Immagini/adc-raw-plot.png
+INPUT ./Immagini/adc-raw-plot.png
+INPUT ./Immagini/adc-raw-plot.png
+INPUT ./Immagini/adc-ma-plot.png
+INPUT ./Immagini/adc-ma-plot.png
+INPUT ./Immagini/adc-ma-plot.png
+INPUT ./Immagini/adc-ma-plot.png
+INPUT ./Immagini/adc-ma-plot.png
+INPUT ./Immagini/adc-noise-plot.png
+INPUT ./Immagini/adc-noise-plot.png
+INPUT ./Immagini/adc-noise-plot.png
+INPUT ./Immagini/adc-noise-plot.png
+INPUT ./Immagini/adc-noise-plot.png
+INPUT ./Capitoli/Problems and Solution.tex
+INPUT ./Capitoli/Problems and Solution.tex
+INPUT Capitoli/Problems and Solution.tex
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr9.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr12.tfm
@@ -288,53 +349,24 @@ INPUT /usr/share/texmf/fonts/tfm/public/lm/lmsy10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmsy8.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmsy6.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr8.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr17.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
-INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
-INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ts1-lmr12.tfm
-INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc
-INPUT ./Capitoli/Methods and Algorithms.tex
-INPUT ./Capitoli/Methods and Algorithms.tex
-INPUT ./Capitoli/Methods and Algorithms.tex
-INPUT ./Capitoli/Methods and Algorithms.tex
-INPUT Capitoli/Methods and Algorithms.tex
-INPUT ./Capitoli/Data Description.tex
-INPUT ./Capitoli/Data Description.tex
-INPUT ./Capitoli/Data Description.tex
-INPUT ./Capitoli/Data Description.tex
-INPUT Capitoli/Data Description.tex
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmri12.tfm
-INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
-INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
-INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt12.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr9.tfm
-INPUT ./Capitoli/Data Exploration.tex
-INPUT ./Capitoli/Data Exploration.tex
-INPUT ./Capitoli/Data Exploration.tex
-INPUT ./Capitoli/Data Exploration.tex
-INPUT Capitoli/Data Exploration.tex
-INPUT ./Capitoli/Modeling and Results.tex
-INPUT ./Capitoli/Modeling and Results.tex
-INPUT Capitoli/Modeling and Results.tex
-INPUT ./Capitoli/Discussion.tex
-INPUT ./Capitoli/Discussion.tex
-INPUT ./Capitoli/Discussion.tex
-INPUT ./Capitoli/Discussion.tex
-INPUT Capitoli/Discussion.tex
+INPUT ./Capitoli/Results and Evaluation.tex
+INPUT ./Capitoli/Results and Evaluation.tex
+INPUT ./Capitoli/Results and Evaluation.tex
+INPUT ./Capitoli/Results and Evaluation.tex
+INPUT Capitoli/Results and Evaluation.tex
 INPUT ./Capitoli/Conclusion.tex
 INPUT ./Capitoli/Conclusion.tex
 INPUT ./Capitoli/Conclusion.tex
 INPUT ./Capitoli/Conclusion.tex
 INPUT Capitoli/Conclusion.tex
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmcsc10.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/cbfonts/grmn1200.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmr12.pfb

@@ -1,0 +1,93 @@
+\chapter{Implementation}
+
+\section{Overview}
+The firmware was implemented on the Nucleo C031C6 board using the STM32 HAL libraries.  
+The main goal during development was to integrate analog and digital inputs in real time, ensuring a clear and modular code structure. The system combines polling and interrupt mechanisms for signal acquisition, while a finite state machine (FSM) governs the logical flow of the application.
+
+\section{Hardware Circuit}
+The implemented circuit includes:
+\begin{itemize}
+    \item \textbf{Nucleo C031C6} microcontroller;
+    \item \textbf{Potentiometer} connected to ADC1 channel A4 for analog input;
+    \item \textbf{Interrupt button} connected in pull-up with a 100kΩ resistor;
+    \item \textbf{USER button} for FSM state changes;
+    \item \textbf{On-board green LED} for visual feedback;
+    \item power and ground connections.
+\end{itemize}
+
+The following figure shows the implemented circuit:
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{Immagini/circuit.png}
+\caption{Circuit diagram.}
+\label{fig:circuit}
+\end{figure}
+
+\section{Software Architecture}
+The firmware is organized into the following main modules:
+
+\subsection{Finite State Machine (FSM)}
+The system logic is implemented through an FSM with six main states:
+\begin{itemize}
+    \item \textbf{STATE\_INIT}: initial state, where all peripherals are configured and the system immediately transitions to \textbf{STATE\_WAIT\_REQUEST};
+    \item \textbf{STATE\_WAIT\_REQUEST}: waits for the USER button press to start signal acquisition;
+    \item \textbf{STATE\_LISTENING}: acquires the analog signal via ADC in polling mode, calculates three signal modes (RAW, MA, NOISE), and transmits the values via UART;
+    \item \textbf{STATE\_PAUSE}: temporarily pauses acquisition, with the green LED blinking;
+    \item \textbf{STATE\_WARNING}: activated when the analog value exceeds \texttt{POT\_THRESHOLD} for more than 5 seconds;
+    \item \textbf{STATE\_ERROR}: activated when the ADC value exceeds \texttt{POT\_THRESHOLDERROR}.
+\end{itemize}
+
+State transitions occur either through pressing the USER button (detected via polling) or when the analog signal exceeds the predefined thresholds.
+
+\subsection{Analog Signal Acquisition}
+ADC1 is configured for single 12-bit conversions.  
+Polling is used to continuously acquire the potentiometer value. The firmware calculates:
+\begin{itemize}
+    \item \texttt{RAW}: raw ADC value;
+    \item \texttt{MA (Moving Average)}: average of the last 150 samples using a circular buffer;
+    \item \texttt{NOISE}: RAW value with added random noise to simulate disturbances.
+\end{itemize}
+
+All values are converted to millivolts and transmitted via UART2 to a serial terminal. The data are then visualized in real time on graphs, and during continuous acquisition, an acoustic signal is produced.
+
+\subsection{Digital Event Handling}
+The USER button is read using polling, detecting the falling edge to change FSM states.  
+Additionally, an interrupt callback for the button (\texttt{HAL\_GPIO\_EXTI\_Callback()}) sets a flag when the interrupt button is pressed, allowing asynchronous event handling. The callback also generates a UART message to confirm the button press.
+
+\subsection{UART Communication}
+UART2 is initialized at 115200 baud, 8N1 configuration. All analog values and FSM state messages (WARNING, ERROR) are sent over this interface to provide real-time monitoring.
+
+\section{Implementation Details}
+\subsection{Moving Average and Noise Functions}
+\begin{itemize}
+    \item \texttt{computeMovingAverage()}: updates a circular buffer and returns the average of RAW values.
+    \item \texttt{addRandomNoise()}: adds random noise to the RAW ADC value.
+\end{itemize}
+
+\subsection{FSM Handling}
+The FSM is implemented in the main loop using a \texttt{switch-case} statement. Each state defines:
+\begin{itemize}
+    \item LED behavior (ON, OFF, blinking);
+    \item ADC acquisition and value processing (for the LISTENING state);
+    \item state transitions based on button press or thresholds.
+\end{itemize}
+
+\section{Data Visualization}
+The acquired values are displayed graphically on three different plots corresponding to the three applied filters:
+\begin{itemize}
+    \item \textbf{RAW plot}: shows the raw ADC values;
+    \item \textbf{MA (Moving Average) plot}: shows values filtered with a moving average;
+    \item \textbf{NOISE plot}: shows values with added random noise.
+\end{itemize}
+
+Figure~\ref{fig:graphs} shows three screenshots of the graphs obtained during firmware execution.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{Immagini/adc-raw-plot.png}
+\includegraphics[width=0.9\textwidth]{Immagini/adc-ma-plot.png}
+\includegraphics[width=0.9\textwidth]{Immagini/adc-noise-plot.png}
+\caption{RAW, Moving Average, and NOISE plots.}
+\label{fig:graphs}
+\end{figure}

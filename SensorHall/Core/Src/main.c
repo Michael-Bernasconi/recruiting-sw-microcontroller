@@ -23,7 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>   // necessario per rand()
+#include <stdlib.h>  
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -156,7 +156,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 while (1)
 {
-    if (buttonPressed)
+    if (buttonPressed) //interrupt
     {
       char msg[50];
       sprintf(msg, "Button pressed!\r\n");

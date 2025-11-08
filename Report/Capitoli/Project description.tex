@@ -1,0 +1,56 @@
+\chapter{Project description}
+
+\section{General Overview}
+The project consists in developing firmware for the \textbf{Nucleo C031C6} board, aimed at managing analog and digital signals in real time.  
+The system combines two acquisition modes:
+\begin{itemize}
+    \item analog reading in \textbf{polling} mode via \textbf{ADC1}, used to monitor a variable signal provided by a potentiometer;
+    \item management of digital events through the physical button (USER button) detected in \textbf{polling}.
+\end{itemize}
+
+Originally, the project intended the use of a \textbf{Hall sensor} for both analog and digital readings. However, due to a malfunction of the sensor, it was replaced with a \textbf{potentiometer} for analog readings and with the \textbf{USER button} to handle digital events and change the FSM state.
+
+\section{Architecture and Components}
+The system is based on the interaction between various hardware peripherals and STM32 HAL software modules:
+\begin{itemize}
+    \item \textbf{ADC1}: performs analog-to-digital conversion of the signal from the potentiometer;
+    \item \textbf{UART2}: handles serial communication for printing values and status messages;
+    \item \textbf{GPIO}: used for reading the button state and controlling the status LEDs;
+    \item \textbf{USER button}: used to change FSM states through falling-edge detection in polling;
+    \item \textbf{Interrupt button}: used to trigger an interrupt and read its digital value when pressed;
+    \item \textbf{Green LED}: provides a visual indication of the system state.
+\end{itemize}
+
+\section{System Operation}
+The firmware behavior is governed by a \textbf{finite state machine (FSM)} that defines the logical flow of the application. The main states are:
+\begin{itemize}
+    \item \textbf{STATE\_INIT}: initial state, where all peripherals are configured and the system starts;
+    \item \textbf{STATE\_WAIT\_REQUEST}: waits for the USER button press to start acquisition;
+    \item \textbf{STATE\_LISTENING}: acquires the analog signal via ADC in polling mode and transmits the values via UART.  
+    In this state, three signal modes are calculated and printed:
+        \begin{itemize}
+            \item \texttt{RAW}: raw ADC value;
+            \item \texttt{MA (Moving Average)}: value filtered through a moving average over a buffer of 150 samples;
+            \item \texttt{NOISE}: ADC value with added random noise to simulate measurement disturbances.
+        \end{itemize}
+    \item \textbf{STATE\_PAUSE}: temporary pause of acquisition, with the green LED blinking;
+    \item \textbf{STATE\_WARNING}: warning state, activated when the analog value exceeds a predefined threshold (\texttt{POT\_THRESHOLD}) for an extended period;
+    \item \textbf{STATE\_ERROR}: error state, activated when the ADC value exceeds the critical threshold (\texttt{POT\_THRESHOLDERROR}); in this condition, the microcontroller is reset.
+\end{itemize}
+
+State transitions occur through:
+\begin{itemize}
+    \item pressing the USER button (detected in polling);
+    \item exceeding the defined thresholds for the analog signal.
+\end{itemize}
+
+\section{Communication and Output}
+The processed data is sent in real time through the \textbf{UART2} interface and displayed on a serial terminal.  
+The output shows the signal modes and values converted to millivolts, for example:
+\begin{verbatim}
+Mode=RAW   | ADC=1082 -> 871 mV
+Mode=MA    | ADC=1062 -> 855 mV
+Mode=NOISE | ADC=1106 -> 891 mV
+\end{verbatim}
+
+Additionally, text messages are sent for the \texttt{WARNING} and \texttt{ERROR} states, and the green LED provides visual feedback on the current system state.

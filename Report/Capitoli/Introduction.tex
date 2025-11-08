@@ -1,10 +1,33 @@
 \chapter{Introduction}
-Lorem Ipsum \cite{defusco}
- dolor sit amet \cite{Axa}.
-Consectetuer adipiscing.\footnote{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lo-
-bortis facilisis sem. Nullam nec mi et neque pharetra sollicitudin. Praesent
-imperdiet mi nec ante. }
 
+\section{Project Objectives}
+The purpose of this project is the design and implementation of an embedded system based on the \textbf{Nucleo C031C6} microcontroller, with particular attention to the interaction between hardware components and firmware logic.  
+The main goal is to properly configure the peripherals, manage asynchronous events through interrupts, and continuously acquire data using a polling mechanism.  
 
-\Blindtext
+Specifically, the developed firmware is required to demonstrate the following functionalities:
+\begin{itemize}
+    \item real-time acquisition and management of an analog signal through \textbf{polling};
+    \item handling of asynchronous digital events through an \textbf{interrupt} routine;
+    \item clear and modular organization of the code using the STM32 \textbf{HAL} libraries;
+    \item generation of an \textbf{analog graph} of the acquired data, including the \texttt{RAW}, \texttt{NOISE}, and \texttt{Moving Average (MA)} modes;
+    \item generation of a \textbf{digital graph} of the data obtained through interrupts;
+    \item playback of an \textbf{acoustic signal} during continuous analog signal detection.
+\end{itemize}
 
+\section{Context}
+The project is based on the \texttt{microcontrollers} repository, available at \\
+\href{https://github.com/eagletrt/recruiting-sw/tree/master/microcontrollers}{github.com/eagletrt/recruiting-sw}.  
+It is an embedded application that simulates a real-time event acquisition and detection system, aiming to integrate analog and digital readings and verify their behavior through serial and graphical output.
+
+Originally, the task required the use of a \textbf{Hall sensor} for both analog and digital readings. However, due to a malfunction of the component, the sensor was replaced with a \textbf{potentiometer} for the analog part and a \textbf{button} for interrupt generation and digital input.  
+This replacement allowed the overall project logic to remain unchanged.
+
+\section{Structure of the Report}
+This document is organized as follows:
+\begin{itemize}
+    \item \textbf{Chapter~2} describes the project requirements, the hardware used, and the software environment adopted for development;
+    \item \textbf{Chapter~3} details the implementation and structure of the firmware;
+    \item \textbf{Chapter~4} analyzes the main issues encountered during development and the solutions implemented;
+    \item \textbf{Chapter~5} presents the results obtained and possible future optimizations;
+    \item \textbf{Chapter~6} provides final conclusions and reflections on the overall project experience.
+\end{itemize}
