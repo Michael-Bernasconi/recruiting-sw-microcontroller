@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.29)  8 NOV 2025 17:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.29)  8 NOV 2025 17:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1141,7 +1141,7 @@ Package hyperref Info: Link coloring ON on input line 66.
 \openout4 = `main.out'.
 
  (./Frontespizio.tex
-<Immagini/logo_rosso.png, id=104, 401.5pt x 401.5pt>
+<Immagini/logo_rosso.png, id=92, 401.5pt x 401.5pt>
 File: Immagini/logo_rosso.png Graphic file (type png)
 <use Immagini/logo_rosso.png>
 Package pdftex.def Info: Immagini/logo_rosso.png  used on input line 4.
@@ -1204,31 +1204,26 @@ Overfull \hbox (6.56607pt too wide) in paragraph at lines 9--10
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 12.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [1
+)) (./Capitoli/Project description.tex [1
 
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
-Overfull \hbox (1.8155pt too wide) in paragraph at lines 32--33
-[]\T1/lmr/bx/n/13 Chapter 6 \T1/lmr/m/n/13 pro-vides fi-nal con-clu-sions and re-flec-tions on the over-all project
- []
-
-) (./Capitoli/Project description.tex [2]
 Chapter 2.
-[3
+[2
 
 
-]) (./Capitoli/Implementation.tex [4]
+]) (./Capitoli/Implementation.tex [3]
 Chapter 3.
 LaTeX Font Info:    Trying to load font information for LGR+lmr on input line 12.
 (/usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrlmr.fd
 File: lgrlmr.fd 2017/07/29 v1.2 Scalable Greek Latin Modern Regular
 )
-<Immagini/circuit.png, id=165, 1132.98282pt x 353.82187pt>
+<Immagini/circuit.png, id=145, 1132.98282pt x 353.82187pt>
 File: Immagini/circuit.png Graphic file (type png)
 <use Immagini/circuit.png>
 Package pdftex.def Info: Immagini/circuit.png  used on input line 22.
 (pdftex.def)             Requested size: 426.79135pt x 133.28215pt.
- [5
+ [4
 
 
  <./Immagini/circuit.png>]
@@ -1242,58 +1237,41 @@ Overfull \hbox (52.19475pt too wide) in paragraph at lines 38--39
  []
 
 
-Overfull \hbox (83.9281pt too wide) in paragraph at lines 55--57
-\T1/lmr/m/n/13 FSM states. Ad-di-tion-ally, an in-ter-rupt call-back for the but-ton (\T1/lmtt/m/n/13 HAL_GPIO_EXTI_Callback()\T1/lmr/m/n/13 )
+Overfull \hbox (2.4846pt too wide) in paragraph at lines 55--58
+\T1/lmr/m/n/13 (\T1/lmtt/m/n/13 HAL_GPIO_EXTI_Callback()\T1/lmr/m/n/13 ) sets a flag when the in-ter-rupt but-ton is pressed,
  []
 
-[6]
-<Immagini/adc-raw-plot.png, id=181, 925.95938pt x 545.78906pt>
+[5]
+<Immagini/adc-raw-plot.png, id=162, 925.95938pt x 545.78906pt>
 File: Immagini/adc-raw-plot.png Graphic file (type png)
 <use Immagini/adc-raw-plot.png>
-Package pdftex.def Info: Immagini/adc-raw-plot.png  used on input line 88.
+Package pdftex.def Info: Immagini/adc-raw-plot.png  used on input line 89.
 (pdftex.def)             Requested size: 384.1096pt x 226.40662pt.
-<Immagini/adc-ma-plot.png, id=182, 906.38625pt x 543.53062pt>
+<Immagini/adc-ma-plot.png, id=163, 906.38625pt x 543.53062pt>
 File: Immagini/adc-ma-plot.png Graphic file (type png)
 <use Immagini/adc-ma-plot.png>
-Package pdftex.def Info: Immagini/adc-ma-plot.png  used on input line 89.
+Package pdftex.def Info: Immagini/adc-ma-plot.png  used on input line 90.
 (pdftex.def)             Requested size: 384.1096pt x 230.3381pt.
-<Immagini/adc-noise-plot.png, id=183, 917.67844pt x 547.2947pt>
+<Immagini/adc-noise-plot.png, id=164, 917.67844pt x 547.2947pt>
 File: Immagini/adc-noise-plot.png Graphic file (type png)
 <use Immagini/adc-noise-plot.png>
-Package pdftex.def Info: Immagini/adc-noise-plot.png  used on input line 90.
+Package pdftex.def Info: Immagini/adc-noise-plot.png  used on input line 91.
 (pdftex.def)             Requested size: 384.1096pt x 229.0772pt.
 
 
-LaTeX Warning: Float too large for page by 0.43886pt on input line 93.
+LaTeX Warning: Float too large for page by 0.43886pt on input line 94.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./Capitoli/Problems and Solution.tex [7] [8 <./Immagini/adc-raw-plot.png> <./Immagini/adc-ma-plot.png> <./Immagini/adc-noise-plot.png>]
+) (./Capitoli/Problems and Solution.tex [6] [7 <./Immagini/adc-raw-plot.png> <./Immagini/adc-ma-plot.png> <./Immagini/adc-noise-plot.png>]
 Chapter 4.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 6.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 6.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 6.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 6.
-[9
+) (./Capitoli/Conclusion.tex [8
 
 
-]) (./Capitoli/Results and Evaluation.tex [10]
+]
 Chapter 5.
-[11
-
-
-]) (./Capitoli/Conclusion.tex [12]
-Chapter 6.
-[13
-
-
-]) [14] [15
-
-
+) [9
 
 
 ] (./main.aux)
@@ -1307,27 +1285,24 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3BABAEF4514BAE0C4D92A10957304285;3749.
+(rerunfilecheck)             Checksum: D0524C20F823EB35C2CDF8DD472BEB00;3305.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22932 strings out of 474222
- 407771 string characters out of 5748732
- 1933975 words of memory out of 5000000
- 44823 multiletter control sequences out of 15000+600000
- 636170 words of font info for 77 fonts, out of 8000000 for 9000
+ 22657 strings out of 474222
+ 402308 string characters out of 5748732
+ 1932975 words of memory out of 5000000
+ 44571 multiletter control sequences out of 15000+600000
+ 609324 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,8n,107p,1263b,1883s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/cbfonts/grmn1200.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (17 pages, 502705 bytes).
+ 108i,6n,107p,1263b,1883s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/cbfonts/grmn1200.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on main.pdf (11 pages, 452017 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
- 244 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

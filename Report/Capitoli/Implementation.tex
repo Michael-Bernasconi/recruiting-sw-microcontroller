@@ -53,7 +53,8 @@ All values are converted to millivolts and transmitted via UART2 to a serial ter
 
 \subsection{Digital Event Handling}
 The USER button is read using polling, detecting the falling edge to change FSM states.  
-Additionally, an interrupt callback for the button (\texttt{HAL\_GPIO\_EXTI\_Callback()}) sets a flag when the interrupt button is pressed, allowing asynchronous event handling. The callback also generates a UART message to confirm the button press.
+Additionally, an interrupt callback for the button \\
+(\texttt{HAL\_GPIO\_EXTI\_Callback()}) sets a flag when the interrupt button is pressed, allowing asynchronous event handling. The callback also generates a UART message to confirm the button press.
 
 \subsection{UART Communication}
 UART2 is initialized at 115200 baud, 8N1 configuration. All analog values and FSM state messages (WARNING, ERROR) are sent over this interface to provide real-time monitoring.
