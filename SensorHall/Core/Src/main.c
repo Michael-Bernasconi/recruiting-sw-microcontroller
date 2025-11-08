@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
@@ -43,9 +44,10 @@
 
 /* Private variables ---------------------------------------------------------*/
 
-ADC_HandleTypeDef hadc1;     // ADC handle
-DMA_HandleTypeDef hdma_adc1; // DMA handle for ADC (not used in main loop)
-UART_HandleTypeDef huart2;   // UART handle
+ADC_HandleTypeDef hadc1;
+DMA_HandleTypeDef hdma_adc1;
+
+UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 #define MA_SIZE 150           // BUFFER FOR MOVING AVERAGE AND INDEX
@@ -54,6 +56,7 @@ UART_HandleTypeDef huart2;   // UART handle
 uint32_t adcBuffer[MA_SIZE] = {0};  // Circular buffer for MA
 uint16_t bufferIndex = 0;        // Index in circular buffer
 uint8_t buttonPrevState = GPIO_PIN_SET; // Previous button state, default not pressed
+volatile uint8_t buttonPressed = 0;  // 0 = released, 1 = pressed
 
 // Seleziona il tipo di filtro: RAW, MOVING_AVERAGE, RANDOM_NOISE
 typedef enum { RAW, MOVING_AVERAGE, RANDOM_NOISE } FilterMode;
@@ -112,11 +115,13 @@ uint32_t addRandomNoise(uint32_t value) {
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
+
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
@@ -136,16 +141,28 @@ int main(void)
   MX_DMA_Init();
   MX_ADC1_Init();
   MX_USART2_UART_Init();
-
   /* USER CODE BEGIN 2 */
   /* Initialize LEDs */
   BSP_LED_Init(LED_GREEN);
   /* USER CODE END 2 */
 
+  /* Initialize leds */
+  BSP_LED_Init(LED_GREEN);
+
+  /* Initialize USER push-button, will be used to trigger an interrupt each time it's pressed.*/
+  BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 while (1)
 {
+    if (buttonPressed)
+    {
+      char msg[50];
+      sprintf(msg, "Button pressed!\r\n");
+      HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+      buttonPressed = 0;  // reset flag
+    }
     // --- READ BUTTON AND DETECT FALLING EDGE ---
     static uint8_t buttonPrevState = GPIO_PIN_SET; // initially not pressed
     uint8_t buttonState = HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin);
@@ -248,13 +265,12 @@ break;
             break;
     }
 }
-  /* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
-  /* USER CODE BEGIN 3 */
+    /* USER CODE BEGIN 3 */
   /* USER CODE END 3 */
 }
 
-/* ------------------------ STM32 GENERATED FUNCTIONS ------------------------ */
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -266,6 +282,9 @@ void SystemClock_Config(void)
 
   __HAL_FLASH_SET_LATENCY(FLASH_LATENCY_1);
 
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -273,6 +292,8 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSE;
@@ -288,12 +309,24 @@ void SystemClock_Config(void)
 
 /**
   * @brief ADC1 Initialization Function
+  * @param None
   * @retval None
   */
 static void MX_ADC1_Init(void)
 {
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
   ADC_ChannelConfTypeDef sConfig = {0};
 
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  */
   hadc1.Instance = ADC1;
   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
@@ -312,26 +345,40 @@ static void MX_ADC1_Init(void)
   hadc1.Init.SamplingTimeCommon1 = ADC_SAMPLETIME_1CYCLE_5;
   hadc1.Init.OversamplingMode = DISABLE;
   hadc1.Init.TriggerFrequencyMode = ADC_TRIGGER_FREQ_HIGH;
-
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
   {
     Error_Handler();
   }
 
+  /** Configure Regular Channel
+  */
   sConfig.Channel = ADC_CHANNEL_4;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
   }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+
 }
 
 /**
   * @brief USART2 Initialization Function
+  * @param None
   * @retval None
   */
 static void MX_USART2_UART_Init(void)
 {
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
   huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
@@ -343,11 +390,14 @@ static void MX_USART2_UART_Init(void)
   huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
   huart2.Init.ClockPrescaler = UART_PRESCALER_DIV1;
   huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-
   if (HAL_UART_Init(&huart2) != HAL_OK)
   {
     Error_Handler();
   }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
+
 }
 
 /**
@@ -355,37 +405,54 @@ static void MX_USART2_UART_Init(void)
   */
 static void MX_DMA_Init(void)
 {
+
+  /* DMA controller clock enable */
   __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel1_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+
 }
 
 /**
   * @brief GPIO Initialization Function
+  * @param None
   * @retval None
   */
 static void MX_GPIO_Init(void)
 {
-    __HAL_RCC_GPIOF_CLK_ENABLE();
-     GPIO_InitTypeDef GPIO_InitStruct = {0};
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  /* USER CODE BEGIN MX_GPIO_Init_1 */
 
-    // ACTIVE clock GPIO
-    __HAL_RCC_GPIOC_CLK_ENABLE();
-    __HAL_RCC_GPIOA_CLK_ENABLE();
+  /* USER CODE END MX_GPIO_Init_1 */
 
-    // Configure USER BUTTON (PC13) as input
-    GPIO_InitStruct.Pin = USER_BUTTON_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(USER_BUTTON_GPIO_Port, &GPIO_InitStruct);
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOF_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
 
-    // Configure LED (PA5) as output
-    GPIO_InitStruct.Pin = GPIO_PIN_5;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  /*Configure GPIO pin : PA1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /* USER CODE BEGIN MX_GPIO_Init_2 */
+
+  /* USER CODE END MX_GPIO_Init_2 */
 }
+
+/* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if (GPIO_Pin == GPIO_PIN_1)
+    {
+        buttonPressed = 1; //BUTTON PRESSED INTERRUPT
+    }
+}
+/* USER CODE END 4 */
 
 /**
   * @brief  This function is executed in case of error occurrence.
@@ -393,13 +460,27 @@ static void MX_GPIO_Init(void)
   */
 void Error_Handler(void)
 {
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
-  while (1) {}
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
 }
-
 #ifdef USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
 void assert_failed(uint8_t *file, uint32_t line)
 {
-  // Optional: printf("Wrong parameters value: file %s on line %d\r\n", file, line);
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
 }
-#endif
+#endif /* USE_FULL_ASSERT */

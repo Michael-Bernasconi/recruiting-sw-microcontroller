@@ -1,0 +1,27 @@
+Report sul Progetto Nucleo – Lettura Analogica e FSM
+1. Obiettivo del progetto
+
+L'obiettivo del progetto è realizzare un sistema embedded basato su scheda STM32 Nucleo che legge i dati da un sensore analogico (originariamente sensore Hall, sostituito da un potenziometro per problemi hardware) e li trasmette al PC tramite seriale. Il sistema implementa una Finite State Machine (FSM) per gestire la lettura dei dati, il controllo del LED e la gestione del bottone utente. I dati ricevuti sul PC vengono visualizzati in tempo reale su due plot distinti e modulati per generare suoni.
+
+2. Architettura del firmware
+2.1 Periferiche utilizzate
+
+ADC: Lettura analogica del potenziometro.
+
+GPIO: Lettura del USER BUTTON e controllo del USER LED.
+
+UART: Trasmissione dei dati al PC per plotting e audio.
+
+Nota: Non è stata utilizzata la DMA per la lettura ADC perché durante i test causava il blocco della UART, compromettendo la trasmissione dei dati.
+
+2.2 FSM implementata
+
+Lo stato del sistema è definito da un enum SystemState con i seguenti stati:
+
+Stato	Comportamento
+INIT	Inizializzazione periferiche e transizione a WAIT_REQUEST
+WAIT_REQUEST	CLI attiva, LED spento, lettura sensore inattiva; se bottone premuto → LISTENING
+LISTENING	LED acceso, sensore letto continuamente, dati inviati su seriale; se valore analogico > soglia per 5s → WARNING; se bottone premuto → PAUSE
+PAUSE	LED lampeggiante a 2s di periodo, lettura sensore sospesa; bottone → LISTENING
+WARNING	LED spento, seriale invia continuamente "WARNING"; bottone → WAIT_REQUEST
+ERROR	LED lampeggiante a 400ms, seriale invia continuamente "ERROR"; bottone → reset MCU
