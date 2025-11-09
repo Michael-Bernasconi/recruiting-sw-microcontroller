@@ -1,13 +1,14 @@
 # Fdb version 4
-["biber main"] 1762620325.93255 "main.bcf" "main.bbl" "main" 1762620637.11846 0
-  "main.bcf" 1762620636.9394 107353 5126ec284b7cb1b18cd2d41da2972233 "pdflatex"
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1762680780.84068 -1
+  "bibliography.bib" 1762446054 280 065c97603263cd196cf5a038a48f1a33 ""
+  "main.bcf" 1762680780.60566 107353 5126ec284b7cb1b18cd2d41da2972233 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1762620634.27655 "/home/michael/recruiting-sw-microcontroller/Report/main.tex" "main.pdf" "main" 1762620637.11901 0
+["pdflatex"] 1762680778.25843 "/home/michael/recruiting-sw-microcontroller/Report/main.tex" "main.pdf" "main" 1762680780.84199 0
   "/etc/texmf/web2c/texmf.cnf" 1761727842.97758 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/michael/recruiting-sw-microcontroller/Report/main.tex" 1762620289.57429 3401 b291077baabb9eb394aaeb3357330fff ""
+  "/home/michael/recruiting-sw-microcontroller/Report/main.tex" 1762680534.42427 3397 3d6a9538ae52bf49f262bd21ae368fe8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
@@ -143,10 +144,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1761727869.39171 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1761727940 8214277 c909cce668207d2dfebb4e915522fd15 ""
-  "Capitoli/Conclusion.tex" 1762620326.77541 21 dbf604a680aa1192b3965f0ae024a5d0 ""
-  "Capitoli/Implementation.tex" 1762620633.92871 4877 c354176aea71edef10957fe0bc97d190 ""
+  "Capitoli/Conclusion.tex" 1762680117.09244 779 03f632b4686c937b2bb3b3f75b4c5dcd ""
+  "Capitoli/Implementation.tex" 1762680619.74026 4876 0b1522bc39fb7bc3e26236f6dfa14714 ""
   "Capitoli/Introduction.tex" 1762620163.07716 1975 9249e7df22d118b28792a672864a07bc ""
-  "Capitoli/Problems and Solution.tex" 1762620340.88565 31 9b96ad27303078706961a1bf5a7aa108 ""
+  "Capitoli/Problems and Solution.tex" 1762680774.83134 1869 0d4c35b95c191ec6cd5a40c37840a150 ""
   "Capitoli/Project description.tex" 1762616375.89375 3643 282a3117018a9fd37759b91bb9a940b8 ""
   "Frontespizio.tex" 1762613799.06378 811 b12e27ab749f4118e87bed27be3a625c ""
   "Immagini/adc-ma-plot.png" 1762593499.18583 29582 370b325a14fba61999efd755d5dbd40c ""
@@ -154,12 +155,12 @@
   "Immagini/adc-raw-plot.png" 1762593499.18515 40521 fe5074826ced0ae7dde9ef6b485c5e8a ""
   "Immagini/circuit.png" 1762593499.18956 253974 8d5becb3829a3c9b21118518c065d357 ""
   "Immagini/logo_rosso.png" 1762446408 22405 c7c97e1f457426285d5c605efb1440b1 ""
-  "main.aux" 1762620636.9324 3955 97cac06f8d353a35799c35d2f560b2c7 "pdflatex"
+  "main.aux" 1762680780.60066 4368 c12af482159e0d7a6e3d7aae220e1cdb "pdflatex"
   "main.bbl" 1762620327.32062 466 ee04f40f768daeed26442158e95aba61 "biber main"
-  "main.out" 1762620636.9364 3305 d0524c20f823eb35c2cdf8dd472beb00 "pdflatex"
-  "main.run.xml" 1762620636.94184 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
-  "main.tex" 1762620289.57429 3401 b291077baabb9eb394aaeb3357330fff ""
-  "main.toc" 1762620636.94184 1796 ed5ee0d7a1e45db5741c42d3fe294f9f "pdflatex"
+  "main.out" 1762680780.60366 4059 e8f12f4a88086566c99785664e7eeb64 "pdflatex"
+  "main.run.xml" 1762680780.60761 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.tex" 1762680534.42427 3397 3d6a9538ae52bf49f262bd21ae368fe8 ""
+  "main.toc" 1762680780.60761 2086 dbbe842e3da26eeb0d8eb27244285180 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

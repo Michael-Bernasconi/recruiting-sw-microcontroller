@@ -337,6 +337,7 @@ INPUT ./Immagini/adc-noise-plot.png
 INPUT ./Capitoli/Problems and Solution.tex
 INPUT ./Capitoli/Problems and Solution.tex
 INPUT Capitoli/Problems and Solution.tex
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT ./Capitoli/Conclusion.tex
 INPUT ./Capitoli/Conclusion.tex
 INPUT ./Capitoli/Conclusion.tex
