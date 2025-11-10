@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1762680780.84068 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1762761263.14153 -1
   "bibliography.bib" 1762446054 280 065c97603263cd196cf5a038a48f1a33 ""
-  "main.bcf" 1762680780.60566 107353 5126ec284b7cb1b18cd2d41da2972233 "pdflatex"
+  "main.bcf" 1762761262.95506 107353 5126ec284b7cb1b18cd2d41da2972233 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1762680778.25843 "/home/michael/recruiting-sw-microcontroller/Report/main.tex" "main.pdf" "main" 1762680780.84199 0
+["pdflatex"] 1762761259.49216 "/home/michael/recruiting-sw-microcontroller/Report/main.tex" "main.pdf" "main" 1762761263.14219 0
   "/etc/texmf/web2c/texmf.cnf" 1761727842.97758 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/michael/recruiting-sw-microcontroller/Report/main.tex" 1762680534.42427 3397 3d6a9538ae52bf49f262bd21ae368fe8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -148,19 +148,19 @@
   "Capitoli/Implementation.tex" 1762680619.74026 4876 0b1522bc39fb7bc3e26236f6dfa14714 ""
   "Capitoli/Introduction.tex" 1762620163.07716 1975 9249e7df22d118b28792a672864a07bc ""
   "Capitoli/Problems and Solution.tex" 1762680774.83134 1869 0d4c35b95c191ec6cd5a40c37840a150 ""
-  "Capitoli/Project description.tex" 1762616375.89375 3643 282a3117018a9fd37759b91bb9a940b8 ""
+  "Capitoli/Project description.tex" 1762761259.10062 3592 f21332b89ce3edfa1a62ef43459d19e0 ""
   "Frontespizio.tex" 1762613799.06378 811 b12e27ab749f4118e87bed27be3a625c ""
   "Immagini/adc-ma-plot.png" 1762593499.18583 29582 370b325a14fba61999efd755d5dbd40c ""
   "Immagini/adc-noise-plot.png" 1762593499.18656 38528 740bf97e28986c06b7bc04dcd9acecbc ""
   "Immagini/adc-raw-plot.png" 1762593499.18515 40521 fe5074826ced0ae7dde9ef6b485c5e8a ""
   "Immagini/circuit.png" 1762593499.18956 253974 8d5becb3829a3c9b21118518c065d357 ""
   "Immagini/logo_rosso.png" 1762446408 22405 c7c97e1f457426285d5c605efb1440b1 ""
-  "main.aux" 1762680780.60066 4368 c12af482159e0d7a6e3d7aae220e1cdb "pdflatex"
+  "main.aux" 1762761262.95005 4368 c12af482159e0d7a6e3d7aae220e1cdb "pdflatex"
   "main.bbl" 1762620327.32062 466 ee04f40f768daeed26442158e95aba61 "biber main"
-  "main.out" 1762680780.60366 4059 e8f12f4a88086566c99785664e7eeb64 "pdflatex"
-  "main.run.xml" 1762680780.60761 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.out" 1762761262.95205 4059 e8f12f4a88086566c99785664e7eeb64 "pdflatex"
+  "main.run.xml" 1762761262.95704 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1762680534.42427 3397 3d6a9538ae52bf49f262bd21ae368fe8 ""
-  "main.toc" 1762680780.60761 2086 dbbe842e3da26eeb0d8eb27244285180 "pdflatex"
+  "main.toc" 1762761262.95704 2086 dbbe842e3da26eeb0d8eb27244285180 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
