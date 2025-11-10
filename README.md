@@ -42,4 +42,5 @@ Warnings and error messages are also printed, while the green LED reflects state
 Data can be visualized using:
 - Arduino Serial Plotter
 - Python live plotting scripts
+- Python live playback sound scripts
 - Any serial monitoring tool with graph support
