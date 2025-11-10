@@ -22,12 +22,13 @@ The firmware demonstrates:
 
 ## System Architecture
 The core of the firmware is a Finite State Machine that controls system behavior. The main states are:
-• STATE_INIT: System configuration.
-• STATE_WAIT_REQUEST: Waiting for the user to start acquisition.
-• STATE_LISTENING: Analog signal acquisition, processing and UART transmission.
-• STATE_PAUSE: Temporary acquisition pause with LED blinking.
-• STATE_WARNING: Analog signal exceeded threshold for a prolonged time.
-• STATE_ERROR: Critical threshold exceeded, system resets.
+
+- STATE_INIT: System configuration.
+- STATE_WAIT_REQUEST: Waiting for the user to start acquisition.
+- STATE_LISTENING: Analog signal acquisition, processing and UART transmission.
+- STATE_PAUSE: Temporary acquisition pause with LED blinking.
+- STATE_WARNING: Analog signal exceeded threshold for a prolonged time.
+- STATE_ERROR: Critical threshold exceeded, system resets.
 Transitions occur via USER button press or analog signal threshold checks.
 
 ## Data Output Example
@@ -39,6 +40,6 @@ Warnings and error messages are also printed, while the green LED reflects state
 
 ## Data Visualization
 Data can be visualized using:
-• Arduino Serial Plotter
-• Python live plotting scripts
-• Any serial monitoring tool with graph support
+- Arduino Serial Plotter
+- Python live plotting scripts
+- Any serial monitoring tool with graph support
