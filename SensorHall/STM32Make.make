@@ -81,7 +81,6 @@ Core/Src/stm32c0xx_it.c \
 Core/Src/syscalls.c \
 Core/Src/sysmem.c \
 Core/Src/system_stm32c0xx.c \
-Drivers/BSP/STM32C0xx_Nucleo/stm32c0xx_nucleo.c \
 Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.c \
 Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.c \
 Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c \
@@ -97,9 +96,7 @@ Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.c \
 Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.c \
 Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.c \
 Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.c \
-Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.c \
-Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_usart.c \
-Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_usart_ex.c
+Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.c
 
 
 CXX_SOURCES = \
@@ -178,15 +175,13 @@ AS_DEFS =
 # C defines
 C_DEFS =  \
 -DSTM32C031xx \
--DUSE_HAL_DRIVER \
--DUSE_NUCLEO_64
+-DUSE_HAL_DRIVER
 
 
 # CXX defines
 CXX_DEFS =  \
 -DSTM32C031xx \
--DUSE_HAL_DRIVER \
--DUSE_NUCLEO_64
+-DUSE_HAL_DRIVER
 
 
 # AS includes
@@ -195,7 +190,6 @@ AS_INCLUDES = \
 # C includes
 C_INCLUDES =  \
 -ICore/Inc \
--IDrivers/BSP/STM32C0xx_Nucleo \
 -IDrivers/CMSIS/Device/ST/STM32C0xx/Include \
 -IDrivers/CMSIS/Include \
 -IDrivers/STM32C0xx_HAL_Driver/Inc \

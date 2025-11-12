@@ -35,6 +35,10 @@
 /* USER CODE BEGIN PD */
 #define USER_BUTTON_Pin       GPIO_PIN_13  //USER BUTTON PIN NUMBER
 #define USER_BUTTON_GPIO_Port GPIOC        //PORT FOR USER BOTTON
+
+#define LED_GREEN_Pin GPIO_PIN_5
+#define LED_GREEN_GPIO_Port GPIOA
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -43,7 +47,6 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-
 ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
 
@@ -143,14 +146,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   /* Initialize LEDs */
-  BSP_LED_Init(LED_GREEN);
   /* USER CODE END 2 */
-
-  /* Initialize leds */
-  BSP_LED_Init(LED_GREEN);
-
-  /* Initialize USER push-button, will be used to trigger an interrupt each time it's pressed.*/
-  BSP_PB_Init(BUTTON_USER, BUTTON_MODE_EXTI);
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -160,11 +156,10 @@ while (1)
     {
       char msg[50];
       sprintf(msg, "Button pressed!\r\n");
-      HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+      HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 10);
       buttonPressed = 0;  // reset flag
     }
     // --- READ BUTTON AND DETECT FALLING EDGE ---
-    static uint8_t buttonPrevState = GPIO_PIN_SET; // initially not pressed
     uint8_t buttonState = HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin);
 
     if(buttonPrevState == GPIO_PIN_SET && buttonState == GPIO_PIN_RESET) // CHECK IF BUTTON WAS JUST PRESSED
@@ -190,13 +185,12 @@ while (1)
             break;
 
         case STATE_WAIT_REQUEST:
-            BSP_LED_Off(LED_GREEN); // LED OFF
-            HAL_Delay(100);
+HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);            HAL_Delay(100);
             break;
 
         case STATE_LISTENING:
        {
-    BSP_LED_On(LED_GREEN); // LED ON
+    HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET); // LED ON
 
     //START ADC CONVERSION
     HAL_ADC_Start(&hadc1);
@@ -247,20 +241,18 @@ while (1)
 break;
 
         case STATE_PAUSE:
-            BSP_LED_Toggle(LED_GREEN); // LED BLINKING
-            HAL_Delay(500); // 50% duty
+            HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);            HAL_Delay(500); // 50% duty
 
             break;
 
         case STATE_WARNING:
-            BSP_LED_Off(LED_GREEN); //LED OFF
+            HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);//LED OFF
             HAL_UART_Transmit(&huart2, (uint8_t*)"WARNING\r\n", 9, HAL_MAX_DELAY);
             HAL_Delay(200);
             break;
 
         case STATE_ERROR:
-            BSP_LED_Toggle(LED_GREEN);
-            HAL_UART_Transmit(&huart2, (uint8_t*)"ERROR\r\n", 7, HAL_MAX_DELAY);
+            HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);            HAL_UART_Transmit(&huart2, (uint8_t*)"ERROR\r\n", 7, HAL_MAX_DELAY);
             HAL_Delay(200);
             break;
     }
@@ -433,14 +425,30 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
+  /*Configure GPIO pin : PC13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /* Configure GPIO pin : PA5 (LED) */
+GPIO_InitStruct.Pin = LED_GREEN_Pin;
+GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+GPIO_InitStruct.Pull = GPIO_NOPULL;
+GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+HAL_GPIO_Init(LED_GREEN_GPIO_Port, &GPIO_InitStruct);
+
+
   /*Configure GPIO pin : PA1 */
   GPIO_InitStruct.Pin = GPIO_PIN_1;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
-
+/* Enable EXTI line 0 and 1 interrupts */
+HAL_NVIC_SetPriority(EXTI0_1_IRQn, 1, 0);
+HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
   /* USER CODE END MX_GPIO_Init_2 */
 }
 
@@ -450,7 +458,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     if (GPIO_Pin == GPIO_PIN_1)
     {
         buttonPressed = 1; //BUTTON PRESSED INTERRUPT
-    }
+     }
 }
 /* USER CODE END 4 */
 

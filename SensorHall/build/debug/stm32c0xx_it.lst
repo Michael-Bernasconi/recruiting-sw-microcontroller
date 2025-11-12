@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 1
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc3L4899.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 1
   30:Core/Src/stm32c0xx_it.c **** /* USER CODE END TD */
   31:Core/Src/stm32c0xx_it.c **** 
   32:Core/Src/stm32c0xx_it.c **** /* Private define ------------------------------------------------------------*/
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc3L4899.s 			page 2
 
 
   33:Core/Src/stm32c0xx_it.c **** /* USER CODE BEGIN PD */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 1
   75:Core/Src/stm32c0xx_it.c ****   {
   36              		.loc 1 75 10 view .LVU3
   37 0000 FEE7     		b	.L2
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 3
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc3L4899.s 			page 3
 
 
   38              		.cfi_endproc
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 1
  100:Core/Src/stm32c0xx_it.c **** {
   73              		.loc 1 100 1 view -0
   74              		.cfi_startproc
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 4
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc3L4899.s 			page 4
 
 
   75              		@ args = 0, pretend = 0, frame = 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 1
  121:Core/Src/stm32c0xx_it.c **** 
  122:Core/Src/stm32c0xx_it.c **** /**
  123:Core/Src/stm32c0xx_it.c ****   * @brief This function handles System tick timer.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 5
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc3L4899.s 			page 5
 
 
  124:Core/Src/stm32c0xx_it.c ****   */
@@ -268,13 +268,13 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 1
  126 0006 10BD     		pop	{r4, pc}
  127              		.cfi_endproc
  128              	.LFE346:
- 130              		.section	.text.EXTI4_15_IRQHandler,"ax",%progbits
+ 130              		.section	.text.DMA1_Channel1_IRQHandler,"ax",%progbits
  131              		.align	1
- 132              		.global	EXTI4_15_IRQHandler
+ 132              		.global	DMA1_Channel1_IRQHandler
  133              		.syntax unified
  134              		.code	16
  135              		.thumb_func
- 137              	EXTI4_15_IRQHandler:
+ 137              	DMA1_Channel1_IRQHandler:
  138              	.LFB347:
  135:Core/Src/stm32c0xx_it.c **** 
  136:Core/Src/stm32c0xx_it.c **** /******************************************************************************/
@@ -285,9 +285,9 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 1
  141:Core/Src/stm32c0xx_it.c **** /******************************************************************************/
  142:Core/Src/stm32c0xx_it.c **** 
  143:Core/Src/stm32c0xx_it.c **** /**
- 144:Core/Src/stm32c0xx_it.c ****   * @brief This function handles EXTI line 4 to 15 interrupts.
+ 144:Core/Src/stm32c0xx_it.c ****   * @brief This function handles DMA1 channel 1 interrupt.
  145:Core/Src/stm32c0xx_it.c ****   */
- 146:Core/Src/stm32c0xx_it.c **** void EXTI4_15_IRQHandler(void)
+ 146:Core/Src/stm32c0xx_it.c **** void DMA1_Channel1_IRQHandler(void)
  147:Core/Src/stm32c0xx_it.c **** {
  139              		.loc 1 147 1 is_stmt 1 view -0
  140              		.cfi_startproc
@@ -297,70 +297,59 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 1
  144              		.cfi_def_cfa_offset 8
  145              		.cfi_offset 4, -8
  146              		.cfi_offset 14, -4
- 148:Core/Src/stm32c0xx_it.c ****   /* USER CODE BEGIN EXTI4_15_IRQn 0 */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 6
+ 148:Core/Src/stm32c0xx_it.c ****   /* USER CODE BEGIN DMA1_Channel1_IRQn 0 */
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc3L4899.s 			page 6
 
 
  149:Core/Src/stm32c0xx_it.c **** 
- 150:Core/Src/stm32c0xx_it.c ****   /* USER CODE END EXTI4_15_IRQn 0 */
- 151:Core/Src/stm32c0xx_it.c ****   BSP_PB_IRQHandler(BUTTON_USER);
+ 150:Core/Src/stm32c0xx_it.c ****   /* USER CODE END DMA1_Channel1_IRQn 0 */
+ 151:Core/Src/stm32c0xx_it.c ****   HAL_DMA_IRQHandler(&hdma_adc1);
  147              		.loc 1 151 3 view .LVU16
- 148 0002 0020     		movs	r0, #0
- 149 0004 FFF7FEFF 		bl	BSP_PB_IRQHandler
+ 148 0002 0248     		ldr	r0, .L9
+ 149 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
  150              	.LVL1:
- 152:Core/Src/stm32c0xx_it.c ****   /* USER CODE BEGIN EXTI4_15_IRQn 1 */
+ 152:Core/Src/stm32c0xx_it.c ****   /* USER CODE BEGIN DMA1_Channel1_IRQn 1 */
  153:Core/Src/stm32c0xx_it.c **** 
- 154:Core/Src/stm32c0xx_it.c ****   /* USER CODE END EXTI4_15_IRQn 1 */
+ 154:Core/Src/stm32c0xx_it.c ****   /* USER CODE END DMA1_Channel1_IRQn 1 */
  155:Core/Src/stm32c0xx_it.c **** }
  151              		.loc 1 155 1 is_stmt 0 view .LVU17
  152              		@ sp needed
  153 0008 10BD     		pop	{r4, pc}
- 154              		.cfi_endproc
- 155              	.LFE347:
- 157              		.section	.text.DMA1_Channel1_IRQHandler,"ax",%progbits
- 158              		.align	1
- 159              		.global	DMA1_Channel1_IRQHandler
- 160              		.syntax unified
- 161              		.code	16
- 162              		.thumb_func
- 164              	DMA1_Channel1_IRQHandler:
- 165              	.LFB348:
+ 154              	.L10:
+ 155 000a C046     		.align	2
+ 156              	.L9:
+ 157 000c 00000000 		.word	hdma_adc1
+ 158              		.cfi_endproc
+ 159              	.LFE347:
+ 161              		.section	.text.EXTI0_1_IRQHandler,"ax",%progbits
+ 162              		.align	1
+ 163              		.global	EXTI0_1_IRQHandler
+ 164              		.syntax unified
+ 165              		.code	16
+ 166              		.thumb_func
+ 168              	EXTI0_1_IRQHandler:
+ 169              	.LFB348:
  156:Core/Src/stm32c0xx_it.c **** 
- 157:Core/Src/stm32c0xx_it.c **** /**
- 158:Core/Src/stm32c0xx_it.c ****   * @brief This function handles DMA1 channel 1 interrupt.
- 159:Core/Src/stm32c0xx_it.c ****   */
- 160:Core/Src/stm32c0xx_it.c **** void DMA1_Channel1_IRQHandler(void)
- 161:Core/Src/stm32c0xx_it.c **** {
- 166              		.loc 1 161 1 is_stmt 1 view -0
- 167              		.cfi_startproc
- 168              		@ args = 0, pretend = 0, frame = 0
- 169              		@ frame_needed = 0, uses_anonymous_args = 0
- 170 0000 10B5     		push	{r4, lr}
- 171              		.cfi_def_cfa_offset 8
- 172              		.cfi_offset 4, -8
- 173              		.cfi_offset 14, -4
- 162:Core/Src/stm32c0xx_it.c ****   /* USER CODE BEGIN DMA1_Channel1_IRQn 0 */
- 163:Core/Src/stm32c0xx_it.c **** 
- 164:Core/Src/stm32c0xx_it.c ****   /* USER CODE END DMA1_Channel1_IRQn 0 */
- 165:Core/Src/stm32c0xx_it.c ****   HAL_DMA_IRQHandler(&hdma_adc1);
- 174              		.loc 1 165 3 view .LVU19
- 175 0002 0248     		ldr	r0, .L10
- 176 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
- 177              	.LVL2:
- 166:Core/Src/stm32c0xx_it.c ****   /* USER CODE BEGIN DMA1_Channel1_IRQn 1 */
- 167:Core/Src/stm32c0xx_it.c **** 
- 168:Core/Src/stm32c0xx_it.c ****   /* USER CODE END DMA1_Channel1_IRQn 1 */
- 169:Core/Src/stm32c0xx_it.c **** }
- 178              		.loc 1 169 1 is_stmt 0 view .LVU20
- 179              		@ sp needed
- 180 0008 10BD     		pop	{r4, pc}
- 181              	.L11:
- 182 000a C046     		.align	2
- 183              	.L10:
- 184 000c 00000000 		.word	hdma_adc1
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 7
-
-
+ 157:Core/Src/stm32c0xx_it.c **** /* USER CODE BEGIN 1 */
+ 158:Core/Src/stm32c0xx_it.c **** void EXTI0_1_IRQHandler(void)
+ 159:Core/Src/stm32c0xx_it.c **** {
+ 170              		.loc 1 159 1 is_stmt 1 view -0
+ 171              		.cfi_startproc
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 174 0000 10B5     		push	{r4, lr}
+ 175              		.cfi_def_cfa_offset 8
+ 176              		.cfi_offset 4, -8
+ 177              		.cfi_offset 14, -4
+ 160:Core/Src/stm32c0xx_it.c ****     HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
+ 178              		.loc 1 160 5 view .LVU19
+ 179 0002 0220     		movs	r0, #2
+ 180 0004 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 181              	.LVL2:
+ 161:Core/Src/stm32c0xx_it.c **** }
+ 182              		.loc 1 161 1 is_stmt 0 view .LVU20
+ 183              		@ sp needed
+ 184 0008 10BD     		pop	{r4, pc}
  185              		.cfi_endproc
  186              	.LFE348:
  188              		.text
@@ -369,32 +358,35 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 1
  191              		.file 3 "C:/Users/micha/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
  192              		.file 4 "Drivers/CMSIS/Device/ST/STM32C0xx/Include/stm32c031xx.h"
  193              		.file 5 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_def.h"
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc3L4899.s 			page 7
+
+
  194              		.file 6 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_dma.h"
- 195              		.file 7 "Drivers/BSP/STM32C0xx_Nucleo/stm32c0xx_nucleo.h"
+ 195              		.file 7 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_gpio.h"
  196              		.file 8 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h"
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s 			page 8
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc3L4899.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32c0xx_it.c
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:19     .text.NMI_Handler:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:25     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:42     .text.HardFault_Handler:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:48     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:65     .text.SVC_Handler:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:71     .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:85     .text.PendSV_Handler:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:91     .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:105    .text.SysTick_Handler:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:111    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:131    .text.EXTI4_15_IRQHandler:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:137    .text.EXTI4_15_IRQHandler:00000000 EXTI4_15_IRQHandler
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:158    .text.DMA1_Channel1_IRQHandler:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:164    .text.DMA1_Channel1_IRQHandler:00000000 DMA1_Channel1_IRQHandler
-C:\Users\micha\AppData\Local\Temp\ccnDvYeE.s:184    .text.DMA1_Channel1_IRQHandler:0000000c $d
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:19     .text.NMI_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:25     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:42     .text.HardFault_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:48     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:65     .text.SVC_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:71     .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:85     .text.PendSV_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:91     .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:105    .text.SysTick_Handler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:111    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:131    .text.DMA1_Channel1_IRQHandler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:137    .text.DMA1_Channel1_IRQHandler:00000000 DMA1_Channel1_IRQHandler
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:157    .text.DMA1_Channel1_IRQHandler:0000000c $d
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:162    .text.EXTI0_1_IRQHandler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc3L4899.s:168    .text.EXTI0_1_IRQHandler:00000000 EXTI0_1_IRQHandler
 
 UNDEFINED SYMBOLS
 HAL_IncTick
-BSP_PB_IRQHandler
 HAL_DMA_IRQHandler
 hdma_adc1
+HAL_GPIO_EXTI_IRQHandler

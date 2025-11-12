@@ -4,9 +4,9 @@ from matplotlib.widgets import Button
 from collections import deque
 
 # --- Serial Port Parameters ---
-port = 'COM5'         # Cambia con la tua porta reale
+port = 'COM5'        
 baudrate = 115200
-timeout = 1           # Secondi di attesa
+timeout = 1           
 
 ser = serial.Serial(port, baudrate, timeout=timeout)
 

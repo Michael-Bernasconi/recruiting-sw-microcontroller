@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 1
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 1
   30:Core/Src/system_stm32c0xx.c ****   *
   31:Core/Src/system_stm32c0xx.c ****   ******************************************************************************
   32:Core/Src/system_stm32c0xx.c ****   */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s 			page 2
 
 
   33:Core/Src/system_stm32c0xx.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 1
   87:Core/Src/system_stm32c0xx.c **** /*!< Uncomment the following line if you need to relocate your vector Table in
   88:Core/Src/system_stm32c0xx.c ****      Internal SRAM. */
   89:Core/Src/system_stm32c0xx.c **** //#define VECT_TAB_SRAM 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 3
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s 			page 3
 
 
   90:Core/Src/system_stm32c0xx.c **** #define VECT_TAB_OFFSET  0x0U /*!< Vector Table base offset field.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 1
   27              		.loc 1 143 1 view -0
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 4
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s 			page 4
 
 
   30              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 1
  173:Core/Src/system_stm32c0xx.c ****   *           - If SYSCLK source is LSE, SystemCoreClock will contain the LSE_VALUE
  174:Core/Src/system_stm32c0xx.c ****   *
  175:Core/Src/system_stm32c0xx.c ****   *         (**) HSI_VALUE is a constant defined in stm32c0xx_hal_conf.h file (default value
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 5
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s 			page 5
 
 
  176:Core/Src/system_stm32c0xx.c ****   *              48 MHz) but the real value may vary depending on the variations
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 1
   81              		.loc 1 205 7 is_stmt 1 view .LVU13
   82              		.loc 1 205 23 is_stmt 0 view .LVU14
   83 0014 124B     		ldr	r3, .L9+4
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 6
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s 			page 6
 
 
   84 0016 134A     		ldr	r2, .L9+8
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 1
  110              	.LVL2:
  111              	.L5:
  215:Core/Src/system_stm32c0xx.c ****       break;
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 7
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s 			page 7
 
 
  112              		.loc 1 215 7 is_stmt 1 view .LVU23
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 1
  153 005c 00100240 		.word	1073876992
  154 0060 00000000 		.word	SystemCoreClock
  155 0064 006CDC02 		.word	48000000
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 8
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s 			page 8
 
 
  156 0068 00000000 		.word	AHBPrescTable
@@ -468,22 +468,22 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 1
  207              		.file 4 "Drivers/CMSIS/Include/core_cm0plus.h"
  208              		.file 5 "Drivers/CMSIS/Device/ST/STM32C0xx/Include/system_stm32c0xx.h"
  209              		.file 6 "Drivers/CMSIS/Device/ST/STM32C0xx/Include/stm32c031xx.h"
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccNgthDM.s 			page 9
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_stm32c0xx.c
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:19     .text.SystemInit:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:25     .text.SystemInit:00000000 SystemInit
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:44     .text.SystemInit:0000000c $d
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:49     .text.SystemCoreClockUpdate:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:55     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:153    .text.SystemCoreClockUpdate:0000005c $d
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:201    .data.SystemCoreClock:00000000 SystemCoreClock
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:179    .rodata.AHBPrescTable:00000000 AHBPrescTable
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:165    .rodata.APBPrescTable:00000000 APBPrescTable
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:162    .rodata.APBPrescTable:00000000 $d
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:176    .rodata.AHBPrescTable:00000000 $d
-C:\Users\micha\AppData\Local\Temp\ccNgthDM.s:198    .data.SystemCoreClock:00000000 $d
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:19     .text.SystemInit:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:25     .text.SystemInit:00000000 SystemInit
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:44     .text.SystemInit:0000000c $d
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:49     .text.SystemCoreClockUpdate:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:55     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:153    .text.SystemCoreClockUpdate:0000005c $d
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:201    .data.SystemCoreClock:00000000 SystemCoreClock
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:179    .rodata.AHBPrescTable:00000000 AHBPrescTable
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:165    .rodata.APBPrescTable:00000000 APBPrescTable
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:162    .rodata.APBPrescTable:00000000 $d
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:176    .rodata.AHBPrescTable:00000000 $d
+C:\Users\micha\AppData\Local\Temp\cckkQ4hd.s:198    .data.SystemCoreClock:00000000 $d
 
 NO UNDEFINED SYMBOLS

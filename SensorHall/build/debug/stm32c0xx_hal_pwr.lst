@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
   30:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c **** 
   31:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c **** /** @addtogroup PWR
   32:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****   * @{
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 2
 
 
   33:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****   */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
   38 000a DA62     		str	r2, [r3, #44]
   76:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****   __HAL_RCC_PWR_RELEASE_RESET();
   39              		.loc 1 76 3 view .LVU2
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 3
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 3
 
 
   40 000c DA6A     		ldr	r2, [r3, #44]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  108:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****            main mode.
  109:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****       (+) Standby mode: all clocks are stopped except LSI and LSE, regulator is
  110:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****           disable.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 4
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 4
 
 
  111:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****       (+) Shutdown mode: all clocks are stopped except LSE, regulator is
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  165:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****          and Standby/Shutdown modes control) are not impacted.
  166:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c **** 
  167:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****     *** Shutdown mode ***
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 5
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 5
 
 
  168:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****    ======================
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
   73 0002 CA68     		ldr	r2, [r1, #12]
   74 0004 2F23     		movs	r3, #47
   75 0006 0340     		ands	r3, r0
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 6
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 6
 
 
   76 0008 9A43     		bics	r2, r3
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  113 0000 0349     		ldr	r1, .L8
  114 0002 8B68     		ldr	r3, [r1, #8]
  115 0004 2F22     		movs	r2, #47
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 7
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 7
 
 
  116 0006 0240     		ands	r2, r0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  259:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****   CLEAR_BIT(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPDEEP_Msk));
  146              		.loc 1 259 3 view .LVU17
  147 0000 064A     		ldr	r2, .L14
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 8
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 8
 
 
  148 0002 1369     		ldr	r3, [r2, #16]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  186              	.L15:
  187 001a C046     		.align	2
  188              	.L14:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 9
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 9
 
 
  189 001c 00ED00E0 		.word	-536810240
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  213 0004 0720     		movs	r0, #7
  214              	.LVL6:
  215              		.loc 1 306 3 is_stmt 0 view .LVU30
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 10
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 10
 
 
  216 0006 8343     		bics	r3, r0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  250 0024 8B43     		bics	r3, r1
  251 0026 1361     		str	r3, [r2, #16]
  327:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c **** }
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 11
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 11
 
 
  252              		.loc 1 327 1 view .LVU39
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  288 0000 064A     		ldr	r2, .L23
  289 0002 1368     		ldr	r3, [r2]
  290 0004 0721     		movs	r1, #7
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 12
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 12
 
 
  291 0006 8B43     		bics	r3, r1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  328              		.loc 1 365 1 is_stmt 1 view -0
  329              		.cfi_startproc
  330              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 13
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 13
 
 
  331              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  371 000a 7047     		bx	lr
  372              	.L30:
  373              		.align	2
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 14
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 14
 
 
  374              	.L29:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  396:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c **** /**
  397:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****   * @brief  Disable Cortex Sev On Pending feature.
  398:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****   * @note   Clear SEVONPEND bit of SCR register. When this bit is clear, only
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 15
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 15
 
 
  399:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c ****   *         enable interrupts or events can wakeup processor from WFE
@@ -875,40 +875,40 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 1
  442              		.file 3 "C:/Users/micha/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
  443              		.file 4 "Drivers/CMSIS/Include/core_cm0plus.h"
  444              		.file 5 "Drivers/CMSIS/Device/ST/STM32C0xx/Include/stm32c031xx.h"
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s 			page 16
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cc5clSwu.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32c0xx_hal_pwr.c
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:19     .text.HAL_PWR_DeInit:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:25     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:50     .text.HAL_PWR_DeInit:00000018 $d
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:56     .text.HAL_PWR_EnableWakeUpPin:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:62     .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:92     .text.HAL_PWR_EnableWakeUpPin:00000018 $d
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:97     .text.HAL_PWR_DisableWakeUpPin:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:103    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:125    .text.HAL_PWR_DisableWakeUpPin:00000010 $d
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:130    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:136    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:189    .text.HAL_PWR_EnterSLEEPMode:0000001c $d
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:194    .text.HAL_PWR_EnterSTOPMode:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:200    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:268    .text.HAL_PWR_EnterSTOPMode:00000030 $d
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:274    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:280    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:314    .text.HAL_PWR_EnterSTANDBYMode:0000001c $d
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:320    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:326    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:345    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:350    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:356    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:375    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:380    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:386    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:405    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:410    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:416    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
-C:\Users\micha\AppData\Local\Temp\ccAW2gOT.s:435    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:19     .text.HAL_PWR_DeInit:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:25     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:50     .text.HAL_PWR_DeInit:00000018 $d
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:56     .text.HAL_PWR_EnableWakeUpPin:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:62     .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:92     .text.HAL_PWR_EnableWakeUpPin:00000018 $d
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:97     .text.HAL_PWR_DisableWakeUpPin:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:103    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:125    .text.HAL_PWR_DisableWakeUpPin:00000010 $d
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:130    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:136    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:189    .text.HAL_PWR_EnterSLEEPMode:0000001c $d
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:194    .text.HAL_PWR_EnterSTOPMode:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:200    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:268    .text.HAL_PWR_EnterSTOPMode:00000030 $d
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:274    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:280    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:314    .text.HAL_PWR_EnterSTANDBYMode:0000001c $d
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:320    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:326    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:345    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:350    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:356    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:375    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:380    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:386    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:405    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:410    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:416    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
+C:\Users\micha\AppData\Local\Temp\cc5clSwu.s:435    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
 
 NO UNDEFINED SYMBOLS

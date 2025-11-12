@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
   30:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****        and the read and write protection mechanisms.
   31:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
   32:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   [..] The Flash memory interface accelerates code execution with a system of instruction
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 2
 
 
   33:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****        prefetch and cache lines.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
   87:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
   88:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** /** @addtogroup STM32C0xx_HAL_Driver
   89:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   * @{
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 3
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 3
 
 
   90:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  144:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     program operations.
  145:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
  146:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** @endverbatim
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 4
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 4
 
 
  147:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   * @{
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  201:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     CLEAR_BIT(FLASH->CR, TypeProgram);
  202:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   }
  203:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 5
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 5
 
 
  204:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   /* Process Unlocked */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  258:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****       /* Program double-word (64-bit) at a specified address */
  259:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****       FLASH_Program_DoubleWord(Address, Data);
  260:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     }
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 6
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 6
 
 
  261:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     else
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  315:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     /*Stop the procedure ongoing*/
  316:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     pFlash.ProcedureOnGoing = FLASH_TYPENONE;
  317:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 7
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 7
 
 
  318:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     /* Error callback */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  372:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   * @retval None
  373:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   */
  374:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** __weak void HAL_FLASH_EndOfOperationCallback(uint32_t ReturnValue)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 8
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 8
 
 
  375:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  429:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   if (READ_BIT(FLASH->CR, FLASH_CR_LOCK) != 0x00U)
  430:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   {
  431:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     /* Authorize the FLASH Registers access */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 9
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 9
 
 
  432:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     WRITE_REG(FLASH->KEYR, FLASH_KEY1);
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  486:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   return status;
  487:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** }
  488:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 10
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 10
 
 
  489:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** /**
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  543:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   * @retval FLASH_ErrorCode The returned value can be
  544:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   *            @arg @ref HAL_FLASH_ERROR_NONE No error set
  545:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   *            @arg @ref HAL_FLASH_ERROR_OP FLASH Operation error
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 11
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 11
 
 
  546:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   *            @arg @ref HAL_FLASH_ERROR_PROG FLASH Programming error
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  600:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   /* clear error flags */
  601:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   __HAL_FLASH_CLEAR_FLAG(error);
  602:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 12
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 12
 
 
  603:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   if (error != 0x00U)
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  638:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
  639:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   /* Barrier to ensure programming is performed in 2 steps, in right order
  640:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     (independently of compiler optimization behavior) */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 13
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 13
 
 
  641:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   __ISB();
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
   50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
   51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 14
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 14
 
 
   53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
  108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
  109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 15
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 15
 
 
  110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  164:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  165:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  166:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 16
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 16
 
 
  167:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  221:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "r" (r)
  222:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  223:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 17
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 17
 
 
  224:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  645:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** }
   64              		.loc 1 645 1 view .LVU10
   65              		@ sp needed
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 18
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 18
 
 
   66 0014 30BD     		pop	{r4, r5, pc}
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  664:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   primask_bit = __get_PRIMASK();
  104              		.loc 1 664 3 view .LVU18
  105              	.LBB12:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 19
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 19
 
 
  106              	.LBI12:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  314:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  315:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM ("rev16 %0, %1" : __CMSIS_GCC_OUT_REG (result) : __CMSIS_GCC_USE_REG (value) );
  316:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 20
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 20
 
 
  317:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  371:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Reversed value
  372:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  373:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __RBIT(uint32_t value)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 21
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 21
 
 
  374:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  428:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a exclusive LDR instruction for 8 bit value.
  429:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
  430:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return             value of type uint8_t at (*ptr)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 22
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 22
 
 
  431:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  485:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  486:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   STR Exclusive (8 bit)
  487:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a exclusive STR instruction for 8 bit values.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 23
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 23
 
 
  488:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  542:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("clrex" ::: "memory");
  543:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  544:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 24
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 24
 
 
  545:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif /* ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  599:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  600:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  601:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 25
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 25
 
 
  602:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  656:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldrt %0, %1" : "=r" (result) : "Q" (*ptr) );
  657:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(result);
  658:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 26
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 26
 
 
  659:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  713:Drivers/CMSIS/Include/cmsis_gcc.h ****     if (val > max)
  714:Drivers/CMSIS/Include/cmsis_gcc.h ****     {
  715:Drivers/CMSIS/Include/cmsis_gcc.h ****       return max;
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 27
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 27
 
 
  716:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  770:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  771:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  772:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Load-Acquire (16 bit)
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 28
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 28
 
 
  773:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a LDAH instruction for 16 bit values.
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  827:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a STL instruction for 32 bit values.
  828:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
  829:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 29
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 29
 
 
  830:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  884:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Executes a STLB exclusive instruction for 8 bit values.
  885:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
  886:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 30
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 30
 
 
  887:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return          0  Function succeeded
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  941:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
  942:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  943:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 31
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 31
 
 
  944:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  998:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Writes the given value to the Control Register.
  999:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    control  Control Register value to set
 1000:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 32
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 32
 
 
 1001:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_CONTROL(uint32_t control)
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
 1055:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_xPSR(void)
 1056:Drivers/CMSIS/Include/cmsis_gcc.h **** {
 1057:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 33
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 33
 
 
 1058:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
 1112:Drivers/CMSIS/Include/cmsis_gcc.h **** {
 1113:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psp_ns, %0" : : "r" (topOfProcStack) : );
 1114:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 34
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 34
 
 
 1115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
 1169:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
 1170:Drivers/CMSIS/Include/cmsis_gcc.h **** 
 1171:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 35
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 35
 
 
 1172:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  122              		.loc 1 665 3 is_stmt 1 view .LVU24
  123              	.LBB14:
  124              	.LBI14:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 36
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 36
 
 
  960:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  165              		.loc 1 668 16 is_stmt 1 view .LVU39
  166 0020 3F2B     		cmp	r3, #63
  167 0022 F9D9     		bls	.L6
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 37
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 37
 
 
  168              	.LVL9:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  183              	.LBB19:
 1235:Drivers/CMSIS/Include/cmsis_gcc.h **** {
 1236:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 38
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 38
 
 
  184              		.loc 2 1236 3 view .LVU46
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  237              		.loc 1 393 1 is_stmt 1 view -0
  238              		.cfi_startproc
  239              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 39
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 39
 
 
  240              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  285 0014 274A     		ldr	r2, .L27+12
  291:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   {
  286              		.loc 1 291 6 view .LVU64
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 40
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 40
 
 
  287 0016 1042     		tst	r0, r2
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  326              		.loc 1 353 5 is_stmt 1 view .LVU79
  327 003e 2000     		movs	r0, r4
  328 0040 FFF7FEFF 		bl	HAL_FLASH_EndOfOperationCallback
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 41
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 41
 
 
  329              	.LVL18:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  299:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   }
  369              		.loc 1 299 11 view .LVU94
  370 0068 D9E7     		b	.L15
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 42
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 42
 
 
  371              	.LVL22:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  410              		.loc 1 334 10 is_stmt 0 view .LVU109
  411 0090 002B     		cmp	r3, #0
  412 0092 03D1     		bne	.L26
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 43
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 43
 
 
  343:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****       }
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  459 0000 084B     		ldr	r3, .L34
  460 0002 5B69     		ldr	r3, [r3, #20]
  429:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   {
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 44
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 44
 
 
  461              		.loc 1 429 6 view .LVU120
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  506              		.syntax unified
  507              		.code	16
  508              		.thumb_func
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 45
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 45
 
 
  510              	HAL_FLASH_Lock:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  555              		.syntax unified
  556              		.code	16
  557              		.thumb_func
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 46
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 46
 
 
  559              	HAL_FLASH_OB_Unlock:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  600              	.L44:
  482:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****     }
  601              		.loc 1 482 14 view .LVU154
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 47
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 47
 
 
  602 0020 0020     		movs	r0, #0
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  649 0014 7047     		bx	lr
  650              	.LVL38:
  651              	.L49:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 48
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 48
 
 
  503:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   }
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  704              		.loc 1 557 1 is_stmt 1 view -0
  705              		.cfi_startproc
  706              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 49
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 49
 
 
  707              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  753              	.LVL41:
  589:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   {
  754              		.loc 1 589 3 is_stmt 1 view .LVU180
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 50
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 50
 
 
  755              	.L61:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  793              		.loc 1 606 22 is_stmt 0 view .LVU196
  794 002a 0B4A     		ldr	r2, .L66+8
  795 002c 5360     		str	r3, [r2, #4]
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 51
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 51
 
 
  608:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   }
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  836 0058 00000000 		.word	pFlash
  837              		.cfi_endproc
  838              	.LFE353:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 52
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 52
 
 
  840              		.section	.text.HAL_FLASH_Program,"ax",%progbits
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  173:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
  884              		.loc 1 173 20 is_stmt 0 view .LVU222
  885 0018 0022     		movs	r2, #0
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 53
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 53
 
 
  886 001a 5A60     		str	r2, [r3, #4]
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  205:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
  926              		.loc 1 205 3 view .LVU237
  927 0044 054B     		ldr	r3, .L75
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 54
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 54
 
 
  928 0046 0022     		movs	r2, #0
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  975              	.LVL65:
  976              	.LFB343:
  223:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c ****   HAL_StatusTypeDef status;
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 55
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 55
 
 
  977              		.loc 1 223 1 is_stmt 1 view -0
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  1018 0020 8000     		lsls	r0, r0, #2
  1019 0022 FFF7FEFF 		bl	FLASH_WaitForLastOperation
  1020              	.LVL67:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 56
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 56
 
 
  237:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  1060              		.loc 1 253 8 is_stmt 0 view .LVU275
  1061 0048 012F     		cmp	r7, #1
  1062 004a 04D0     		beq	.L82
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 57
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 57
 
 
  264:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c **** 
@@ -3418,57 +3418,57 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 1
  1109              		.file 6 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_def.h"
  1110              		.file 7 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_flash.h"
  1111              		.file 8 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h"
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 58
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 58
 
 
  1112              		.file 9 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_flash_ex.h"
-ARM GAS  C:\Users\micha\AppData\Local\Temp\cceNEJXp.s 			page 59
+ARM GAS  C:\Users\micha\AppData\Local\Temp\cceRAw7v.s 			page 59
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32c0xx_hal_flash.c
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:19     .text.FLASH_Program_DoubleWord:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:24     .text.FLASH_Program_DoubleWord:00000000 FLASH_Program_DoubleWord
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:70     .text.FLASH_Program_DoubleWord:00000018 $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:75     .RamFunc:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:80     .RamFunc:00000000 FLASH_Program_Fast
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:201    .RamFunc:00000034 $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:206    .text.HAL_FLASH_EndOfOperationCallback:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:212    .text.HAL_FLASH_EndOfOperationCallback:00000000 HAL_FLASH_EndOfOperationCallback
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:228    .text.HAL_FLASH_OperationErrorCallback:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:234    .text.HAL_FLASH_OperationErrorCallback:00000000 HAL_FLASH_OperationErrorCallback
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:250    .text.HAL_FLASH_IRQHandler:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:256    .text.HAL_FLASH_IRQHandler:00000000 HAL_FLASH_IRQHandler
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:433    .text.HAL_FLASH_IRQHandler:000000a8 $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:1102   .bss.pFlash:00000000 pFlash
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:442    .text.HAL_FLASH_Unlock:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:448    .text.HAL_FLASH_Unlock:00000000 HAL_FLASH_Unlock
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:497    .text.HAL_FLASH_Unlock:00000024 $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:504    .text.HAL_FLASH_Lock:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:510    .text.HAL_FLASH_Lock:00000000 HAL_FLASH_Lock
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:548    .text.HAL_FLASH_Lock:0000001c $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:553    .text.HAL_FLASH_OB_Unlock:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:559    .text.HAL_FLASH_OB_Unlock:00000000 HAL_FLASH_OB_Unlock
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:607    .text.HAL_FLASH_OB_Unlock:00000024 $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:614    .text.HAL_FLASH_OB_Lock:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:620    .text.HAL_FLASH_OB_Lock:00000000 HAL_FLASH_OB_Lock
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:658    .text.HAL_FLASH_OB_Lock:0000001c $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:663    .text.HAL_FLASH_OB_Launch:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:669    .text.HAL_FLASH_OB_Launch:00000000 HAL_FLASH_OB_Launch
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:691    .text.HAL_FLASH_OB_Launch:00000010 $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:696    .text.HAL_FLASH_GetError:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:702    .text.HAL_FLASH_GetError:00000000 HAL_FLASH_GetError
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:720    .text.HAL_FLASH_GetError:00000008 $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:725    .text.FLASH_WaitForLastOperation:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:731    .text.FLASH_WaitForLastOperation:00000000 FLASH_WaitForLastOperation
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:834    .text.FLASH_WaitForLastOperation:00000050 $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:841    .text.HAL_FLASH_Program:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:847    .text.HAL_FLASH_Program:00000000 HAL_FLASH_Program
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:962    .text.HAL_FLASH_Program:0000005c $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:968    .text.HAL_FLASH_Program_IT:00000000 $t
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:974    .text.HAL_FLASH_Program_IT:00000000 HAL_FLASH_Program_IT
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:1092   .text.HAL_FLASH_Program_IT:00000068 $d
-C:\Users\micha\AppData\Local\Temp\cceNEJXp.s:1099   .bss.pFlash:00000000 $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:19     .text.FLASH_Program_DoubleWord:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:24     .text.FLASH_Program_DoubleWord:00000000 FLASH_Program_DoubleWord
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:70     .text.FLASH_Program_DoubleWord:00000018 $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:75     .RamFunc:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:80     .RamFunc:00000000 FLASH_Program_Fast
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:201    .RamFunc:00000034 $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:206    .text.HAL_FLASH_EndOfOperationCallback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:212    .text.HAL_FLASH_EndOfOperationCallback:00000000 HAL_FLASH_EndOfOperationCallback
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:228    .text.HAL_FLASH_OperationErrorCallback:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:234    .text.HAL_FLASH_OperationErrorCallback:00000000 HAL_FLASH_OperationErrorCallback
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:250    .text.HAL_FLASH_IRQHandler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:256    .text.HAL_FLASH_IRQHandler:00000000 HAL_FLASH_IRQHandler
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:433    .text.HAL_FLASH_IRQHandler:000000a8 $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:1102   .bss.pFlash:00000000 pFlash
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:442    .text.HAL_FLASH_Unlock:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:448    .text.HAL_FLASH_Unlock:00000000 HAL_FLASH_Unlock
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:497    .text.HAL_FLASH_Unlock:00000024 $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:504    .text.HAL_FLASH_Lock:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:510    .text.HAL_FLASH_Lock:00000000 HAL_FLASH_Lock
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:548    .text.HAL_FLASH_Lock:0000001c $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:553    .text.HAL_FLASH_OB_Unlock:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:559    .text.HAL_FLASH_OB_Unlock:00000000 HAL_FLASH_OB_Unlock
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:607    .text.HAL_FLASH_OB_Unlock:00000024 $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:614    .text.HAL_FLASH_OB_Lock:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:620    .text.HAL_FLASH_OB_Lock:00000000 HAL_FLASH_OB_Lock
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:658    .text.HAL_FLASH_OB_Lock:0000001c $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:663    .text.HAL_FLASH_OB_Launch:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:669    .text.HAL_FLASH_OB_Launch:00000000 HAL_FLASH_OB_Launch
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:691    .text.HAL_FLASH_OB_Launch:00000010 $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:696    .text.HAL_FLASH_GetError:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:702    .text.HAL_FLASH_GetError:00000000 HAL_FLASH_GetError
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:720    .text.HAL_FLASH_GetError:00000008 $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:725    .text.FLASH_WaitForLastOperation:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:731    .text.FLASH_WaitForLastOperation:00000000 FLASH_WaitForLastOperation
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:834    .text.FLASH_WaitForLastOperation:00000050 $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:841    .text.HAL_FLASH_Program:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:847    .text.HAL_FLASH_Program:00000000 HAL_FLASH_Program
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:962    .text.HAL_FLASH_Program:0000005c $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:968    .text.HAL_FLASH_Program_IT:00000000 $t
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:974    .text.HAL_FLASH_Program_IT:00000000 HAL_FLASH_Program_IT
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:1092   .text.HAL_FLASH_Program_IT:00000068 $d
+C:\Users\micha\AppData\Local\Temp\cceRAw7v.s:1099   .bss.pFlash:00000000 $d
 
 UNDEFINED SYMBOLS
 FLASH_PageErase

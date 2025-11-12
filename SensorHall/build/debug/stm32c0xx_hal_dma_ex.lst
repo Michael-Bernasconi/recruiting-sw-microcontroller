@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
   29:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****    (+) Configure the DMA_MUX Request Generator Block using HAL_DMAEx_ConfigMuxRequestGenerator func
   30:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****        Functions HAL_DMAEx_EnableMuxRequestGenerator and HAL_DMAEx_DisableMuxRequestGenerator can t
   31:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****        to respectively enable/disable the request generator.
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 2
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 2
 
 
   32:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
   86:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c **** 
   87:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c **** /**
   88:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****   * @brief  Configure the DMAMUX synchronization parameters for a given DMA channel (instance).
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 3
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 3
 
 
   89:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****   * @param  hdma Pointer to a DMA_HandleTypeDef structure that contains
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
   62              		.loc 1 108 5 view .LVU14
  109:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c **** 
  110:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****     /* Set the new synchronization parameters (and keep the request ID filled during the Init)*/
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 4
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 4
 
 
  111:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****     MODIFY_REG(hdma->DMAmuxChannel->CCR, \
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  129:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****     return HAL_ERROR;
   99              		.loc 1 129 12 view .LVU23
  100 0048 0120     		movs	r0, #1
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 5
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 5
 
 
  101              	.LVL4:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  147:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c **** 
  148:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****   assert_param(IS_DMAMUX_REQUEST_GEN_SIGNAL_ID(pRequestGeneratorConfig->SignalID));
  138              		.loc 1 148 3 view .LVU30
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 6
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 6
 
 
  149:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****   assert_param(IS_DMAMUX_REQUEST_GEN_POLARITY(pRequestGeneratorConfig->Polarity));
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  177              		.loc 1 163 59 view .LVU48
  178 002c 4968     		ldr	r1, [r1, #4]
  179              	.LVL9:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 7
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 7
 
 
  162:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****                                    ((pRequestGeneratorConfig->RequestNumber - 1U) << DMAMUX_RGxCR_G
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  177:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****   * @param  hdma Pointer to a DMA_HandleTypeDef structure that contains
  178:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****   *                     the configuration information for the specified DMA channel.
  179:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****   * @retval HAL status
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 8
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 8
 
 
  180:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****   */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  253 001a 7047     		bx	lr
  254              	.LVL15:
  255              	.L11:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 9
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 9
 
 
  198:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****   }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  292 0004 002B     		cmp	r3, #0
  293 0006 08D0     		beq	.L15
  294              		.loc 1 216 52 discriminator 1 view .LVU81
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 10
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 10
 
 
  295 0008 036D     		ldr	r3, [r0, #80]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  333              	.LFE345:
  335              		.section	.text.HAL_DMAEx_MUX_IRQHandler,"ax",%progbits
  336              		.align	1
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 11
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 11
 
 
  337              		.global	HAL_DMAEx_MUX_IRQHandler
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  375              		.loc 1 245 9 is_stmt 0 view .LVU105
  376 0018 836C     		ldr	r3, [r0, #72]
  377              		.loc 1 245 42 view .LVU106
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 12
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 12
 
 
  378 001a C26C     		ldr	r2, [r0, #76]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  263:Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c ****       hdma->DMAmuxRequestGen->RGCR &= ~DMAMUX_RGxCR_OIE;
  415              		.loc 1 263 7 is_stmt 1 view .LVU123
  416              		.loc 1 263 29 is_stmt 0 view .LVU124
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 13
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 13
 
 
  417 0040 1A68     		ldr	r2, [r3]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  456 0064 FFFEFFFF 		.word	-257
  457              		.cfi_endproc
  458              	.LFE346:
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 14
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 14
 
 
  460              		.text
@@ -790,22 +790,22 @@ ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 1
  466              		.file 6 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_def.h"
  467              		.file 7 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_dma.h"
  468              		.file 8 "Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_dma_ex.h"
-ARM GAS  C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s 			page 15
+ARM GAS  C:\Users\micha\AppData\Local\Temp\ccskoHOm.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32c0xx_hal_dma_ex.c
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:19     .text.HAL_DMAEx_ConfigMuxSync:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:25     .text.HAL_DMAEx_ConfigMuxSync:00000000 HAL_DMAEx_ConfigMuxSync
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:117    .text.HAL_DMAEx_ConfigMuxRequestGenerator:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:123    .text.HAL_DMAEx_ConfigMuxRequestGenerator:00000000 HAL_DMAEx_ConfigMuxRequestGenerator
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:211    .text.HAL_DMAEx_EnableMuxRequestGenerator:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:217    .text.HAL_DMAEx_EnableMuxRequestGenerator:00000000 HAL_DMAEx_EnableMuxRequestGenerator
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:272    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:278    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000000 HAL_DMAEx_DisableMuxRequestGenerator
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:331    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000024 $d
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:336    .text.HAL_DMAEx_MUX_IRQHandler:00000000 $t
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:342    .text.HAL_DMAEx_MUX_IRQHandler:00000000 HAL_DMAEx_MUX_IRQHandler
-C:\Users\micha\AppData\Local\Temp\ccaZsWCh.s:456    .text.HAL_DMAEx_MUX_IRQHandler:00000064 $d
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:19     .text.HAL_DMAEx_ConfigMuxSync:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:25     .text.HAL_DMAEx_ConfigMuxSync:00000000 HAL_DMAEx_ConfigMuxSync
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:117    .text.HAL_DMAEx_ConfigMuxRequestGenerator:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:123    .text.HAL_DMAEx_ConfigMuxRequestGenerator:00000000 HAL_DMAEx_ConfigMuxRequestGenerator
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:211    .text.HAL_DMAEx_EnableMuxRequestGenerator:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:217    .text.HAL_DMAEx_EnableMuxRequestGenerator:00000000 HAL_DMAEx_EnableMuxRequestGenerator
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:272    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:278    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000000 HAL_DMAEx_DisableMuxRequestGenerator
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:331    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000024 $d
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:336    .text.HAL_DMAEx_MUX_IRQHandler:00000000 $t
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:342    .text.HAL_DMAEx_MUX_IRQHandler:00000000 HAL_DMAEx_MUX_IRQHandler
+C:\Users\micha\AppData\Local\Temp\ccskoHOm.s:456    .text.HAL_DMAEx_MUX_IRQHandler:00000064 $d
 
 NO UNDEFINED SYMBOLS
